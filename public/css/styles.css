@@ -1,0 +1,115 @@
+*{
+    padding: 0%;
+    margin:0%;
+    box-sizing: border-box;
+}
+.texto {
+    text-align: center;
+    font-size: x-large;
+}
+.login {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding-left:20%;
+    padding-right: 20%;
+    font-size: xx-large
+}
+.usuario {
+    margin-top: 0%;
+    margin-bottom: 0%;
+}
+.password {
+    margin-top: 0%;
+    margin-bottom: 0%;
+}
+.recupera{
+font-size: small;
+}
+.button {
+    margin-top: 0%;
+}
+.nuevosClientes {
+    text-align: center;
+}
+.crearUsuario {
+    border-radius: 100%;
+    font-size: large;
+    background-color: red;
+    margin-left:42% ;
+    margin-right:42%;
+    padding:2%
+}
+.principal {
+    box-sizing: content-box;
+}
+.header {
+    display: flex;
+    width: 100%;
+    font-size: 1vw;}
+    
+.logo {
+    text-align: center;
+    height: 100%;
+}
+    
+.lupita {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+  
+}
+.changuito {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+    
+}
+.encabezado{
+    list-style:none;
+    display: flex;
+    padding: 0%;
+    width: 70%;
+    
+}
+.encabezado li {
+  margin-left: 10%;
+  font-size: large;
+  position: relative;
+  top:3em
+  
+}
+.main {
+    list-style:none;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.producto {
+  width: 50%;
+}
+.cantidad {
+text-align: center;
+}
+.subtotal {
+margin-left: 15%;
+text-align: center;
+}
+.pagar {
+border-radius: 100%;
+background-color: black;
+color: white;
+font-size:x-large;
+}
+.botonDePago{
+display: flex;
+justify-content: right;
+margin-right: 20%;
+}
+
+.Vino{ 
+position:relative;
+bottom: 4em
+}
