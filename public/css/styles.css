@@ -3,6 +3,9 @@
     margin:0%;
     box-sizing: border-box;
 }
+body{
+    background-color: #FAF3E3;
+}
 .texto {
     text-align: center;
     font-size: x-large;
@@ -49,8 +52,9 @@ font-size: small;
     font-size: 1vw;}
     
 .logo {
-    text-align: center;
-    height: 100%;
+    
+    
+  
 }
     
 .lupita {
@@ -71,11 +75,11 @@ font-size: small;
     list-style:none;
     display: flex;
     padding: 0%;
-    width: 70%;
+    width: 150%;
     
 }
 .encabezado li {
-  margin-left: 10%;
+  margin-left: 5%;
   font-size: large;
   position: relative;
   top:3em
@@ -111,5 +115,12 @@ margin-right: 20%;
 
 .Vino{ 
 position:relative;
-bottom: 4em
+bottom: 4em;
+background-color: #FAF3E3;
+
+}
+
+.buttonHeader {
+    margin-left: 5%;
+    height: 50%;
 }
