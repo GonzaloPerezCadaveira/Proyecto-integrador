@@ -8,10 +8,11 @@ body{
     
     background-color: #FCF8E8;
 }
+/*Inicio del Header*/
 
 header{
-    display: flex;
     position: fixed;
+    display: flex;
     top:0vw;
     height: 9vw;
     width: 100%;
@@ -59,9 +60,10 @@ header{
 }
 
 .logo img{
-    width: 120%;
+
+    height: 18vw;
     color: #94B49F;
-    margin: -1.5% 0px;
+    padding: 2% 0px;
 }
 
 .encabezado li {
@@ -72,8 +74,8 @@ header{
 .encabezado li p{
     border-radius: 5%;
 }
-
-
+/*Fin del Header*/
+/*Inicio del Main*/
 main{
     display: flex;
     width: 75%;
@@ -86,9 +88,10 @@ main #boton-comprar{
 }
 
 main img{
-    width: 40%;
+    
     max-width: 450px;
-    max-height: 580px;
+    max-height: 600px;
+    width: 100%;
     border: solid 1px #ebebeb;
     flex-grow: 1;
 }
@@ -190,19 +193,62 @@ main img{
     margin-right: 30%;
 }
 
+#envio-retiro button:hover{
+    background-color:rgba(223, 120, 97, 0.8) ;
+}
+/*Fin del Main*/
+/*Inicio del Footer*/
 footer{
-    margin: 0% 5%;
+    padding: 2% 2%;
+    display: flex;
+    width: 100%;
+    background-color:rgba(236, 179, 144, 0.3) ;
 }
 
 footer label{
     font-size: 1.5vw;
 }
 
-footer ul{
+#redes ul{
     font-size: 1vw;
     display: flex;
 }
-footer ul li{
+#redes ul li{
     margin: 2% 2%;
     font-size: 2vw;
 }
+.divs-footer{
+    flex-grow: 1;
+}
+.divs-footer li{
+    margin:2% 0%;
+}
+/*Fin del Footer*/
+
+
+@media (min-width:360px) and (max-width:768px) {
+    /*Inicio del Header*/
+    header{
+        height: 15%;
+    
+    }
+    .logo img{
+        height: 25vw;
+        color: #94B49F;
+        padding:3% 0px;
+    }
+    /*Fin del Header*/
+    /*Inicio del Main*/
+    main{
+        flex-direction: column;
+        align-items: center;
+        margin:15% 12%;
+    }
+    main img{
+        max-width: 300px;
+        max-height: 450px;
+        width: 100%;
+    }
+    /*Fin del Main*/
+}
+    
