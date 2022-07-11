@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,39 +6,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Descripcion</title>
     <script src="https://kit.fontawesome.com/7a0a501500.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/css/style_form.css">
+    <link rel="stylesheet" href="/css/style_desc.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>        
+    <header class="header">
+        <div class="logo"> 
+            <img src="/image/Carpincho-Drinks-Logo_2.png"> 
+        </div>
+        <div class="encabezado">
+            <ul type="none" id="opciones-pagina" class="opciones">
+                <li><p>Productos</p></li> 
+                <li>Nosotros</li>
+                <li>Contactenos</li>
+                <li class="lupita"> <input type="text"><button><i class="fa-solid fa-magnifying-glass"></i></button></li>
+                <li class= "changuito"> <i class="fa-solid fa-cart-shopping"></i> </li>
+            </ul>
+            <ul type="none" id="opciones-cuenta" class="opciones">
+                <li><a href="/login">Registrate!!</a></li>
+                <li><a href="/login">Iniciar Cuanta</a></li>
+            </ul>
+        </div>       
     </header>
     <main>
         <img src="https://i.pinimg.com/originals/df/be/27/dfbe27d26a5594681492f691cad7aa24.jpg" alt="Cerveza Corona">
-        <div>
+        <div id="descripcion">
             <h2>Cerveza corora Extra 355ml</h2>
-            <p>500$</p>
-            <div>
-                <ul>
-                    <li><i class="fa-solid fa-shop"></i></li>
-                    <li><i class="fa-solid fa-truck"></i></li>
+            <b>500$</b>
+            <div id="envio-retiro">
+                <ul type="none">
+                    <li><i class="fa-solid fa-shop"></i><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate debitis quos saepe ipsum beatae, commodi amet.</p></li>
+                    <li><i class="fa-solid fa-truck"></i><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic qui, obcaecati deleniti officia ut quam adipisci.</p></li>
                 </ul>
             </div>
-            <div>
+            <div id="opcion-bebida">
                 <label for="opcion-bebida">Opcion</label>
-                <select name="opcion-bebida" id="">
+                <select name="opcion-bebida" id="envio-retiro">
                     <option value="corona">Corona</option>
                 </select>
+            </div>
+            <div id="sel-cant">
+                <label for="">Cantidades</label>
+                <div id="cantidades">
+                    <h1>1</h1>
+                    <button>+</button>
+                    <button>-</button>
+                </div>
+            </div>
+            <div id="envio-retiro">
+                <button>Comprar!</button>
+            </div>
+            <div id="desc-res">
+                <label for="">Descripcion</label>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, eligendi iure! Doloremque labore blanditiis sed placeat voluptates reprehenderit aliquam id asperiores adipisci rerum.</p>
+                <label for="">Reseñas</label>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime eaque optio quis voluptatum obcaecati omnis eum eveniet est iure amet at inventore error minima aliquid</p>
             </div>
         </div>
     </main>
     <footer>
-        <ul>
+        <label for="">Comparti</label>
+        <ul type="none">
             <li><i class="fa-brands fa-whatsapp"></i></li>
             <li><i class="fa-brands fa-twitter"></i></li>
             <li><i class="fa-brands fa-instagram"></i></li>
         </ul>
+        <p>● Copyright © 2020 Carpincho-Drinks S.A</p>
     </footer>
 </body>
 </html>

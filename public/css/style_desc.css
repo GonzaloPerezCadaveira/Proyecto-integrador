@@ -1,0 +1,208 @@
+*{
+    margin: 0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+
+body{
+    
+    background-color: #FCF8E8;
+}
+
+header{
+    display: flex;
+    position: fixed;
+    top:0vw;
+    height: 9vw;
+    width: 100%;
+    align-items: center;
+    background-color:  #94B49F;
+}
+
+.encabezado{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    flex-grow: 0.7;
+    margin-right: 5%;
+    font-size: 1.3vw;
+}
+
+.lupita button{
+    height: 100%;
+}
+
+.lupita input, .lupita button{
+    border: 0px;
+    height: 100%;
+}
+
+.encabezado .opciones{
+    display:flex ;
+    justify-content: flex-end;
+    margin:2% 0px;
+    flex-wrap: wrap
+}
+
+.encabezado #opciones-cuenta{
+    width: 100%;
+    flex-grow: 1;
+}
+
+.encabezado a{
+    color:black;
+}
+
+
+.logo{
+    flex-grow: 0.3;
+}
+
+.logo img{
+    width: 120%;
+    color: #94B49F;
+    margin: -1.5% 0px;
+}
+
+.encabezado li {
+    margin: 0px 2%;
+    border-radius: 5%;
+}
+
+.encabezado li p{
+    border-radius: 5%;
+}
+
+
+main{
+    display: flex;
+    width: 75%;
+    margin: 6% 19%;
+    padding-top: 7vw;
+}
+
+main #boton-comprar{
+    border: 0px;
+}
+
+main img{
+    width: 40%;
+    max-width: 450px;
+    max-height: 580px;
+    border: solid 1px #ebebeb;
+    flex-grow: 1;
+}
+
+#descripcion{
+    flex-grow: 1;
+    margin:0px 2%;
+}
+
+#descripcion h2{
+    font-size: 2.2vw;
+}
+#descripcion b{
+    display: block;
+    font-size:1.8vw;
+    margin: 4% 0%;
+}
+
+#envio-retiro{
+    margin-left: 2%;
+}
+
+#envio-retiro {
+    margin-left: 2%;
+}
+
+#envio-retiro button{ 
+    background-color: rgb(236, 179, 144);
+    border: 0px; 
+    width: 60%;
+    height: 2vw;
+    flex-wrap: wrap;
+    border-radius: 5px;
+    margin: 10% 0px;
+}
+
+#envio-retiro ul{
+    margin-right: 10%;
+    padding-bottom: 10%;
+}
+
+#envio-retiro li{
+    display: flex;
+    margin: 3% 0px;
+    width: 100%;
+    font-size: 1vw;
+    align-items: center;
+}
+
+#envio-retiro li i{
+    padding: 0% 5%;
+}
+
+#envio-retiro li p{
+    margin-right: 10%;
+}
+
+#opcion-bebida{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.3vw;
+
+}
+
+#opcion-bebida select{
+    width: 60%;
+    height: 2vw;
+    border-radius: 3%;
+    border: solid 2px #ebebeb;
+    margin: 2% 2%;
+}
+
+#sel-cant label{
+    font-size: 1.4vw;
+}
+
+#cantidades{
+    display: flex;
+    border-radius: 3%;
+}
+#cantidades h1{
+    background-color: #ebebeb;
+    padding: 1% 0px;
+}
+
+#cantidades button{ 
+    padding: 1vw;
+    border: 0px;
+}
+
+#desc-res label{
+    display: block;
+    font-size: 1.3vw;
+    margin-top:2%;
+}
+
+#desc-res p{
+    display: block;
+    margin-right: 30%;
+}
+
+footer{
+    margin: 0% 5%;
+}
+
+footer label{
+    font-size: 1.5vw;
+}
+
+footer ul{
+    font-size: 1vw;
+    display: flex;
+}
+footer ul li{
+    margin: 2% 2%;
+    font-size: 2vw;
+}
