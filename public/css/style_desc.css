@@ -134,10 +134,6 @@ main img{
     margin-left: 2%;
 }
 
-#envio-retiro {
-    margin-left: 2%;
-}
-
 #boton-compra button{ 
     background-color: rgb(236, 179, 144);
     border: 0px; 
@@ -148,25 +144,21 @@ main img{
     margin: 10% 0px;
 }
 
-#envio-retiro ul{
+.envio-retiro ul{
     margin-right: 10%;
     padding-bottom: 10%;
 }
 
-#envio-retiro li{
+.envio-retiro li{
     display: flex;
     margin: 3% 0px;
     width: 100%;
     font-size: 1vw;
     align-items: center;
 }
-
-#envio-retiro li i{
-    padding: 0% 5%;
-}
-
-#envio-retiro li p{
-    margin-right: 10%;
+ 
+.envio-retiro p{
+    margin: 0px 3%;
 }
 
 #opcion-bebida{
@@ -301,10 +293,6 @@ footer label{
         margin:10% 12%;
     }
 
-    div label{
-        font-size: 2vw;
-    }
-
     .descripcion label{
         font-size: 2vw;
     }
@@ -318,13 +306,23 @@ footer label{
         font-size: 3vw;
     }
 
-    #envio-retiro{
+    .envio-retiro{
         font-size: 2.2vw;
+    }
+
+    .envio-retiro li {
+
+        font-size: 2.2vw;
+        align-items: center;
     }
 
     #opcion-bebida{
         margin: 3% 0px;
     } 
+
+    #opcion-bebida label{
+        font-size: 2.2vw;
+    }
 
     #opcion-bebida select{
         height: 4vw;
@@ -356,5 +354,7 @@ footer label{
         font-size: 2.3vw;
     }
     /*Fin del Main*/
+    /*Inicio del footer*/
+    /*Fin del footer*/
 }
     
