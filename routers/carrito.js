@@ -1,6 +1,8 @@
-const router = exporess.Router();
+const express= require ("express");
 
-const carritoController = require ("./controllers/controllerCarrito");
+const router = express.Router();
+
+const carritoController = require ("../controllers/controllerCarrito");
 
 router.get("/", carritoController.carro);
 

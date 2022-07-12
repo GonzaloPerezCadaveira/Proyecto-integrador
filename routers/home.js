@@ -1,6 +1,8 @@
-const router = exporess.Router();
+const express= require ("express");
 
-const homeController = require ("./controllers/controllerHome");
+const router = express.Router();
+
+const homeController = require ("../controllers/controllerHome");
 
 router.get("/", homeController.home);
 

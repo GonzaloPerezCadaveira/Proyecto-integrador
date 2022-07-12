@@ -1,6 +1,8 @@
-const router = exporess.Router();
+const express= require ("express");
 
-const detailController = require ("./controllers/controllerDetail");
+const router = express.Router();
+
+const detailController = require ("../controllers/controllerDetail");
 
 router.get("/", detailController.detail);
 

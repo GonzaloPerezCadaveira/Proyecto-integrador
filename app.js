@@ -1,12 +1,13 @@
-const express = require ('express')
+const express = require ('express');
+
 const app = express ()
-const path = require ('path')
+
 
 const homeRouter = require ("./routers/home");
 
 const detailRouter = require ("./routers/details");
 
-const loginRouter = requiere ("./routers/login");
+const loginRouter = require ("./routers/login");
 
 const carritoRouter = require ("./routers/carrito");
 
