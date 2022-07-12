@@ -23,32 +23,49 @@ header{
 .encabezado{
     display: flex;
     flex-direction: column;
-    width: 80%;
-    flex-grow: 0.7;
+    width: 57%;
+    flex-grow: 0.3;
     margin-right: 5%;
     font-size: 1.3vw;
+    align-items: flex-end;
 }
 
-.lupita button{
-    height: 100%;
-}
-
-.lupita input, .lupita button{
-    border: 0px;
-    height: 100%;
-}
-
-.encabezado .opciones{
-    display:flex ;
-    justify-content: flex-end;
-    margin:2% 0px;
-    flex-wrap: wrap
-}
-
-.encabezado #opciones-cuenta{
+#log-bar{
+    align-items: center;
+    display: flex;
     width: 100%;
+    flex-grow: 0.7;
+}
+#log-bar #logo,#log-bar #busqueda{
     flex-grow: 1;
 }
+
+#busqueda{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+#busqueda input{
+    height: 2vw;
+    width: 100%;
+    border: 0px;
+    
+}
+#busqueda button{
+    border:0px;
+    width: 1.3vw;
+}
+
+
+.opciones{
+    display:flex ;
+    margin:2% 0px;
+    width: 50%;
+    text-align: end;
+}
+
 
 .encabezado a{
     color:black;
@@ -56,7 +73,7 @@ header{
 
 
 .logo{
-    flex-grow: 0.3;
+    flex-grow: 1;
 }
 
 .logo img{
@@ -74,6 +91,9 @@ header{
 .encabezado li p{
     border-radius: 5%;
 }
+
+
+
 /*Fin del Header*/
 /*Inicio del Main*/
 main{
@@ -169,17 +189,26 @@ main img{
 }
 
 #cantidades{
+    margin:2% 0px;
     display: flex;
-    border-radius: 3%;
-}
-#cantidades h1{
+    min-width: 60px;
+    width: 14%;
+    border: solid 1px black;
     background-color: #ebebeb;
+}
+
+#cantidades h1{
     padding: 1% 0px;
 }
 
 #cantidades button{ 
-    padding: 1vw;
+    padding:auto;
     border: 0px;
+}
+
+#cantidades h1, #cantidades button{
+    width: 100%;
+    flex-grow: 1;
 }
 
 #desc-res label{
@@ -229,14 +258,37 @@ footer label{
 @media (min-width:360px) and (max-width:768px) {
     /*Inicio del Header*/
     header{
-        height: 15%;
-    
+        position: relative;
+        display: inline-table;
     }
+
+    #log-bar{
+        width: 90%;
+    }
+
+    #busqueda input {
+        height: 3vw;
+        width: 75%;
+    }
+    
     .logo img{
         height: 25vw;
         color: #94B49F;
         padding:3% 0px;
     }
+
+    .encabezado{
+        margin :0px;
+        width: 100%;
+        flex-direction: row;
+        font-size:2.7vw;
+        justify-content: space-between;
+    }
+    .encabezado .opciones{
+        justify-content: space-around;
+
+    }
+
     /*Fin del Header*/
     /*Inicio del Main*/
     main{
