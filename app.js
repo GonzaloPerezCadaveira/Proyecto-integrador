@@ -2,24 +2,24 @@ const express = require ('express')
 const app = express ()
 const path = require ('path')
 
+const homeRouter = require ("./routers/home");
+
+const detailRouter = require ("./routers/details");
+
+const loginRouter = requiere ("./routers/login");
+
+const carritoRouter = require ("./routers/carrito");
+
 app.use(express.static('public'));
 
 app.listen (3050, () => { 
 console.log ('servidor corriendo')
 })
 
-app.get('/', (req, res) => {
-  res.sendFile (path.resolve(__dirname,'./views/index.html'))
-});
+app.use("/",homeRouter);
 
-app.get('/Carrito', (req, res) => {
-  res.sendFile (path.resolve(__dirname,'./views/Carrito.html'))
-});
+app.use("/Carrito", carritoRouter);
 
-app.get('/login', (req, res) => {
-  res.sendFile (path.resolve(__dirname,'./views/login.html'))
-}); 
+app.use("/login", loginRouter);
 
-app.get('/productDetail', (req, res) => {
-  res.sendFile (path.resolve(__dirname,'./views/productDetail.html'))
-});
+app.use ("/productDetail", detailRouter);
