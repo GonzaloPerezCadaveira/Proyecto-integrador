@@ -13,6 +13,10 @@ const carritoRouter = require ("./routers/carrito");
 
 app.set('view engine', 'ejs');
 
+// En caso de que querramos llamar a la carpeta con otro nombre :
+// app.set('views', __dirname + '/otro_nombre');
+
+
 app.use(express.static('public'));
 
 app.get('/',(req,res)=>{

@@ -1,0 +1,32 @@
+*{
+    margin: 0px;
+    padding: 0%;
+    box-sizing: border-box;
+}
+/*Inicio del Footer*/
+footer{
+    padding: 2% 2%;
+    display: flex;
+    width: 100%;
+    background-color:rgba(236, 179, 144, 0.3) ;
+}
+
+footer label{
+    font-size: 1.5vw;
+}
+
+#redes ul{
+    font-size: 1vw;
+    display: flex;
+}
+#redes ul li{
+    margin: 2% 2%;
+    font-size: 2vw;
+}
+.divs-footer{
+    flex-grow: 1;
+}
+.divs-footer li{
+    margin:2% 0%;
+}
+/*Fin del Footer*/

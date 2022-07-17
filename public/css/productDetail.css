@@ -8,93 +8,6 @@ body{
     
     background-color: #FCF8E8;
 }
-/*Inicio del Header*/
-
-header{
-    position: fixed;
-    display: flex;
-    top:0vw;
-    height: 9vw;
-    width: 100%;
-    align-items: center;
-    background-color:  #94B49F;
-}
-
-.encabezado{
-    display: flex;
-    flex-direction: column;
-    width: 57%;
-    flex-grow: 0.3;
-    margin-right: 5%;
-    font-size: 1.3vw;
-    align-items: flex-end;
-}
-
-#log-bar{
-    align-items: center;
-    display: flex;
-    width: 100%;
-    flex-grow: 0.7;
-}
-#log-bar #logo,#log-bar #busqueda{
-    flex-grow: 1;
-}
-
-#busqueda{
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    flex-grow: 1;
-}
-
-#busqueda input{
-    height: 2vw;
-    width: 100%;
-    border: 0px;
-    
-}
-#busqueda button{
-    border:0px;
-    width: 1.3vw;
-}
-
-
-.opciones{
-    display:flex ;
-    margin:2% 0px;
-    width: 50%;
-    text-align: end;
-}
-
-
-.encabezado a{
-    color:black;
-}
-
-
-.logo{
-    flex-grow: 1;
-}
-
-.logo img{
-
-    height: 18vw;
-    color: #94B49F;
-    padding: 2% 0px;
-}
-
-.encabezado li {
-    margin: 0px 2%;
-    border-radius: 5%;
-}
-
-.encabezado li p{
-    border-radius: 5%;
-}
-
-
-
-/*Fin del Header*/
 /*Inicio del Main*/
 main{
     display: flex;
@@ -218,73 +131,10 @@ main img{
     background-color:rgba(223, 120, 97, 0.8) ;
 }
 /*Fin del Main*/
-/*Inicio del Footer*/
-footer{
-    padding: 2% 2%;
-    display: flex;
-    width: 100%;
-    background-color:rgba(236, 179, 144, 0.3) ;
-}
 
-footer label{
-    font-size: 1.5vw;
-}
-
-#redes ul{
-    font-size: 1vw;
-    display: flex;
-}
-#redes ul li{
-    margin: 2% 2%;
-    font-size: 2vw;
-}
-.divs-footer{
-    flex-grow: 1;
-}
-.divs-footer li{
-    margin:2% 0%;
-}
-/*Fin del Footer*/
 
 
 @media (min-width:360px) and (max-width:768px) {
-    /*Inicio del Header*/
-    header{
-        position: relative;
-        display: inline-table;
-    }
-
-    #log-bar{
-        width: 90%;
-    }
-
-    #busqueda input {
-        height: 3vw;
-        width: 75%;
-    }
-    #busqueda button {
-        width: 2.2vw;
-    }
-    
-    .logo img{
-        height: 25vw;
-        color: #94B49F;
-        padding:3% 0px;
-    }
-
-    .encabezado{
-        margin :0px;
-        width: 100%;
-        flex-direction: row;
-        font-size:2.7vw;
-        justify-content: space-between;
-    }
-    .encabezado .opciones{
-        justify-content: space-around;
-
-    }
-
-    /*Fin del Header*/
     /*Inicio del Main*/
     main{
         flex-direction: column;
