@@ -4,6 +4,6 @@ const router = express.Router();
 
 const carritoController = require ("../controllers/controllerCarrito");
 
-router.get("/", carritoController.carro);
+router.get("/", carritoController.Carrito);
 
 module.exports= router;

@@ -24,11 +24,7 @@ app.listen (3050, () => {
 console.log ('servidor corriendo')
 })
 
-app.get('/',(req,res)=>{
-    res.render('index');
-})
-
-app.use("/home",homeRouter);
+app.use("/",homeRouter);
 
 app.use("/Carrito", carritoRouter);
 
