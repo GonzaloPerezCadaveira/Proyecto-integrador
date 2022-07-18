@@ -3,13 +3,13 @@ const express = require ('express');
 const app = express ()
 
 
-const homeRouter = require ("./routers/home");
+const homeRouter = require("./routers/home");
 
-const detailRouter = require ("./routers/details");
+const detailRouter = require("./routers/details");
 
-const loginRouter = require ("./routers/login");
+const loginRouter = require("./routers/login");
 
-const carritoRouter = require ("./routers/carrito");
+const carritoRouter = require("./routers/carrito");
 
 app.set('view engine', 'ejs');
 
@@ -19,18 +19,19 @@ app.set('view engine', 'ejs');
 
 app.use(express.static('public'));
 
-app.get('/',(req,res)=>{
-    res.render('index');
-})
 
 app.listen (3050, () => { 
 console.log ('servidor corriendo')
 })
 
-app.use("/",homeRouter);
+app.get('/',(req,res)=>{
+    res.render('index');
+})
+
+app.use("/home",homeRouter);
 
 app.use("/Carrito", carritoRouter);
 
 app.use("/login", loginRouter);
 
-app.use ("/productDetail", detailRouter);
+app.use("/productDetail", detailRouter);

@@ -1,3 +1,5 @@
+const path =require('path');
+
 const controller={
     
     detail: (req, res)=>{
@@ -7,8 +9,10 @@ const controller={
             opcion:['corona 355', 'corona 750','opciones']
         }
         res.render('productDetail',{
-            producto:prooducto
-        });
+            producto:prooducto,
+            titulo:'Detalle de Producto',
+            enlace:'/css/productDetail.css',
+       });
     }
 };
 

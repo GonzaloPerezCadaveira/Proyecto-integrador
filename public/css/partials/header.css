@@ -30,6 +30,15 @@ header{
     align-items: flex-end;
 }
 
+.logo h2{
+    display: block;
+    position:relative;
+    justify-content: center;
+    margin:2%;
+    bottom:6.5vw;
+    left: 4vw;
+}
+
 #log-bar{
     align-items: center;
     display: flex;

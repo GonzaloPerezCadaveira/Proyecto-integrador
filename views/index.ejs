@@ -1,28 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href= "/css/style_index.css" rel = "stylesheet">
-    <script src="https://kit.fontawesome.com/b8d968d2f1.js" crossorigin="anonymous"> </script>
-    <link href="/style_index.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
-    <title>Carpincho Drinks</title>
-</head>
+<%- include('partials/head')%>
 <body>
-    <header class="header">
-        <div class="logo"> <img  src="/image/Carpincho-Drinks-Logo.jpg" width=60%> </div>
-        <ul class="encabezado">
-            <li>Productos</li>
-            <li>Nosotros</li>
-            <li>Contactenos</li>
-        <li class="lupita"> <i class="fa-solid fa-magnifying-glass"></i></li>
-        <li class= "changuito"> <a href = "Carrito"> <i class="fa-solid fa-cart-shopping"></i> </a> </li>
-        <button> <a href = "login"> Iniciar Sesion </a> </button>
-        <button> Registrarse </button>
-      </ul>       
-    </header>
+    <%- include('partials/header')%>
     <br>
     <br>
     <main>
@@ -141,5 +121,6 @@
             </article>
           </section>
     </main>
+    <%- inlcude('partials/footer')%>
 </body>
 </html>

@@ -2,7 +2,10 @@ const path=require("path");
 
 const controller={
     login: (req, res)=>{
-        res.sendFile(path.resolve(__dirname , "../views/login.html"));
+        res.render('login',{
+            titulo:'Login',
+            enlace:'css/styles.css'
+        });
     }
 
 };
