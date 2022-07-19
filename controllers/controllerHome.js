@@ -4,7 +4,7 @@ const controller={
     home: (req, res)=>{
         res.render('index', {
             titulo:'Login',
-            enlace:'css/styles.css'
+            enlace:'css/style_index.css'
         });
     }
 

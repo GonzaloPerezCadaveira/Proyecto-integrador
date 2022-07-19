@@ -6,6 +6,11 @@
 body{
     background-color: #FAF3E3;
 }
+
+main{
+    margin:10% 0px;
+}
+
 .texto {
     text-align: center;
     font-size: x-large;
@@ -46,45 +51,18 @@ font-size: small;
 .principal {
     box-sizing: content-box;
 }
-.header {
-    display: flex;
-    width: 100%;
-    font-size: 1vw;}
-    
-.logo {
-    
-    
-  
-}
-    
+
 .lupita {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    
-  
 }
 .changuito {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    
-    
+    justify-content: center;   
 }
-.encabezado{
-    list-style:none;
-    display: flex;
-    padding: 0%;
-    width: 150%;
-    
-}
-.encabezado li {
-  margin-left: 5%;
-  font-size: large;
-  position: relative;
-  top:3em
-  
-}
+
 .main {
     list-style:none;
     display: flex;

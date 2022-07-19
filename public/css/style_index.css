@@ -7,6 +7,7 @@ body{
     display: flex;
     width: 100%;
     font-size: 1vw;}
+
     
 .logo {
     text-align: center;
@@ -24,22 +25,6 @@ body{
     flex-wrap: wrap;
     justify-content: center;
 }
-
-.encabezado{
-    list-style:none;
-    display: flex;
-    padding: 0%;
-    width: 70%;
-    
-}
-
-.encabezado li {
-  margin-left: 10%;
-  font-size: large;
-  position: relative;
-  top:3em
-}
-
 
 /* MAIN STYLES */
 
@@ -139,7 +124,7 @@ main {
 
 main {
     justify-content: center;
-    margin: auto;
+    margin:12% 10%;
 }
 
 .producto img, .producto div{
