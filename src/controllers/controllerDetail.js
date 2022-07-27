@@ -1,12 +1,17 @@
 const path =require('path');
+const fs= require('fs');
 
+const productoData= path.join(__dirname, '../data/productsData.json')
+const productoBase= JSON.parse(fs.readFileSync(productoData, 'utf-8'))
+console.log(productoBase)
 const controller={
     
     detail: (req, res)=>{
         prooducto={
             nombre:'Cerveza corona Extra 355ml',
             precio:'500$',
-            opcion:['corona 355', 'corona 750','opciones']
+            opcion: ['Nada','Mas nada'],
+            variable:1
         }
         res.render('productDetail',{
             producto:prooducto,

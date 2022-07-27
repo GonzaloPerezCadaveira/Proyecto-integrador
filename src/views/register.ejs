@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head') %>
+<body>
+    <%- include('partials/header')%>
+    <main>
+        <form id="registro" >
+            <div class="fecha-nac">
+                <input type="text" name="nombre" placeholder="Nombre y Apellido">
+                <input type="text" name="usuario" placeholder="Nombre de usuario">
+            </div>
+            <div class="fecha-nac">
+                <b class="label-titulo"><label for="fecha">Seleccione su fecha de Nacimiento</label></b>
+                <input id="nacimiento" type="date" name="fecha" i> 
+                <input type="text" name="domicilio" placeholder="Domicilio">
+            </div>                    
+            <div class="radio-check">
+                <b class="label-titulo"><label  for="Gustos">Seleccione categorías de interés</label></b>
+                <p>
+                    <label for="Gustos">Electro</label>
+                    <input type="checkbox" name="Gustos" value="Electro">
+                </p>
+                <p>
+                    <label for="Gustos">Moda</label>
+                    <input type="checkbox" name="Gustos" value="Moda">
+                </p>
+                <p>
+                    <label for="Gustos">Hogar</label>
+                    <input type="checkbox" name="Gustos" value="Hogar">
+                </p>
+                <p>
+                    <label for="Gustos">Jugueteria</label>
+                    <input type="checkbox" name="Gustos" value="Jugueteria">
+                </p>
+                <p>
+                    <label for="Gustos">Vida sana</label>
+                    <input type="checkbox" name="Gustos" value="Vida-sana">
+                </p>
+            </div>
+            <div class="fecha-nac">
+                <b class="label-titulo"><label for="foto">Seleccione una foto para su perfil:</label></b>
+                <input type="file" name="foto" accept=".jpg">
+            </div>
+            <div class="fecha-nac">
+                <input type="email" required placeholder="Email">
+                <input type="password" required placeholder="Contraseña">
+                <input type="password" required placeholder="Contraseña">
+                <input type="submit">
+            </div>        
+        </form>
+    </main>
+    <%- include('partials/footer')%>
+</body>
+</html>

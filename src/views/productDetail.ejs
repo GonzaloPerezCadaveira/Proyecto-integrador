@@ -18,17 +18,17 @@
                 <label for="opcion-bebida">Opcion</label>
                 <select name="opcion-bebida" id="envio-retiro">
                     <% producto.opcion.forEach(function(element){ %>
-                        <option value=""><%= element %></option>
+                        <option value="<%= element %>"><%= element %></option>
                     <%}) %>
                 </select>
             </div>
             <div id="sel-cant">
                 <label for="">Cantidades</label>
-                <div id="cantidades">
-                    <h1>1</h1>
-                    <button>+</button>
-                    <button>-</button>
-                </div>
+                <select name="cantidad" id="cantidades">
+                    <% producto.opcion.forEach(function(element){ %>
+                        <option value="<%= element %>"><%= element %></option>
+                    <%}) %>
+                </select>
             </div>
             <div id="boton-compra">
                 <button>Comprar!</button>

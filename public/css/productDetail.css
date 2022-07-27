@@ -84,7 +84,6 @@ main img{
 #opcion-bebida select{
     width: 60%;
     height: 2vw;
-    border-radius: 3%;
     border: solid 2px #ebebeb;
     margin: 2% 2%;
 }

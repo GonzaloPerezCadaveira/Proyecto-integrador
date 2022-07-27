@@ -1,0 +1,29 @@
+*{
+    margin:0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+main{
+    justify-content: center;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    margin:12vw 25%;
+} 
+
+.fecha-nac{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+.fecha-nac input{
+    margin:2% 0%;
+    padding:1vw 0%;
+}
+
+.fecha-nac b,.radio-check b {
+    margin:5% 0px;
+}
