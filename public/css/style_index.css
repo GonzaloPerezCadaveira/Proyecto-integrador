@@ -29,13 +29,13 @@ body{
 /* MAIN STYLES */
 
 main {
-    font-family: sans-serif;
+    font-family: 'Titilium', sans-serif;
 }
 
 #el-slider{
  font-family: sans-serif;
  margin: auto;
- background-color:#1A4D2E;
+ background-color:#94B49F;
  max-width: 800px;
  width: 100%;
  padding: 30px;

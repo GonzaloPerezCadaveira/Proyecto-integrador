@@ -9,7 +9,8 @@ footer{
     display: flex;
     width: 100%;
     font-size: 1.8vw;
-    background-color:rgba(236, 179, 144, 0.3) ;
+    background-color:rgba(236, 179, 144, 0.3);
+    font-family: 'Titilium', sans-serif;
 }
 
 footer label{
