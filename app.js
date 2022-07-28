@@ -29,7 +29,7 @@ console.log ('servidor corriendo')
 
 app.use("/",homeRouter);
 
-app.use("/Carrito", carritoRouter);
+app.use("/carrito", carritoRouter);
 
 app.use("/login", loginRouter);
 

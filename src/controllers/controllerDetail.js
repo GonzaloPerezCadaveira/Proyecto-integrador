@@ -2,22 +2,36 @@ const path =require('path');
 const fs= require('fs');
 
 const productoData= path.join(__dirname, '../data/productsData.json')
+
 const productoBase= JSON.parse(fs.readFileSync(productoData, 'utf-8'))
+
+
 console.log(productoBase)
+
+
 const controller={
-    
     detail: (req, res)=>{
-        prooducto={
-            nombre:'Cerveza corona Extra 355ml',
-            precio:'500$',
-            opcion: ['Nada','Mas nada'],
-            variable:1
-        }
+        const idprod = req.params.id;
+        const product = productoBase.find(item => item.id == idprod);
         res.render('productDetail',{
-            producto:prooducto,
+            product:product,
+            productoBase,
             titulo:'Detalle de Producto',
             enlace:'/css/productDetail.css',
        });
+    },
+    create:(req,res)=>{
+        res.render('create-product',{
+            titulo:'Creacion de Producto',
+            enlace:'/css/crear_prod.css'
+        });
+    },
+    store:(req,res)=>{
+        const nuevoProducto = req.body;
+        nuevoProducto.id = productoBase.length +1;
+        productoBase.push(nuevoProducto);
+        fs.writeFileSync(productoData, JSON.stringify(productoBase, null, ' '));
+        res.redirect('/')
     }
 };
 

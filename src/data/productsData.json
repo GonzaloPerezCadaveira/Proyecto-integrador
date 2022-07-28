@@ -1,20 +1,27 @@
 [
     {
+        "id": 1,
         "name": "Corona 355ml",
         "cantidad": 5,
-        "img": "",
-        "precio": "500"
+        "img": "index.corona.jpg",
+        "precio": "500",
+        "descripcion":""
+        
     },
     {
+        "id": 2,
         "name": "Corona 750ml",
         "cantidad": 3,
         "img": "",
-        "precio": "$800"
+        "precio": "$800",
+        "descripcion":""
     },
     {
-        "name": "Corona 355ml",
+        "id": 3,
+        "name": "Corona 1lt",
         "cantidad": 5,
         "img": "",
-        "precio": "500"
+        "precio": "$1000",
+        "descripcion":""
     }
 ]

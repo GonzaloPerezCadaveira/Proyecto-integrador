@@ -19,6 +19,7 @@ header{
     align-items: center;
     background-color:  #94B49F;
     font-family: 'Titilium', sans-serif;
+    z-index: 1;
 }
 
 .encabezado{
@@ -37,7 +38,8 @@ header{
     justify-content: center;
     margin: 1%;
     bottom: 46px;
-    left: 1px;
+    left: 9vw;
+    bottom: 6vw;
 }
 
 #log-bar{
@@ -45,6 +47,7 @@ header{
     display: flex;
     width: 100%;
     flex-grow: 0.7;
+    height: 6vw;
 }
 #log-bar #logo,#log-bar #busqueda{
     flex-grow: 1;
@@ -102,13 +105,7 @@ header{
     border-radius: 5%;
 }
 
-.fa-solid, .fas {
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    position: absolute;
-    right: 3px;
-    top: 2px;
-}
+
 
 /*Fin del Header*/
 @media (min-width:360px) and (max-width:768px) {

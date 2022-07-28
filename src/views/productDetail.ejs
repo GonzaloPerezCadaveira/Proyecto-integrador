@@ -4,10 +4,10 @@
 <body>
     <%- include('partials/header') %>
     <main>
-        <img src="/image/dfbe27d26a5594681492f691cad7aa24.jpg" alt="Cerveza Corona">
+        <img src="/image/<%= productoBase[0].img %>" alt="Cerveza Corona">
         <div id="descripcion">
-            <h2><%= producto.nombre %></h2>
-            <b><%= producto.precio %></b>
+            <h2><%= product.name %></h2>
+            <b><%= product.precio %></b>
             <div class="envio-retiro">
                 <ul type="none">
                     <li><i class="fa-solid fa-shop"></i><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate debitis quos saepe ipsum beatae, commodi amet.</p></li>
@@ -17,17 +17,17 @@
             <div id="opcion-bebida">
                 <label for="opcion-bebida">Opcion</label>
                 <select name="opcion-bebida" id="envio-retiro">
-                    <% producto.opcion.forEach(function(element){ %>
-                        <option value="<%= element %>"><%= element %></option>
+                    <% productoBase.forEach(function(element){ %>
+                        <option value="<%= element %>"><%= element.name %></option>
                     <%}) %>
                 </select>
             </div>
             <div id="sel-cant">
                 <label for="">Cantidades</label>
                 <select name="cantidad" id="cantidades">
-                    <% producto.opcion.forEach(function(element){ %>
-                        <option value="<%= element %>"><%= element %></option>
-                    <%}) %>
+                    <% for(var i=0;i<=product.cantidad;i++){ %>
+                        <option value="<%= i %>"><%= i  %></option>
+                    <% } %>
                 </select>
             </div>
             <div id="boton-compra">
