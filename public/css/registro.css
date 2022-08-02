@@ -80,7 +80,11 @@ form{
     margin:5% 0px;
 }
 
-#nacimiento{
+#nacimiento,#foto{
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
+}
+
+#nacimiento input{
+    margin:2vw 17.1vw;
 }

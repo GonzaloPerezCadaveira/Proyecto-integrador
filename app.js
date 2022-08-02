@@ -4,13 +4,9 @@ const app = express()
 
 const homeRouter = require("./src/routers/home");
 
-const detailRouter = require("./src/routers/details");
+const productsRouter = require("./src/routers/products");
 
-const loginRouter = require("./src/routers/login");
-
-const carritoRouter = require("./src/routers/carrito");
-
-const registerRouter = require("./src/routers/registro")
+const usersRouter = require ('./src/routers/users')
 
 app.set('view engine', 'ejs');
 
@@ -29,10 +25,11 @@ console.log ('servidor corriendo')
 
 app.use("/",homeRouter);
 
-app.use("/carrito", carritoRouter);
+app.use("/productDetail",productsRouter);
 
-app.use("/login", loginRouter);
+app.use("/carrito", productsRouter);
 
-app.use("/registro", registerRouter);
+app.use("/login",usersRouter );
 
-app.use("/productDetail", detailRouter);
+app.use("/registro", usersRouter);
+
