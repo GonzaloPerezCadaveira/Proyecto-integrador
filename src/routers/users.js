@@ -8,6 +8,6 @@ const loginController = require ("../controllers/controllerUsers");
 
 router.get("/", loginController.login);
 
-router.get("/", registerController.usuario);
+router.get("/carrito", registerController.usuario);
 
 module.exports= router;

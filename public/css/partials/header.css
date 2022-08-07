@@ -1,148 +1,20 @@
-*{
-    margin: 0px;
-    padding:0px;
-    box-sizing: border-box;
-}
+.form-control-dark {
+    border-color: var(--bs-gray);
+  }
+  .form-control-dark:focus {
+    border-color: #fff;
+    box-shadow: 0 0 0 .25rem rgba(255, 255, 255, .25);
+  }
+  
+  .text-small {
+    font-size: 85%;
+  }
+  
+  .dropdown-toggle {
+    outline: 0;
+  }
 
-body{
-    
-    background-color: #FCF8E8;
-}
-/*Inicio del Header*/
-
-header{
-    position: fixed;
-    display: flex;
-    top:0vw;
-    height: 11vw;
-    width: 100%;
-    align-items: center;
-    background-color:  #94B49F;
-    font-family: 'Titilium', sans-serif;
-    z-index: 1;
-}
-
-.encabezado{
-    display: flex;
-    flex-direction: column;
-    width: 60%;
-    flex-grow: 0.3;
-    margin-right: 5%;
-    font-size: 1.3vw;
-    align-items: flex-end;
-}
-
-.logo h2 {
-    display: block;
-    position: relative;
-    justify-content: center;
-    margin: 1%;
-    bottom: 46px;
-    left: 9vw;
-    bottom: 6vw;
-}
-
-#log-bar{
-    align-items: center;
-    display: flex;
-    width: 100%;
-    flex-grow: 0.7;
-    height: 6vw;
-}
-#log-bar #logo,#log-bar #busqueda{
-    flex-grow: 1;
-}
-
-#busqueda{
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    flex-grow: 1;
-}
-
-#busqueda input{
-    height: 2vw;
-    width: 100%;
-    border: 0px;
-    border-radius:4px;
-}
-
-#busqueda button {
-    border: 0px;
-    width: -0.7vw;
-    position: relative;
-}
-
-.opciones {
-    display: flex;
-    margin: 1%;
-    width: 80%;
-    text-align: right;
-}
-
-.encabezado a {
-    color: black;
-    text-decoration: none;
-}
-
-.logo{
-    flex-grow: 1;
-}
-
-.logo img{
-
-    height: 18vw;
-    color: #94B49F;
-    padding: 2% 0px;
-}
-
-.encabezado li {
-    margin: 0px 2%;
-    border-radius: 5%;
-}
-
-.encabezado li p{
-    border-radius: 5%;
-}
-
-
-
-/*Fin del Header*/
-@media (min-width:360px) and (max-width:768px) {
-    /*Inicio del Header*/
-    header{
-        position: relative;
-        display: inline-table;
-    }
-
-    #log-bar{
-        width: 90%;
-    }
-
-    #busqueda input {
-        height: 3vw;
-        width: 75%;
-    }
-
-    #busqueda button {
-        width: 2.2vw;
-    }
-    
-    .logo img{
-        height: 25vw;
-        color: #94B49F;
-        padding:3% 0px;
-    }
-
-    .encabezado{
-        margin :0px;
-        width: 100%;
-        flex-direction: row;
-        font-size:2.7vw;
-        justify-content: space-between;
-    }
-    .encabezado .opciones{
-        justify-content: space-around;
-
-    }
-}
+  .carritoDeCompras {
+    display:inline;
+    margin-left:10px;
+  }

@@ -1,0 +1,76 @@
+[
+    {
+        "id": 1,
+        "name": "Trumpeter Malbec x750ml",
+        "cantidad": 5,
+        "img": "producto-vino1.jpg",
+        "precio": "$1400",
+        "descuento":"En oferta",
+        "descripcion":"Rojo violáceo brillante, seduce con sus aromas frutales (cerezas) y especiados (canela, cardamomo, pimienta negra). Posee gran cuerpo y su vivaz estructura acentúa los taninos intensos que se vuelven aterciopelados en el retrogusto."
+        
+    },
+    {
+        "id": 2,
+        "name": "Cerveza Corona Six pack",
+        "cantidad": 6,
+        "img": "producto-cerveza1.jpg",
+        "precio": "$2999,99",
+        "descuento":"En oferta",
+        "descripcion":"Es la cerveza mexicana de mayor venta en el mundo y la marca más valiosa de Latinoamérica de acuerdo con Millward Brown. Es una cerveza tipo Lager Pálida de 4.6º de alcohol. Corona Extra se enfoca en la gente que busca relajarse y refrescarse."
+    },
+    {
+        "id": 3,
+        "name": "Aperitivo Americano Gancia x950ML",
+        "cantidad": 1,
+        "img": "producto-licor1.jpg",
+        "precio": "$549,99",
+        "descuento":"En oferta",
+        "descripcion":"Americano Gancia es un aperitivo que se caracteriza por la presencia de sabores herbáceos y cítricos que se combinan con los del vino blanco y el alcohol. El sabor amargo de las hierbas se mezcla con el dulzor del azúcar logrando una bebida amable, agradable al beber, equilibrada y de gran personalidad."
+    },
+    {
+        "id": 4,
+        "name": "Champagne Baron B",
+        "cantidad": 1,
+        "img": "producto-champagne1.jpg",
+        "precio": "$2.250",
+        "descuento":"En oferta",
+        "descripcion":"Es un Champagne Premium de alta calidad. Se destaca por su elegancia aportada por el Chardonnay y la intensidad de fruta otorgada por el Pinot Noir, conjugándose en un assemblage perfecto y armonioso."
+    },
+    {
+        "id": 5,
+        "name": "Budweiser 24 X 410ML",
+        "cantidad": 24,
+        "img": "producto-cervez2.jpg",
+        "precio": "$2.600",
+        "descuento":"En oferta",
+        "descripcion":"Es una de las cervezas más icónicas e internacionales. Esta American Lager se mantiene fiel a su receta original de 1876. Además de la malta y el lúpulo, el ingrediente clave es el arroz, que le aporta ese frescor característico y sabor ligero."
+    },
+    {
+        "id": 6,
+        "name": "DV Catena Cabernet Malbec",
+        "cantidad": 1,
+        "img": "producto-vino2.jpg",
+        "precio": "$1.620",
+        "descuento":"En oferta",
+        "descripcion":"Es un vino elegante y complejo, de color rojo rubí con reflejos violetas. A la nariz, intenso y concentrado, presenta notas de especias aportadas por el Cabernet Sauvignon del viñedo La Pirámide, y notas de moras maduras y ciruelas, características del Malbec del viñedo Angélica, acompañadas por vainilla, tabaco y licor aportadas por la crianza en roble."
+    },
+    {
+        "id": 7,
+        "name": "Gin Beefeater Pink",
+        "cantidad": 1,
+        "img": "producto-licor2.jpg",
+        "precio": "$3.800",
+        "descuento":"En oferta",
+        "descripcion":"Beefeater Pink Strawberry es la nueva ginebra rosa fabricada con la receta original de Beefeater London Dry más el aroma de fresa natural para darle un intenso y delicioso sabor a fresa."
+    },
+    {
+        "id": 8,
+        "name": "Chandon Delice",
+        "cantidad": 1,
+        "img": "producto-champagne2.jpg",
+        "precio": "$1.540",
+        "descuento":"En oferta",
+        "descripcion":"Chandon Délice es la expresión del estilo innovador de Chandon. Su frescura y versatilidad aportada por sus notas críticas se combinan con una vibrante sensación dulce. Ideal para disfrutar con hielo y con un twist de sabor."
+    }
+
+]

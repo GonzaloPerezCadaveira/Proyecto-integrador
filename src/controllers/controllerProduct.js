@@ -5,7 +5,7 @@ const productoData= path.join(__dirname, '../data/productsData.json')
 
 const productoBase= JSON.parse(fs.readFileSync(productoData, 'utf-8'))
 
-const controller={
+const controller={  
     detail: (req, res)=>{
         const idprod = req.params.id;
         const product = productoBase.find(item => item.id == idprod);
@@ -24,7 +24,7 @@ const controller={
         });
     },
     carrito: (req, res)=>{
-        res.render('Carrito',{
+        res.render('CarritoDeCompras',{
             titulo:'Carrito',
             enlace:'css/styles.css'
         });
