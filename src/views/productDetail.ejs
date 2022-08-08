@@ -4,10 +4,10 @@
 <body>
     <%- include('partials/header') %>
     <main>
-        <img src="/image/<%= productoBase[0].img %>" alt="Cerveza Corona">
+        <img src="/image/<%= producto.img %>" alt="<%= producto.name %>">
         <div id="descripcion">
-            <h2><%= product.name %></h2>
-            <b><%= product.precio %></b>
+            <h2><%= producto.name %></h2>
+            <b><%= producto.precio %></b>
             <div class="envio-retiro">
                 <ul type="none">
                     <li><i class="fa-solid fa-shop"></i><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate debitis quos saepe ipsum beatae, commodi amet.</p></li>
@@ -25,14 +25,15 @@
             <div id="sel-cant">
                 <label for="">Cantidades</label>
                 <select name="cantidad" id="cantidades">
-                    <% for(var i=0;i<=product.cantidad;i++){ %>
+                    <% for(var i=0;i<=producto.cantidad;i++){ %>
                         <option value="<%= i %>"><%= i  %></option>
                     <% } %>
                 </select>
             </div>
             <div id="boton-compra">
                 <button>Comprar!</button>
-                <a href="/products/<%=product.id %>/edit"><button>Editar</button></a>
+                <a href="/products/<%=producto.id %>/edit"><button>Editar</button></a>
+                <a href="/products/create"><button>Crear</button></a>
             </div>
             <div id="desc-res">
                 <label for="">Descripcion</label>

@@ -10,7 +10,7 @@ const controller={
         const idprod = req.params.id;
         const product = productoBase.find(item => item.id == idprod);
         res.render('productDetail',{
-            product:product,
+            producto:product,
             productoBase,
             titulo:'Detalle de Producto',
             enlace:'/css/productDetail.css',
@@ -36,14 +36,16 @@ const controller={
         res.redirect('/')
     },
     edit:(req,res)=>{
-        // JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-		// const idProduc = req.params.id;
-		// const productEdit = products.find( item => item.id == idProduc )
-        // fs.writeFileSync(productoData, JSON.stringify(productoBase, null, ' '));
+        JSON.parse(fs.readFileSync(productoData, 'utf-8'));
+		const idProduc = req.params.id;
+		const productEdit = productoBase.find( item => item.id == idProduc )
+        fs.writeFileSync(productoData, JSON.stringify(productoBase, null, ' '));
 		res.render('edit-product',{
+            producto:productEdit,
             titulo:'Edicion de Producto',
             enlace:'/css/crear_prod.css'
         })
+        
     },
     editComplete:(req,res)=>{
         const idProduc= req.params.id
