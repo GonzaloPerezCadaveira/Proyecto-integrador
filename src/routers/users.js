@@ -2,12 +2,11 @@ const express= require ("express");
 
 const router = express.Router();
 
-const registerController = require ("../controllers/controllerUsers");
+const userController = require("../controllers/controllerUsers");
 
-const loginController = require ("../controllers/controllerUsers");
 
-router.get("/", loginController.login);
+router.get("/login", userController.login);
+router.get("/register", userController.register);
 
-router.get("/carrito", registerController.usuario);
 
-module.exports= router;
+module.exports = router;

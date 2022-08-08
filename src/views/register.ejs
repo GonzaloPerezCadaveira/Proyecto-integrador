@@ -1,30 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('partials/head') %>
-<body>
-    <%- include('partials/header')%>
-    <main>
-        <form id="registro" >
-            <div class="formulario">
-                <input type="text" name="nombre" placeholder="Nombre y Apellido">
-                <input type="text" name="usuario" placeholder="Nombre de usuario">
+
+<body class="text-center">
+    <%- include('partials/header') %>
+        <form class="registeruser" action="/register" method="POST">
+            <div class="row">
+                <div class="inicia mb-50">
+                    <h3 style="text-align: -webkit-center">Bienvenido, ingresá tus datos y registrate</h3>
+                </div>
+
+                <div class="datos row">
+                    <div style="text-align: -webkit-center">
+                        <label for="">Nombre y apellido<span>*</span></label>
+                        <input type="text" class="form-control" style="max-width:20rem" style="text-align:center"
+                            name="email" id="email" value="">
+                    </div>
+
+                    <div style="text-align: -webkit-center">
+                        <label for="">Contraseña<span>*</span></label>
+                        <input type="password" class="form-control" style="max-width:20rem" style="text-align:center"
+                            name="password" id="password" value="">
+                        <label for="">Recordame</label>
+                        <input type="checkbox" name="recordame"><br>
+                    </div>
+
+                    <div class="col-12">
+                        <input type="submit" class="btn essence-btn" value="Iniciar Sesión">
+                    </div>
+                    <div>
+                        <a style="text-decoration: none" href="/register">¿TODAVÍA NO TE REGISTRASTE?</a>
+                    </div>
+                </div>
+
+
             </div>
-            <div class="formulario" id="nacimiento">
-                <b class="label-titulo">Seleccione su fecha de Nacimiento</b>
-                <input id="nacimiento" type="date" name="fecha" >    
-            </div>                    
-            <div class="formulario" id="foto">
-                <b class="label-titulo">Seleccione una foto para su perfil:</b>
-                <input type="file" name="foto" accept=".jpg">
-            </div>
-            <div class="formulario" >
-                <input type="email" required placeholder="Email">
-                <input type="password" required placeholder="Contraseña">
-                <input type="password" required placeholder="Contraseña">
-                <button id="creado" type="submit">Registrate</button>
-            </div>        
         </form>
-    </main>
-    <%- include('partials/footer')%>
+        <%- include('partials/footer')%>
 </body>
 </html>

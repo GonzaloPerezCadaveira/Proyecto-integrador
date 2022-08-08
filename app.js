@@ -6,7 +6,7 @@ const homeRouter = require("./src/routers/home");
 
 const productsRouter = require("./src/routers/products");
 
-const usersRouter = require ('./src/routers/users')
+const usersRouter = require('./src/routers/users')
 
 app.set('view engine', 'ejs');
 
@@ -23,13 +23,13 @@ app.listen (3050, () => {
 console.log ('servidor corriendo')
 })
 
-app.use("/",homeRouter);
+app.use("/", homeRouter);
 
-app.use("/productDetail",productsRouter);
+app.use("/productDetail", productsRouter);
 
 app.use("/carrito", productsRouter);
 
-app.use("/login", usersRouter );
+app.use("/login", usersRouter);
 
-app.use("/registro", usersRouter);
+app.use("/register", usersRouter);
 
