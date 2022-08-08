@@ -29,8 +29,8 @@ app.use("/", homeRouter);
 
 app.use("/products",productsRouter);
 
-app.use("/login", usersRouter);
+app.use("/user/login", usersRouter);
 
-app.use("/register", usersRouter);
+app.use("/user/register", usersRouter);
 
 module.exports= app
