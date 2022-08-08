@@ -2,19 +2,21 @@ const express= require ("express");
 
 const router = express.Router();
 
-const detailController = require ("../controllers/controllerProduct");
+const productController = require("../controllers/controllerProduct");
 
 
-router.get("/:id", detailController.detail);
 
-router.get('/create',detailController.create);
 
-router.post('/create',detailController.store);
+router.get("/:id", productController.detail);
 
-router.get('/carrito', detailController.carrito);
+router.get('/create',productController.create);
 
-router.get('/:id/edit',detailController.edit)
+router.post('/create',productController.store);
 
-router.put('/:id/actualizar',detailController.editComplete)
+router.get('/carrito', productController.carrito);
+
+router.get('/:id/edit',productController.edit)
+
+router.put('/:id/actualizar',productController.editComplete)
 
 module.exports= router;

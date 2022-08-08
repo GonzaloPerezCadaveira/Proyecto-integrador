@@ -1,5 +1,5 @@
 body{
-    background-color: #FAF3E3;
+    background-color:white;
 }
 /* HEADER STYLES */
 
@@ -30,12 +30,14 @@ body{
 
 main {
     font-family: 'Titilium', sans-serif;
+    background-color: white;
+    background-size: cover;
 }
 
 #el-slider{
  font-family: sans-serif;
  margin: auto;
- background-color:#94B49F;
+ background-color:white;
  max-width: 800px;
  width: 100%;
  padding: 30px;

@@ -1,18 +1,17 @@
 const path =require('path');
 const fs= require('fs');
 
-const productoData= path.join(__dirname, '../data/productsData.json')
+const productoData= path.join(__dirname, '../database/productsData.json')
 
 const productoBase= JSON.parse(fs.readFileSync(productoData, 'utf-8'))
 
-const controller={
+const controller={  
     detail: (req, res)=>{
         const idprod = req.params.id;
         const product = productoBase.find(item => item.id == idprod);
         res.render('productDetail',{
             product:product,
             productoBase,
-            
             titulo:'Detalle de Producto',
             enlace:'/css/productDetail.css',
        });
@@ -24,7 +23,7 @@ const controller={
         });
     },
     carrito: (req, res)=>{
-        res.render('Carrito',{
+        res.render('CarritoDeCompras',{
             titulo:'Carrito',
             enlace:'css/styles.css'
         });
