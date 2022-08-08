@@ -37,11 +37,21 @@ const controller={
         res.redirect('/')
     },
     edit:(req,res)=>{
-        JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-		const idProduc = req.params.id;
-		const productEdit = products.find( item => item.id == idProduc )
-        fs.writeFileSync(productoData, JSON.stringify(productoBase, null, ' '));
-		res.render('edit-product', {productEdit})
+        // JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+		// const idProduc = req.params.id;
+		// const productEdit = products.find( item => item.id == idProduc )
+        // fs.writeFileSync(productoData, JSON.stringify(productoBase, null, ' '));
+		res.render('edit-product',{
+            titulo:'Edicion de Producto',
+            enlace:'/css/crear_prod.css'
+        })
+    },
+    editComplete:(req,res)=>{
+        const idProduc= req.params.id
+        const product=productoBase.productoBase.find(item => item.id == idprod);
+        product.name=req.body.nombre
+        product.cantidad=req.body
+               
     }
 };
 
