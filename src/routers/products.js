@@ -4,9 +4,6 @@ const router = express.Router();
 
 const productController = require("../controllers/controllerProduct");
 
-
-
-
 router.get("/:id", productController.detail);
 
 router.get('/create',productController.create);
