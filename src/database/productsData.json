@@ -32,7 +32,7 @@
   "cantidad": 1,
   "img": "producto-licor2.jpg",
   "precio": "$3.800",
-  "descuento": "En oferta",
+  "descuento": "Sin oferta",
   "descripcion": "Beefeater Pink Strawberry es la nueva ginebra rosa fabricada con la receta original de Beefeater London Dry más el aroma de fresa natural para darle un intenso y delicioso sabor a fresa."
  },
  {
@@ -48,7 +48,7 @@
   "name": "Chandon 1l",
   "precio": "2200",
   "usuario": "10",
-  "descuento": "En oferta",
+  "descuento": "Sin oferta",
   "img": "producto-champagne2.jpg",
   "descripcion": "Chandon de las ovas mas fianas de mendoza , seleccionada tallo por tallo",
   "id": 5

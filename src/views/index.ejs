@@ -53,7 +53,25 @@
                       </div>
                     </article>
                   </a>
-                  <% }) %>
+              <% }) %>
+            </div>
+          </section>
+          <section class="ofertas">
+            <% productoBase.forEach(function(element){ %>
+              <% if(element.descuento=='En oferta'){ %>
+                <a href="/products/detail/<%= element.id %>">
+                  <article class="producto">
+                    <img src="/image/<%= element.img %>" alt="<%= element.name %>" />
+                    <div class="contenedor-articulo">
+                      <div class="descuentoprecio">
+                        <h4><%= element.name %></h4>
+                        <p class="precio"><%= element.precio %></p>
+                        <p class="descuento"><%= element.descuento %></p></div>
+                    </div>
+                  </article>
+                </a>
+              <% } %>
+          <% }) %>
           </section>
     </main>
     <%- include('partials/footer')%>
