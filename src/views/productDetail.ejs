@@ -2,7 +2,7 @@
 <html lang="en">
     <%- include('partials/head') %>
 <body>
-    <%- include('partials/header') %>
+    <!-- <%- include('partials/header') %> -->
     <main>
         <img src="/image/<%= producto.img %>" alt="<%= producto.name %>">
         <div id="descripcion">
@@ -32,8 +32,9 @@
             </div>
             <div id="boton-compra">
                 <button>Comprar!</button>
-                <a href="/products/<%=producto.id %>/edit"><button>Editar</button></a>
+                <a href="/products/edit/<%=producto.id %>"><button>Editar</button></a>
                 <a href="/products/create"><button>Crear</button></a>
+                <a href="/products/delete/<%= producto.id %>"><button>Borrar</button></a>
             </div>
             <div id="desc-res">
                 <label for="">Descripcion</label>

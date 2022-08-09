@@ -8,9 +8,8 @@ const productoBase= JSON.parse(fs.readFileSync(productoData, 'utf-8'))
 const controller={  
     detail: (req, res)=>{
         const idprod = req.params.id;
-        const product = productoBase.find(item => item.id == idprod);
         res.render('productDetail',{
-            producto:product,
+            producto:productoBase[idprod],
             productoBase,
             titulo:'Detalle de Producto',
             enlace:'/css/productDetail.css',
@@ -36,23 +35,32 @@ const controller={
         res.redirect('/')
     },
     edit:(req,res)=>{
-        JSON.parse(fs.readFileSync(productoData, 'utf-8'));
 		const idProduc = req.params.id;
-		const productEdit = productoBase.find( item => item.id == idProduc )
-        fs.writeFileSync(productoData, JSON.stringify(productoBase, null, ' '));
+		const productEdit = productoBase.find(item => item.id == idProduc)
 		res.render('edit-product',{
             producto:productEdit,
             titulo:'Edicion de Producto',
             enlace:'/css/crear_prod.css'
         })
-        
     },
     editComplete:(req,res)=>{
         const idProduc= req.params.id
-        const product=productoBase.productoBase.find(item => item.id == idprod);
-        product.name=req.body.nombre
-        product.cantidad=req.body
-               
+        const product=productoBase.find(item => item.id == idProduc);
+        // product.name=req.body.name
+        // product.cantidad=req.body.cantidad
+        // product.precio=req.body.precio
+        // product.descripcion=req.body.descripcion
+        productoBase.push(product)
+        const data= JSON.stringify(productoBase,null,' ')
+        fs.writeFileSync(productoData,data);
+        res.redirect('/') 
+    },
+    destroy:(req,res)=>{
+        const idProd= req.params.id;
+        const productFilter= productoBase.filter(item => item.id != idProd);
+        const data= JSON.stringify(productFilter,null ," ");
+        fs.writeFileSync(productoData,data);
+        res.redirect('/')
     }
 };
 
