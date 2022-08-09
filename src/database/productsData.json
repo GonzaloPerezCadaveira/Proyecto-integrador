@@ -10,15 +10,6 @@
  },
  {
   "id": 1,
-  "name": "corona",
-  "cantidad": "9",
-  "img": "producto-cerveza1.jpg",
-  "precio": "$1502",
-  "descuento": "En oferta",
-  "descripcion": "Corona Fresca"
- },
- {
-  "id": 2,
   "name": "Aperitivo Americano Gancia x950ML",
   "cantidad": 1,
   "img": "producto-licor1.jpg",
@@ -27,25 +18,7 @@
   "descripcion": "Americano Gancia es un aperitivo que se caracteriza por la presencia de sabores herbáceos y cítricos que se combinan con los del vino blanco y el alcohol. El sabor amargo de las hierbas se mezcla con el dulzor del azúcar logrando una bebida amable, agradable al beber, equilibrada y de gran personalidad."
  },
  {
-  "id": 3,
-  "name": "Champagne Baron B",
-  "cantidad": 1,
-  "img": "producto-champagne1.jpg",
-  "precio": "$2.250",
-  "descuento": "En oferta",
-  "descripcion": "Es un Champagne Premium de alta calidad. Se destaca por su elegancia aportada por el Chardonnay y la intensidad de fruta otorgada por el Pinot Noir, conjugándose en un assemblage perfecto y armonioso."
- },
- {
-  "id": 4,
-  "name": "Budweiser 24 X 410ML",
-  "cantidad": 24,
-  "img": "producto-cervez2.jpg",
-  "precio": "$2.600",
-  "descuento": "En oferta",
-  "descripcion": "Es una de las cervezas más icónicas e internacionales. Esta American Lager se mantiene fiel a su receta original de 1876. Además de la malta y el lúpulo, el ingrediente clave es el arroz, que le aporta ese frescor característico y sabor ligero."
- },
- {
-  "id": 5,
+  "id": 2,
   "name": "DV Catena Cabernet Malbec",
   "cantidad": 1,
   "img": "producto-vino2.jpg",
@@ -54,7 +27,7 @@
   "descripcion": "Es un vino elegante y complejo, de color rojo rubí con reflejos violetas. A la nariz, intenso y concentrado, presenta notas de especias aportadas por el Cabernet Sauvignon del viñedo La Pirámide, y notas de moras maduras y ciruelas, características del Malbec del viñedo Angélica, acompañadas por vainilla, tabaco y licor aportadas por la crianza en roble."
  },
  {
-  "id": 6,
+  "id": 3,
   "name": "Gin Beefeater Pink",
   "cantidad": 1,
   "img": "producto-licor2.jpg",
@@ -63,21 +36,21 @@
   "descripcion": "Beefeater Pink Strawberry es la nueva ginebra rosa fabricada con la receta original de Beefeater London Dry más el aroma de fresa natural para darle un intenso y delicioso sabor a fresa."
  },
  {
-  "id": 7,
-  "name": "Chandon Delice",
-  "cantidad": 1,
-  "img": "producto-champagne2.jpg",
-  "precio": "$1.540",
-  "descuento": "En oferta",
-  "descripcion": "Chandon Délice es la expresión del estilo innovador de Chandon. Su frescura y versatilidad aportada por sus notas críticas se combinan con una vibrante sensación dulce. Ideal para disfrutar con hielo y con un twist de sabor."
- },
- {
   "name": "Cerveza industrial",
   "precio": "$450",
   "usuario": "6",
   "descuento": "En oferta",
   "img": "producto-cerveza2.jpeg",
   "descripcion": "Cerveza artezanal del monte cordobes",
-  "id": 8
+  "id": 4
+ },
+ {
+  "name": "Chandon 1l",
+  "precio": "2200",
+  "usuario": "10",
+  "descuento": "En oferta",
+  "img": "producto-champagne2.jpg",
+  "descripcion": "Chandon de las ovas mas fianas de mendoza , seleccionada tallo por tallo",
+  "id": 5
  }
 ]

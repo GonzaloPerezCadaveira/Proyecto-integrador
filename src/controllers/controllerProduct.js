@@ -55,8 +55,12 @@ const controller={
         res.redirect('/') 
     },
     destroy:(req,res)=>{
+        var i=0;
         const idProd= req.params.id;
         const productFilter= productoBase.filter(item => item.id != idProd);
+        productFilter.forEach(element => {
+            element.id=i++
+        });
         const data= JSON.stringify(productFilter,null ," ");
         fs.writeFileSync(productoData,data);
         res.redirect('/')
