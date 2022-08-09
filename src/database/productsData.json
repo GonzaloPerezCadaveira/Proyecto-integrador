@@ -10,12 +10,12 @@
  },
  {
   "id": 1,
-  "name": "Cerveza Corona Six pack",
-  "cantidad": 6,
+  "name": "corona",
+  "cantidad": "9",
   "img": "producto-cerveza1.jpg",
-  "precio": "$2999,99",
+  "precio": "$1502",
   "descuento": "En oferta",
-  "descripcion": "Es la cerveza mexicana de mayor venta en el mundo y la marca más valiosa de Latinoamérica de acuerdo con Millward Brown. Es una cerveza tipo Lager Pálida de 4.6º de alcohol. Corona Extra se enfoca en la gente que busca relajarse y refrescarse."
+  "descripcion": "Corona Fresca"
  },
  {
   "id": 2,
@@ -72,21 +72,12 @@
   "descripcion": "Chandon Délice es la expresión del estilo innovador de Chandon. Su frescura y versatilidad aportada por sus notas críticas se combinan con una vibrante sensación dulce. Ideal para disfrutar con hielo y con un twist de sabor."
  },
  {
-  "id": 0,
-  "name": "Vino barato",
-  "cantidad": "7",
-  "img": "producto-vino1.jpg",
-  "precio": "$1500",
+  "name": "Cerveza industrial",
+  "precio": "$450",
+  "usuario": "6",
   "descuento": "En oferta",
-  "descripcion": "violáceo brillante, seduce con sus aromas frutales (cerezas) y especiados (canela, cardamomo, pimienta negra). Posee gran cuerpo y su vivaz estructura acentúa los taninos intensos que se vuelven aterciopelados en el retrogusto."
- },
- {
-  "id": 1,
-  "name": "Cerveza Corona Six pack",
-  "cantidad": 6,
-  "img": "producto-cerveza1.jpg",
-  "precio": "$2999,99",
-  "descuento": "En oferta",
-  "descripcion": "Es la cerveza mexicana de mayor venta en el mundo y la marca más valiosa de Latinoamérica de acuerdo con Millward Brown. Es una cerveza tipo Lager Pálida de 4.6º de alcohol. Corona Extra se enfoca en la gente que busca relajarse y refrescarse."
+  "img": "producto-cerveza2.jpeg",
+  "descripcion": "Cerveza artezanal del monte cordobes",
+  "id": 8
  }
 ]

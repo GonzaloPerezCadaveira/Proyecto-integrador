@@ -29,7 +29,7 @@ const controller={
     },
     store:(req,res)=>{
         const nuevoProducto = req.body;
-        nuevoProducto.id = productoBase.length +1;
+        nuevoProducto.id = productoBase.length;
         productoBase.push(nuevoProducto);
         fs.writeFileSync(productoData, JSON.stringify(productoBase, null, ' '));
         res.redirect('/')
@@ -46,11 +46,10 @@ const controller={
     editComplete:(req,res)=>{
         const idProduc= req.params.id
         const product=productoBase.find(item => item.id == idProduc);
-        // product.name=req.body.name
-        // product.cantidad=req.body.cantidad
-        // product.precio=req.body.precio
-        // product.descripcion=req.body.descripcion
-        productoBase.push(product)
+        product.name=req.body.name
+        product.cantidad=req.body.cantidad
+        product.precio=req.body.precio
+        product.descripcion=req.body.descripcion
         const data= JSON.stringify(productoBase,null,' ')
         fs.writeFileSync(productoData,data);
         res.redirect('/') 
