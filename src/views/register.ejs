@@ -4,7 +4,7 @@
 
 <body class="text-center">
     <%- include('partials/header') %>
-        <form class="registeruser" action="/register" method="POST">
+        <form class="registeruser" action="/user/register" method="POST">
             <div class="row">
                 <div class="inicia mb-50">
                     <h3 style="text-align: -webkit-center; margin-bottom: 30px">Bienvenido, los siguientes datos y registrate</h3>
@@ -12,19 +12,19 @@
 
                 <div class="datos row">
                     <div style="text-align: -webkit-center">
-                        <label for="">Nombre y apellido<span>*</span></label>
+                        <label for="nombre-apellido">Nombre y apellido<span>*</span></label>
                         <input type="text" class="form-control" style="max-width:20rem; margin-bottom: 30px"
-                            name="email" id="email" value="">
+                            name="nombre-apellido" id="nombre">
                     </div>
 
                     <div style="text-align: -webkit-center">
-                        <label for="">Correo electrónico<span>*</span></label>
-                        <input type="password" class="form-control" style="max-width:20rem; margin-bottom: 30px"
-                            name="password" id="password" value="">
+                        <label for="email">Correo electrónico<span>*</span></label>
+                        <input type="email" class="form-control" style="max-width:20rem; margin-bottom: 30px"
+                            name="email" id="email" >
 
 
                     <div style="text-align: -webkit-center">
-                        <label for="">Contraseña<span>*</span></label>
+                        <label for="password">Contraseña<span>*</span></label>
                         <input type="password" class="form-control" style="max-width:20rem; margin-bottom: 15px"
                             name="password" id="password" value="">
 
