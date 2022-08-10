@@ -1,10 +1,11 @@
 const path = require("path");
-const fs= require('fs');
+const fs = require("fs");
+const bcrypt = require("bcryptjs")
+const { v4: uuidv4 } = require('uuid');
 
 const userData= path.join(__dirname, '../database/users.json')
 
 const userBase= JSON.parse(fs.readFileSync(userData, 'utf-8'))
-
 
 const controller={ 
     register: (req, res)=>{
@@ -21,7 +22,11 @@ const controller={
     },
     nuevoUser:(req,res)=>{
         const nuevoUser = req.body;
-        nuevoUser.id = userBase.length;
+        const nuevoUserId = uuidv4();
+        const passEncriptada = bcrypt.hashSync(req.body.password,10);
+        nuevoUser.password = passEncriptada;
+        nuevoUser.id = nuevoUserId;
+        console.log(nuevoUser);
         userBase.push(nuevoUser);
         fs.writeFileSync(userData, JSON.stringify(userBase, null, ' '));
         res.redirect('/')
