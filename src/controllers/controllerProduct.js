@@ -1,5 +1,6 @@
 const path =require('path');
 const fs= require('fs');
+const { nextTick } = require('process');
 
 const productoData= path.join(__dirname, '../database/productsData.json')
 
@@ -30,6 +31,10 @@ const controller={
     store:(req,res)=>{
         const nuevoProducto = req.body;
         nuevoProducto.id = productoBase.length;
+        console.log(nuevoProducto);
+        if(req.file){
+            nuevoProducto.img= req.file.filename
+        }
         productoBase.push(nuevoProducto);
         fs.writeFileSync(productoData, JSON.stringify(productoBase, null, ' '));
         res.redirect('/')

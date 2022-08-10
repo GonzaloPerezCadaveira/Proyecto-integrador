@@ -4,9 +4,9 @@ const methodOverride= require('method-override')
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 
-const homeRouter = require("./src/routers/home");
-const productsRouter = require("./src/routers/products");
-const usersRouter = require ('./src/routers/users')
+const homeRouter = require("./routers/home");
+const productsRouter = require("./routers/products");
+const usersRouter = require ('./routers/users')
 
 app.set('view engine', 'ejs');
 
