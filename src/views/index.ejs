@@ -1,79 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('partials/head')%>
+  <%- include('partials/head') %>
 <body>
-    <%- include('partials/header')%>
-    <main>
-        <div id="el-slider">
-            <ul class="slider">
-              <li id="slide1">
-                <h1>Cervezas</h1>
-                <img src="/image/index.corona.jpg" alt="cerveza corona">
-              </li>
-              <li id="slide2">
-                <h1>Vinos</h1>
-                <img src="/image/index.vino.jpg" alt="vino"/>
-              </li>
-              <li id="slide3">
-                <h1>Espumantes</h1>
-                <img src="/image/index.champeta.jpg" alt="champagne"/>
-              </li>
-              <li id="slide4">
-                <h1>Licores</h1>
-                <img src="/image/index.gin.jpg" alt="gin"/>
-              </li>
-            </ul>          
-            <ul class="menu">
-              <li>
-                <a href="#slide1"></a>
-              </li>
-              <li>
-                <a href="#slide2"></a>
-              </li>
-               <li>
-                <a href="#slide3"></a>
-              </li>
-              <li>
-                <a href="#slide4"></a>
-              </li>
-            </ul>
-          </div>
-          <h3 class="titular">¡Nuestros productos!</h3>
-          <section>
-            <div class="productos">
-              <% productoBase.forEach(function(element){ %>
-                  <a href="/products/detail/<%= element.id %>">
-                    <article class="producto">
-                      <img src="/image/<%= element.img %>" alt="<%= element.name %>" />
-                      <div class="contenedor-articulo">
-                        <div class="descuentoprecio">
-                          <h4><%= element.name %></h4>
-                          <p class="precio"><%= element.precio %></p>
-                          <p class="descuento"><%= element.descuento %></p></div>
-                      </div>
-                    </article>
-                  </a>
-              <% }) %>
+    <header>    
+        <div class="conteneder">
+            <a href="/" id="logo">Carpincho Drinks <i class="fa-solid fa-wine-glass"></i> </p><a>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#somosCarpi">¿Quienes Somos?</a>
+                <a href="#">Nuestras bebidas</a>
+                <a href="#">Iniciar sesión <i class="fa-solid fa-right-to-bracket"></i> </a>
+                <a href="#">Crear cuenta <i class="fa-regular fa-address-card"></i></a>
+                <a href="#">Mi carrito <i class="fa-solid fa-cart-shopping"></i></a>              
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <h1>Lo querés? Lo tenemos.<br></h1>
+        <p>Tinto, hay. Cerveza? Tenemos.<br>
+        Ese trago explosivo que probaste en tu bar favorito?<br>
+        También.</p>
+        <form action="/products" method="GET">
+        <button>Accedé a nuestra carta de bebidas</button>
+        </form>
+    </section>
+
+    <section id="somosCarpi">
+    <div class="container">
+
+        <div class="img-container"></div>
+        <div class="texto">
+        <h2>Somos Carpincho Drinks</h2>
+        <p>Un almacén online de bebidas, donde podrás encontrar absolutamente
+             todo lo que necesites para la juntada con tus amigos, contamos
+             con una gran cantidad de productos tanto nacionales como importados.
+        </p>
+      </div>
+     </div>
+    </section>
+
+    <section id="nuestrasBebidas">
+        <div class="container">
+            <h2>Nuestras bebidas</h2>
+            <div class="cartasProd">
+            <div class="carta">
+                <h3>Cervezas</h3>
+                <p>Ofrecemos las mejores marcas de cervezas del mercado nacional e internacional, para que no tengas que buscar en otro lugar.</p>
+                <button>Quiero mi birra</button>
             </div>
-          </section>
-          <section class="ofertas">
-            <% productoBase.forEach(function(element){ %>
-              <% if(element.descuento=='En oferta'){ %>
-                <a href="/products/detail/<%= element.id %>">
-                  <article class="producto">
-                    <img src="/image/<%= element.img %>" alt="<%= element.name %>" />
-                    <div class="contenedor-articulo">
-                      <div class="descuentoprecio">
-                        <h4><%= element.name %></h4>
-                        <p class="precio"><%= element.precio %></p>
-                        <p class="descuento"><%= element.descuento %></p></div>
-                    </div>
-                  </article>
-                </a>
-              <% } %>
-          <% }) %>
-          </section>
-    </main>
-    <%- include('partials/footer')%>
+            <div class="carta">
+                <h3>Vinos</h3>
+                <p>Contamos con los tintos de las mejores bodegas del país, si preferís rosado, blanco o incluso un buen espumante acá podes encontrar varias opciones para tu deleite.</p>
+                <button>Quiero mi vino</button>
+            </div>
+            <div class="carta">
+                <h3>Licores</h3>
+                <p>Si lo que buscás es ese vodka o gin importado que no lo conseguís en cualquier lugar, acá vas a encontrar más de lo que necesitas.</p>
+                <button>Quiero un trago</button>
+            </div>
+        </div>
+    </div>
+    </section>
+    <%- include('partials/footer') %>
 </body>
 </html>
