@@ -27,7 +27,7 @@ console.log ('servidor corriendo')
 
 app.use("/", homeRouter);
 
-app.use("/products",productsRouter);
+app.use("/products", productsRouter);
 
 app.use("/user", usersRouter);
 

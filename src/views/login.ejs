@@ -1,55 +1,29 @@
 <!doctype html>
 <html lang="en">
+<%- include('partials/head') %>
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.101.0">
-    <title>Accedé a tu cuenta</title>
+    <body>
+        <%- include('partials/header') %>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/sign-in/">
+            <form class="formulario">
+                <h1>Ingresá a tu cuenta</h1>
 
-    <link href="/docs/5.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-</head>
-
-<body class="text-center">
-    <%- include('partials/header') %>
-        <form class="loginuser" action="/users/login" method="POST">
-            <div class="row">
-                <div class="inicia mb-50">
-                    <h3 style="text-align: -webkit-center; margin-bottom: 20px">Accedé a tu cuenta</h3>
+                <div class="contenedor">
+                    <div class="input-contenedor"></div>
+                    <i class="fa-solid fa-at icon"></i>
+                    <input type="text" placeholder="Correo electrónico">
                 </div>
 
-                <div class="datos row">
-                    <div style="text-align: -webkit-center" >
-                        <label for="email">Email<span>*</span></label>
-                        <input type="text" class="form-control" style="max-width:15rem; margin-bottom:40px"
-                            name="email" id="email" value="">
-                    </div>
-
-                    <div style="text-align: -webkit-center">
-                        <label for="password">Contraseña<span>*</span></label>
-                        <input type="password" class="form-control" style="max-width:15rem; margin-bottom:30px"
-                            name="password" id="password" value="">
-                        <label for="recordame">Recordame</label>
-                        <input type="checkbox" style="max-width:15rem; margin-bottom:40px"  name="recordame"><br>
-                    </div>
-
-                    <div class="col-12">
-                        <input type="submit" class="btn essence-btn" style="max-width:15rem; margin-bottom:40px" value="Iniciar Sesión">
-                    </div>
-                    <div>
-                        <a style="text-decoration: none" href="/user/register">¿TODAVÍA NO TE REGISTRASTE?</a>
-                    </div>
+                <div class="contenedor">
+                    <div class="input-contenedor"></div>
+                    <i class="fa-solid fa-key icon"></i>
+                    <input type="password" placeholder="Contraseña">
                 </div>
+                <input type="submit" value="Ingresar" class="button">
+                <p>¿Todavía no tenés cuenta?<a class="link" href="/user/register"> Registrate</a></p>
+            </form>
+            </form>
 
-
-            </div>
-        </form>
-        <%- include('partials/footer')%>
-</body>
+    </body>
 
 </html>

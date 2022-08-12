@@ -14,12 +14,14 @@ const controller={
             enlace:'css/registro.css'
         });
     },
+    
     login: (req, res)=>{
         res.render('login',{
             titulo:'Login',
             enlace:'css/styles.css'
         });
     },
+
     nuevoUser:(req,res)=>{
         const nuevoUser = req.body;
         const nuevoUserId = uuidv4();
