@@ -20,6 +20,7 @@ const controller={
             enlace:'css/registro.css'
         });
     },
+    
     login: (req, res)=>{
         res.render('login',{
             titulo:'Login',
@@ -27,6 +28,7 @@ const controller={
             enlace:'css/styles.css'
         });
     },
+
     nuevoUser:(req,res)=>{
         const nuevoUser = req.body;
         const emailExist = userBase.find (user => user.email === nuevoUser.email);

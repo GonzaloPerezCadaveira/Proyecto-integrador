@@ -2,32 +2,31 @@
 <html lang="en">
 <%- include('partials/head') %>
 
-<body class="text-center">
-    <%- include('partials/header') %>
-    
-        <form class="registeruser" action="/user/register" method="POST">
-            <div class="row">
-                <div class="inicia mb-50">
-                    <h3 style="text-align: -webkit-center; margin-bottom: 30px">Bienvenido, los siguientes datos y registrate</h3>
+    <body>
+        <%- include('partials/header') %>
+
+            <form class="formulario">
+                <h1>Registrate</h1>
+                <div class="contenedor">
+                    <div class="input-contenedor"></div>
+                    <i class="fa-solid fa-user icon"></i>
+                    <input type="text" placeholder="Nombre y Apellido">
                 </div>
 
-                <div class="datos row">
-                    <div style="text-align: -webkit-center">
-                        <label for="nombre-apellido">Nombre y apellido<span>*</span></label>
-                        <input type="text" class="form-control" style="max-width:20rem; margin-bottom: 30px"
-                            name="nombre-apellido" id="nombre">
-                    </div>
+                <div class="contenedor">
+                    <div class="input-contenedor"></div>
+                    <i class="fa-solid fa-at icon"></i>
+                    <input type="text" placeholder="Correo electrónico">
+                </div>
 
-                    <div style="text-align: -webkit-center">
-                        <label for="email">Correo electrónico<span>*</span></label>
-                        <input type="email" class="form-control" style="max-width:20rem; margin-bottom: 30px"
-                            name="email" id="email" >
-
-
-                    <div style="text-align: -webkit-center">
-                        <label for="password">Contraseña<span>*</span></label>
-                        <input type="password" class="form-control" style="max-width:20rem; margin-bottom: 15px"
-                            name="password" id="password" value="">
+                <div class="contenedor">
+                    <div class="input-contenedor"></div>
+                    <i class="fa-solid fa-key icon"></i>
+                    <input type="password" placeholder="Contraseña">
+                </div>
+                <input type="submit" value="Registrate" class="button">
+                <p>Al registrarte como usuario aceptas nuestras condiciones de uso y politica de Privacidad</p>
+                <p>¿Ya tenés cuenta?<a class="link" href="/user/login">Iniciar sesión</a></p>
 
                     <div class="col-12">
                         <input type="submit" class="btn essence-btn" style="margin-top:20px" value="Enviar">
