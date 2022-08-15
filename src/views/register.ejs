@@ -28,8 +28,15 @@
                 <p>Al registrarte como usuario aceptas nuestras condiciones de uso y politica de Privacidad</p>
                 <p>¿Ya tenés cuenta?<a class="link" href="/user/login">Iniciar sesión</a></p>
 
-            </form>
-
-    </body>
-
+                    <div class="col-12">
+                        <input type="submit" class="btn essence-btn" style="margin-top:20px" value="Enviar">
+                    </div>
+            </div>
+        </form>
+        <div>
+        <p> <%=registerError%>
+        </p>
+    </div>
+        <%- include('partials/footer')%>
+</body>
 </html>

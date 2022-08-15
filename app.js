@@ -3,10 +3,11 @@ const app = express()
 const methodOverride= require('method-override')
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
-
+const { verifyAuth } = require('./src/middlewares/auth')
 const homeRouter = require("./routers/home");
 const productsRouter = require("./routers/products");
-const usersRouter = require ('./routers/users')
+const usersRouter = require('./routers/users')
+
 
 app.set('view engine', 'ejs');
 
@@ -21,6 +22,9 @@ app.use(logger('dev'));
 app.use(cookieParser())
 app.use(methodOverride('_method'));
 
+//Middlewares
+app.use(verifyAuth)
+
 app.listen (3050, () => { 
 console.log ('servidor corriendo')
 })
@@ -30,6 +34,8 @@ app.use("/", homeRouter);
 app.use("/products", productsRouter);
 
 app.use("/user", usersRouter);
+
+app.use("/",usersRouter)
 
 
 module.exports= app

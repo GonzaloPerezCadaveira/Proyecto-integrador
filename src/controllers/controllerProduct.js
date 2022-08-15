@@ -23,7 +23,7 @@ const controller={
         });
     },
     carrito: (req, res)=>{
-        res.render('CarritoDeCompras',{
+        res.render('carritoDeCompras',{
             titulo:'Carrito',
             enlace:'css/styles.css'
         });
