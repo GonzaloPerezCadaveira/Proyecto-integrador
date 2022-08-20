@@ -35,7 +35,7 @@ app.use("/products", productsRouter);
 
 app.use("/user", usersRouter);
 
-app.use("/",usersRouter)
+app.use("/", usersRouter)
 
 
-module.exports= app
+module.exports = app

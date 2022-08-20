@@ -11,6 +11,14 @@ body{
     font-family: 'Roboto', sans-serif;
 }
 
+.body{
+    background-image: url("/image/banner2.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
 html{
     scroll-behavior:smooth;
 }
@@ -62,7 +70,7 @@ header #logo{
     padding: 25px 30px;
     color:white;
     font-weight: bold;
-    font-size: 2.5em;
+    font-size: 2em;
 }
 
 header .container{
@@ -120,6 +128,7 @@ header a:hover{
 
 #somosCarpi h2{
     color:white;
+    text-align:center;
 }
 
 #nuestrasBebidas{
@@ -193,9 +202,118 @@ footer .container{
     align-items: flex-end;
 }
 
-@media (min-width:720px)
-{  
+/* ESTILOS DE LA SECCIÓN DE PRODUCTOS */
 
+.titular {
+    font-size:20px;
+    color: white;
+    text-align: center;
+    margin:auto;
+    padding:20px;
+}
+
+main{
+    justify-content: center;
+    margin: auto;
+    background-color: black;
+}
+
+.producto img, .producto div{
+    width: 100%;
+}
+
+main article.producto{
+    margin: 10px;
+}
+
+.precio_descripcion{
+    display:flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+div p.precio{
+    width:30%;
+    text-align:start;
+}
+
+div p.descuento{
+    width: 30%;
+    text-align:left;
+}
+
+main article div.contenedor-articulo{
+    position:relative;
+    padding:10px;
+}
+
+main article div.contenedor-articulo i {
+    background-color: #FFF;
+    display: block;
+    color:black;
+    font-size: 20px;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 20px;
+    top:-15px;
+}
+
+main article div.contenedor-articulo {
+    width: 100%;
+    background-color: #FFF;
+    border-top:1px solid #ebebeb;
+    margin-top: -4px;
+    padding:15px;
+    border-radius: 2px;
+}
+
+.precio {
+    width: 30%;
+    color: rgb(20, 20, 20);
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.descripcion {
+    margin-bottom:10px;
+    font-size: 15px;
+    color: rgb(20, 20, 20);
+}
+
+main section article{
+    transition: all 800ms;
+}
+
+main section article:hover {
+    box-shadow: 0px 0px 20px white;
+}
+
+
+main article div.contenedor-articulo:hover i{
+    transform: rotateX(1turn);
+    transition: all 800ms;
+}
+
+.productos{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
+}
+
+ section .producto {
+    width: 100%;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+
+@media (min-width:720px)
+
+{  
     header{
         width: 100%;
     }
@@ -267,6 +385,10 @@ footer .container{
 
     footer .container{
         justify-content: flex-end;
+    }
+
+    .productos{
+        flex-wrap:nowrap;
     }
 
 }

@@ -2,9 +2,20 @@
     box-sizing: border-box;
 }
 
-body {
+body{
     margin: 0;
-    background:url("/image/banner2.jpg");
+}
+
+.bodyRegister{
+    background:url("/image/banner.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.bodyLogin{
+    background:url("/image/banner3.jpg");
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -79,6 +90,7 @@ p{
 .link:hover {
     color:rgb(193, 192, 192)
 }
+
 
 @media (min-width:720px){
 
