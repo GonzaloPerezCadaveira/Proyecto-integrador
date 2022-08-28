@@ -27,6 +27,10 @@ body{
     padding:15px;
 }
 
+.login-error {
+    color: red;
+}
+
 .formulario{
     background: white;
     margin-top: 150px;
@@ -91,6 +95,10 @@ p{
     color:rgb(193, 192, 192)
 }
 
+.register-error {
+    color:red
+}
+
 
 @media (min-width:720px){
 
@@ -100,5 +108,6 @@ p{
         margin-top:100px;
         border-radius:2%;
     }
+
 
 }

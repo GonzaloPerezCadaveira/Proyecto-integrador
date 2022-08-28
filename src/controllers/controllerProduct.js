@@ -10,6 +10,7 @@ const controller = {
     productsList: (req, res) => {
         res.render('productsList', {
         titulo: 'Carta de bebidas',
+        productos:productoBase,
         enlace: '/css/productsList'})
     },
     detail: (req, res) => {

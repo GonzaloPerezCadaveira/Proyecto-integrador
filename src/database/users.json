@@ -12,9 +12,9 @@
   "id": 1
  },
  {
-  "nombre-apellido": "Gonzalo Perez",
+  "name": "Gonza",
   "email": "gperezmdp@gmail.com",
-  "password": "$2a$10$hzAeCQC8ZkB/ohG05vjwa.RrYkcngAHw8pnqUp4OsDGY6BtLcP3km",
-  "id": "fc4c612d-568a-44c4-a99c-dceb81c39919"
+  "password": "$2a$10$tW70uHe31tpQUsnprJWCFO3j2b14z8UOvsmniKjXSfVMp.Ht6x5MG",
+  "id": "a1e59b5c-a0fb-4942-a70c-2d18045ae9da"
  }
 ]
