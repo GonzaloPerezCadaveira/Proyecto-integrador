@@ -16,5 +16,17 @@
   "email": "gperezmdp@gmail.com",
   "password": "$2a$10$tW70uHe31tpQUsnprJWCFO3j2b14z8UOvsmniKjXSfVMp.Ht6x5MG",
   "id": "a1e59b5c-a0fb-4942-a70c-2d18045ae9da"
+ },
+ {
+  "name": "Mariano Di Pietro",
+  "email": "marianodp@gmail.com",
+  "password": "$2a$10$XCL05ZTc/SS1kirY.2Th.uPe7oJdhBElSxArEnU9W2e4ZmOF63qB6",
+  "id": "486b960f-2ec7-49e5-a733-700f4eed743c"
+ },
+ {
+  "name": "Manolo Rodriguez",
+  "email": "rodriguezm@gmail.com",
+  "password": "$2a$10$bsiHUxEekrct.f6AV4AxCu5tvpT1pJVtOR4.O4lLKpgHFyxAQ1EC2",
+  "id": "1120348d-90c7-4ef8-bd21-71c2197dc4ee"
  }
 ]
