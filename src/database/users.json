@@ -28,5 +28,17 @@
   "email": "rodriguezm@gmail.com",
   "password": "$2a$10$bsiHUxEekrct.f6AV4AxCu5tvpT1pJVtOR4.O4lLKpgHFyxAQ1EC2",
   "id": "1120348d-90c7-4ef8-bd21-71c2197dc4ee"
+ },
+ {
+  "name": "Agustin",
+  "email": "lautarogil@live.com",
+  "password": "$2a$10$.0Q3WtfE3e9JfXtI8YxLw.qq0axbndErNNwJgAvIFZRDzrTOxqd1m",
+  "id": "62b7a436-8f44-4223-851d-e4ef98bfce30"
+ },
+ {
+  "name": "Amarula 1L",
+  "email": "alvarezagusnx@gmail.com",
+  "password": "$2a$10$3AlSUc2utYUeT63Gq3Q1dumwgdoNb33AyV2j.XVI1Szg3aovVehXK",
+  "id": "c322bbf4-508a-4d7f-a4a8-fa674721c900"
  }
 ]

@@ -33,6 +33,6 @@ router.get('/edit/:id',productController.edit);
 
 router.put('/actualizar/:id',productController.editComplete);
 
-router.get('/delete/:id', productController.destroy)
+router.post('/delete/:id', productController.destroy)
 
 module.exports= router;

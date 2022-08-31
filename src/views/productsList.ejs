@@ -8,16 +8,19 @@
                 <section class="lastvisit">
                     <h3 class="titular">Seleccioná el producto que querés y luego completá el proceso de compra</h3>
                     <div class="productos">
-                        <article class="producto">
-                            <img src= <%= productos.img %>
-                            <div class="contenedor-articulo">
-                                <h2> <%= productos.nombre %></h2>
-                                <i class="fa-solid fa-cart-shopping"></i>
-                                <div class="precio_descripcion">
-                                    <p class="precio"><%= productos.precio %></p>
-                                    <h4 class="descripcion"><%= productos.descripcion %></h4>
-                                </div>
-                        </article>
+                        <% productos.forEach(function(element){ %>
+                            <a href="/products/detail/<%= element.id%>">
+                                <article class="producto">
+                                    <img src="/image/<%= element.img %>">
+                                    <div class="contenedor-articulo">
+                                        <h2> <%= element.name %></h2>
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                        <div class="precio_descripcion">
+                                            <p class="precio"><%= element.precio %></p>
+                                        </div>
+                                </article>
+                            </a>
+                        <%})%>
                     </div>
             </main>
             <%- include('partials/footer') %>
