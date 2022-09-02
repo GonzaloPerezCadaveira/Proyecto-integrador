@@ -1,17 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
-    margin:0;
+body {
+    margin: 0;
     font-family: 'Roboto', sans-serif;
 }
 
-.body{
+.body {
     background-image: url("/image/banner2.jpg");
     background-size: cover;
     background-attachment: fixed;
@@ -19,271 +19,271 @@ body{
     background-position: center center;
 }
 
-html{
-    scroll-behavior:smooth;
+html {
+    scroll-behavior: smooth;
 }
 
-h1{
-    font-size:3.5em;
+h1 {
+    font-size: 3.5em;
 }
 
-h2{
+h2 {
     font-size: 3em;
 }
 
-h3{
+h3 {
     font-size: 2em;
 }
 
-p{
+p {
     font-size: 2em;
 }
 
-button{
+button {
     font-size: 1.5em;
     font-weight: bold;
     padding: 10px 30px;
     margin-top: 15px;
     border-radius: 10px;
-    border:1px solid rgba(0,0,0,0.5);
-    box-shadow:2px 2px 10px rgba(0,0,0,0.5);
-    color:#EEEEEE;
-    background-color: #222831;    
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    color: #EEEEEE;
+    background-color: #222831;
     cursor: pointer;
 }
 
-button:hover{
-    background-color:#919395;
+button:hover {
+    background-color: #919395;
 }
 
-.container{
+.container {
     max-width: 1400px;
-    margin:auto;
+    margin: auto;
 }
 
-header{
-    background-color: rgba(30,30,30);
+header {
+    background-color: rgba(30, 30, 30);
 }
 
-header #logo{
-    margin:0;
+header #logo {
+    margin: 0;
     padding: 25px 30px;
-    color:white;
+    color: white;
     font-weight: bold;
     font-size: 2em;
 }
 
-header .container{
+header .container {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-header nav{
+header nav {
     display: flex;
     flex-direction: column;
     text-align: center;
     padding-bottom: 25px;
+    align-items: center;
 }
 
-header a{
+header a {
     padding: 5px 12px;
     text-decoration: none;
-    font-style:normal;
+    font-style: normal;
     font-weight: bold;
     color: yellow
 }
 
-header a:hover{
+header a:hover {
     color: white;
 }
 
-#hero{
+#hero {
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     flex-direction: column;
-    color:white;
+    color: white;
     height: 90vh;
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
 }
 
-#hero h1{
-    color:white;
+#hero h1 {
+    color: white;
 }
 
 
-#somosCarpi .container{
+#somosCarpi .container {
     text-align: center;
     padding: 200px 12px
 }
 
-#somosCarpi p{
+#somosCarpi p {
     margin-top: 20px;
-    color:white;
+    color: white;
 }
 
-#somosCarpi h2{
-    color:white;
-    text-align:center;
-}
-
-#nuestrasBebidas{
-    background-color: rgba(30,30,30);
-    color:white;
+#somosCarpi h2 {
+    color: white;
     text-align: center;
 }
 
-#nuestrasBebidas .container{
+#nuestrasBebidas {
+    background-color: rgba(30, 30, 30);
+    color: white;
+    text-align: center;
+}
+
+#nuestrasBebidas .container {
     padding: 150px 12px;
 }
 
-#nuestrasBebidas h2{
+#nuestrasBebidas h2 {
     margin-top: 0;
     font-size: 3.2em;
 }
 
-#nuestrasBebidas p{
+#nuestrasBebidas p {
     display: none;
 }
 
-#nuestrasBebidas .carta{
+#nuestrasBebidas .carta {
     background-size: cover;
     background-position: center center;
-    padding:50px;
-    margin:20px;
+    padding: 50px;
+    margin: 20px;
     border-radius: 18px;
 }
 
-.carta:first-child{
-    background-image:linear-gradient(
-        0deg,
-        rgba(0,0,0,0.5),
-        rgba(0,0,0,0.5)
-    )
-    ,url("/image/index-corona.jpg");
+.carta:first-child {
+    background-image: linear-gradient(0deg,
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)), url("/image/index-corona.jpg");
 }
 
-.carta:nth-child(2){
-    background-image:linear-gradient(
-        0deg,
-        rgba(0,0,0,0.5),
-        rgba(0,0,0,0.5)
-    )
-    ,url("/image/index-vino.jpg");
+.carta:nth-child(2) {
+    background-image: linear-gradient(0deg,
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)), url("/image/index-vino.jpg");
 }
 
-.carta:nth-child(3){
-    background-image:linear-gradient(
-        0deg,
-        rgba(0,0,0,0.5),
-        rgba(0,0,0,0.5)
-    )
-    ,url("/image/index-gin.jpg");
+.carta:nth-child(3) {
+    background-image: linear-gradient(0deg,
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)), url("/image/index-gin.jpg");
 }
 
-footer{
-    background-color: rgba(230,230,230);
+footer {
+    background-color: rgba(230, 230, 230);
 }
 
-footer p{
+footer p {
     margin: 0;
-    color:rgba(100,100,100);
-    padding:12px;
+    color: rgba(100, 100, 100);
+    padding: 12px;
 }
 
-footer .container{
+footer .container {
     height: 150px;
     display: flex;
-    justify-content:center;
+    justify-content: center;
     align-items: flex-end;
+}
+
+.main_create {
+    justify-content: center;
+    margin: auto;
+    text-align: center;
 }
 
 /* ESTILOS DE LA SECCIÓN DE PRODUCTOS */
 
 .titular {
-    font-size:20px;
+    font-size: 20px;
     color: white;
     text-align: center;
-    margin:auto;
-    padding:20px;
+    margin: auto;
+    padding: 20px;
 }
 
-main{
+.main_products {
     justify-content: center;
     margin: auto;
     background-color: black;
 }
 
-.producto img, .producto div{
+.producto img,
+.producto div {
     width: 100%;
 }
 
-main article.producto{
+main article.producto {
     margin: 10px;
 }
 
-.precio_descripcion{
-    display:flex;
+.precio_descripcion {
+    display: flex;
     flex-wrap: wrap;
     align-items: baseline;
     justify-content: space-between;
 }
 
-div p.precio{
-    width:30%;
-    text-align:start;
-}
-
-div p.descuento{
+div p.precio {
     width: 30%;
-    text-align:left;
+    text-align: start;
 }
 
-main article div.contenedor-articulo{
-    position:relative;
-    padding:10px;
+a {
+    text-decoration: none;
+    color: black;
+    text-align: start
+}
+
+main article div.contenedor-articulo {
+    position: relative;
+    padding: 10px;
 }
 
 main article div.contenedor-articulo i {
     background-color: #FFF;
     display: block;
-    color:black;
-    font-size: 20px;
+    color: black;
+    font-size: 15px;
     padding: 5px;
     width: 30px;
     height: 30px;
     position: absolute;
     right: 20px;
-    top:-15px;
+    top: -15px;
 }
 
 main article div.contenedor-articulo {
     width: 100%;
     background-color: #FFF;
-    border-top:1px solid #ebebeb;
-    margin-top: -4px;
-    padding:15px;
+    border-top: 1px solid #ebebeb;
+    margin-top: -3px;
+    padding: 5px;
     border-radius: 2px;
+}
+
+.nombre_producto {
+    font-size: 15px;
+    text-align: left;
+    font-weight: bold;
 }
 
 .precio {
     width: 30%;
     color: rgb(20, 20, 20);
     font-size: 15px;
-    margin-bottom: 5px;
 }
 
-.descripcion {
-    margin-bottom:10px;
-    font-size: 15px;
-    color: rgb(20, 20, 20);
-}
 
-main section article{
+main section article {
     transition: all 800ms;
 }
 
@@ -292,103 +292,120 @@ main section article:hover {
 }
 
 
-main article div.contenedor-articulo:hover i{
+main article div.contenedor-articulo:hover i {
     transform: rotateX(1turn);
     transition: all 800ms;
 }
 
-.productos{
-    display:flex;
-    flex-wrap:wrap;
+.productos {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
 }
 
- section .producto {
-    width: 40%;
-    display:flex;
+section .producto {
+    width: 60%;
+    display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 }
 
-
-@media (min-width:720px)
-
-{  
-    header{
-        width: 100%;
-    }
-
-
-    header .container{
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    header nav{
-        flex-direction:row;
-        padding-bottom: 0;
-        padding-right: 30px;
-    }
-
-    #somosCarpi .container{
+@media (min-width:425px) {
+    section .producto {
+        width: 40%;
         display: flex;
-        justify-content: space-evenly;
+        flex-wrap: wrap;
+        justify-content: space-around;
     }
 
-    #somosCarpi .texto{
-        width: 50%;
-        max-width: 600px;
-        text-align: initial;
-        padding-left: 30px;
+    @media (min-width:720px) {
+        header {
+            width: 100%;
+        }
+
+        header .container {
+            flex-direction: row;
+            justify-content: space-between;
+            text-align: center;
+        }
+
+        header nav {
+            flex-direction: row;
+            padding-bottom: 0;
+            padding-right: 30px;
+        }
+
+        #somosCarpi .container {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        #somosCarpi .texto {
+            width: 50%;
+            max-width: 600px;
+            text-align: initial;
+            padding-left: 30px;
+        }
+
+        #somosCarpi h2 {
+            margin-top: 0px;
+        }
+
+        #hero h1 {
+            font-size: 3.8em;
+        }
+
+        #somosCarpi .img-container {
+            background-image: url("/image/banner.jpg");
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            width: 400px;
+        }
+
+        #nuestrasBebidas .cartasProd {
+            display: flex;
+            justify-content: center;
+        }
+
+        #nuestrasBebidas p {
+            display: block;
+            font-size: 1.10em;
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+
+        #nuestrasBebidas h3 {
+            margin-top: 0px;
+        }
+
+        #nuestrasBebidas .carta {
+            padding: 50px;
+
+        }
+
+        #nuestrasBebidas .carta:hover {
+            box-shadow: 1px 1px 12px rgb(251, 250, 250);
+        }
+
+        footer .container {
+            justify-content: flex-end;
+        }
+
+        section .producto {
+            width: 30%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        @media (min-width:1200px) {
+            section .producto {
+                width: 20%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+        }
     }
-
-    #somosCarpi h2{
-        margin-top: 0px;
-    }
-
-    #hero h1{
-        font-size: 3.8em;
-    }
-
-    #somosCarpi .img-container{
-        background-image:url("/image/banner.jpg");
-        background-size: cover;
-        background-position: center;
-        height: 500px;
-        width: 400px;
-    }
-
-    #nuestrasBebidas .cartasProd{
-        display: flex;
-        justify-content: center;
-    }
-
-    #nuestrasBebidas p{
-        display: block;
-        font-size: 1.10em;
-        margin-top:20px;
-        margin-bottom: 30px;
-    }
-
-    #nuestrasBebidas h3{
-        margin-top: 0px;
-    }
-
-    #nuestrasBebidas .carta{
-        padding:50px;
-
-    }
-
-    #nuestrasBebidas .carta:hover{
-        box-shadow: 1px 1px 12px rgb(251, 250, 250);
-    }
-
-    footer .container{
-        justify-content: flex-end;
-    }
-
-    .productos{
-        flex-wrap:nowrap;
-    }
-
 }

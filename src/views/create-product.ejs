@@ -1,26 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('partials/head') %>
-<body>
-    <%- include('partials/header')%>
-    <main>
-        <form method="POST" action="/products/create" enctype='multipart/form-data'>
-            <div class="formulario">
-                <input type="text" name="name" placeholder="Nombre del Producto">
-                <input type="number" name="precio" placeholder="Precio">               
-            </div>
-            <div class="formulario">
-                <input type="number" name="cantindad" placeholder="Cantidad">
-                <input type="text" name="descuento" placeholder="Descuento">
-            </div>
-            <div class="formulario" id="form-footer">
 
-                <input type="file" name="img">
-                <input type="text" name="descripcion" placeholder="Descripcion del Producto">
-                <button id="creado" type="submit" >Guardar Producto</button>
-            </div>        
-        </form>
-    </main>
-    <%- include('partials/footer')%>
-</body>
+    <body>
+        <%- include('partials/header')%>
+            <main class="main_create">
+                <body class="bodyRegister">
+                        <form method="POST" action="/products/create" enctype='multipart/form-data' class="formulario">
+                            <h1>Formulario de creación de productos</h1>
+                            <div class="contenedor">
+                                <div class="input-contenedor"></div>
+                                <input type="text" placeholder="Nombre del producto" name="name">
+                            </div>
+                            <div class="contenedor">
+                                <div class="input-contenedor"></div>
+                                <input type="text" placeholder="Descripción" name="description">
+                            </div>
+                            <div class="contenedor">
+                                <div class="input-contenedor"></div>
+                                <input type="text" placeholder="Precio" name="price">
+                            </div>
+                            <div class="contenedor">
+                                <div class="input-contenedor"></div>
+                                <input type="text" placeholder="Cantidad" name="cantidad">
+                            </div>
+                            <div class="contenedor">
+                                <div class="input-contenedor"></div>
+                                <input type="text" placeholder="Categoría" name="category">
+                            </div>
+                            <div class="contenedor">
+                                <div class="input-contenedor"></div>
+                                <input type="file" name="img">
+                            </div>
+                            <input type="submit" value="Guardar producto" class="button">
+             </form>
+         <%- include('partials/footer')%>
+     </body>
 </html>
