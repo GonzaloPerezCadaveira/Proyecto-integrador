@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('partials/head') %>
+<<<<<<< HEAD
 <body>
     <%- include('partials/header')%>
     <main>
@@ -28,4 +29,41 @@
     </main>
     <%- include('partials/footer')%>
 </body>
+=======
+
+    <body>
+        <%- include('partials/header')%>
+            <main class="main_create">
+                <body class="bodyRegister">
+                        <form method="POST" action="/products/create" enctype='multipart/form-data' class="formulario">
+                            <h1>Formulario de creación de productos</h1>
+                            <div class="contenedor">
+                                <div class="input-contenedor"></div>
+                                <input type="text" placeholder="Nombre del producto" name="name">
+                            </div>
+                            <div class="contenedor">
+                                <div class="input-contenedor"></div>
+                                <input type="text" placeholder="Descripción" name="description">
+                            </div>
+                            <div class="contenedor">
+                                <div class="input-contenedor"></div>
+                                <input type="text" placeholder="Precio" name="price">
+                            </div>
+                            <div class="contenedor">
+                                <div class="input-contenedor"></div>
+                                <input type="text" placeholder="Cantidad" name="cantidad">
+                            </div>
+                            <div class="contenedor">
+                                <div class="input-contenedor"></div>
+                                <input type="text" placeholder="Categoría" name="category">
+                            </div>
+                            <div class="contenedor">
+                                <div class="input-contenedor"></div>
+                                <input type="file" name="img">
+                            </div>
+                            <input type="submit" value="Guardar producto" class="button">
+             </form>
+         <%- include('partials/footer')%>
+     </body>
+>>>>>>> 57564ec456b10a820bb760859a1ab0b5d2024b14
 </html>
