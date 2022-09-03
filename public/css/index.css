@@ -178,6 +178,7 @@ header a:hover {
 }
 
 footer {
+    width: 100%;
     background-color: rgba(230, 230, 230);
 }
 

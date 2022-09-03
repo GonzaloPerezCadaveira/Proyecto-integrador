@@ -6,15 +6,18 @@
 
 body{
     background-color: #FCF8E8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 /*Inicio del Main*/
 main{
     display: flex;
     width: 75%;
-    margin: 6% 19%;
+    margin: 6% 0;
     padding-top: 7vw;
     color: #FCF8E8;
-
+    background-color: rgba(30, 30, 30);
 }
 
 main #boton-comprar{
