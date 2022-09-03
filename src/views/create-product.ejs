@@ -7,16 +7,21 @@
         <form method="POST" action="/products/create" enctype='multipart/form-data'>
             <div class="formulario">
                 <input type="text" name="name" placeholder="Nombre del Producto">
-                <input type="number" name="precio" placeholder="Precio">               
+                <input type="number" name="price" placeholder="Precio">
+                <select name="id_cat" id="">
+                    <% catBase.forEach(function(element){ %>
+                        <option value="<%= element.id %>"><%= element.name %></option>
+                    <% })%>
+                </select>               
             </div>
             <div class="formulario">
-                <input type="number" name="cantindad" placeholder="Cantidad">
-                <input type="text" name="descuento" placeholder="Descuento">
+                <input type="number" name="cant" placeholder="Cantidad">
+                <input type="text" name="desc" placeholder="Descuento">
             </div>
             <div class="formulario" id="form-footer">
 
                 <input type="file" name="img">
-                <input type="text" name="descripcion" placeholder="Descripcion del Producto">
+                <input type="text" name="description" placeholder="Descripcion del Producto">
                 <button id="creado" type="submit" >Guardar Producto</button>
             </div>        
         </form>

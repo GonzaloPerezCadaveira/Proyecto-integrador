@@ -2,12 +2,16 @@
 <html lang="en">
     <%- include('partials/head') %>
 <body>
-    <!-- <%- include('partials/header') %> -->
+    <%- include('partials/header') %>
     <main>
-        <img src="/image/<%= producto.img %>" alt="<%= producto.name %>">
+        <div id="photo">
+            <img src="/image/<%= producto.img %>" alt="<%= producto.name %>">
+        </div>
         <div id="descripcion">
-            <h2><%= producto.name %></h2>
-            <b>$<%= producto.precio %></b>
+            <section>
+                <h2><%= producto.name %></h2>
+                <b>$<%= producto.precio %></b>
+            </section>
             <div class="envio-retiro">
                 <ul type="none">
                     <li><i class="fa-solid fa-shop"></i><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate debitis quos saepe ipsum beatae, commodi amet.</p></li>
@@ -15,20 +19,20 @@
                 </ul>
             </div>
             <div id="opcion-bebida">
-                <label for="opcion-bebida">Opcion</label>
-                <select name="opcion-bebida" id="envio-retiro">
+                <!--<label for="opcion-bebida">Opcion</label>
+                 <select name="opcion-bebida" id="envio-retiro">
                     <% productoBase.forEach(function(element){ %>
                         <option value="<%= element %>"><%= element.name %></option>
                     <%}) %>
-                </select>
+                </select> -->
             </div>
             <div id="sel-cant">
-                <label for="">Cantidades</label>
+                <!-- <label for="">Cantidades</label>
                 <select name="cantidad" id="cantidades">
                     <% for(var i=0;i<=producto.cantidad;i++){ %>
                         <option value="<%= i %>"><%= i  %></option>
                     <% } %>
-                </select>
+                </select> -->
             </div>
             <div id="boton-compra">
                 <button>Comprar!</button>

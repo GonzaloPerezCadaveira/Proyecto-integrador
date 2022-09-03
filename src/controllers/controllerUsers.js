@@ -51,27 +51,23 @@ const controller={
         }
     },
     validateUser: (req,res) => {
-        const validateUser = req.body;
-        const user = userBase.find(user => user.email === validateUser.email);
-        console.log('USER: ', user)
-        if (user) {
-            if (bcrypt.compareSync(validateUser.password, user.password)){
-                res.cookie('auth', true)
-                console.log("Contraseña validada")
-                res.render('index',{
-                    productoBase,
-                    titulo:'Carpincho Drinks',
-                    enlace:'css/style_index.css'
-                })
-            }
+
+            //     res.render('index',{
+            //         productoBase,
+            //         titulo:'Carpincho Drinks',
+            //         enlace:'css/style_index.css'
+            //     })
+            // },{
+
+            // }
+            // res.cookie('auth', false)
+            // res.render('login', {
+            //     titulo:'Login',
+            //     loginError: 'Credenciales inválidas',
+            //     enlace:'css/styles.css'
+            // })
         }
-        res.cookie('auth', false)
-        res.render('login', {
-            titulo:'Login',
-            loginError: 'Credenciales inválidas',
-            enlace:'css/styles.css'
-        })
-    }
+    
    
 };
 

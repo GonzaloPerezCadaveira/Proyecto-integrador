@@ -3,8 +3,10 @@ const fs = require('fs');
 const { nextTick } = require('process');
 
 const productoData = path.join(__dirname, '../database/productsData.json')
+const catData = path.join(__dirname, '../database/categories.json')
 
 const productoBase = JSON.parse(fs.readFileSync(productoData, 'utf-8'))
+const catBase = JSON.parse(fs.readFileSync(catData, 'utf-8'))
 
 const controller = {
     productsList: (req, res) => {
@@ -24,6 +26,7 @@ const controller = {
     },
     create: (req, res) => {
         res.render('create-product', {
+            catBase,
             titulo: 'Creacion de Producto',
             enlace: '/css/crear_prod.css'
         });

@@ -1,0 +1,14 @@
+[
+    {
+        "id":1,
+        "name":"cerveza"
+    },
+    {
+        "id":2,
+        "name":"vino"
+    },
+    {
+        "id":3,
+        "name":"licor"
+    }
+]
