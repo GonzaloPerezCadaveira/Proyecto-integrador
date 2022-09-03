@@ -11,11 +11,7 @@
  },
  {
   "id": 1,
-<<<<<<< HEAD
   "name": "DV Catena Cabernet Malbec",
-=======
-  "name": "DV Catena Cabernet",
->>>>>>> 57564ec456b10a820bb760859a1ab0b5d2024b14
   "cantidad": 1,
   "img": "producto-vino2.jpg",
   "precio": "1.620",
@@ -32,7 +28,6 @@
   "descripcion": "Beefeater Pink Strawberry es la nueva ginebra rosa fabricada con la receta original de Beefeater London Dry más el aroma de fresa natural para darle un intenso y delicioso sabor a fresa."
  },
  {
-<<<<<<< HEAD
   "name": "Cerveza industrial",
   "precio": "450",
   "usuario": "6",
@@ -46,37 +41,12 @@
   "name": "Chandon 1l",
   "precio": "2200",
   "usuario": "10",
-=======
   "id": 4,
-  "name": "Chandon",
-  "precio": "$2200",
->>>>>>> 57564ec456b10a820bb760859a1ab0b5d2024b14
   "descuento": "Sin oferta",
   "img": "producto-champagne2.jpg",
   "descripcion": "Chandon de las ovas mas fianas de mendoza , seleccionada tallo por tallo"
  },
- {
-  "id": 5,
-<<<<<<< HEAD
-  "img": "img1660090832896.jpg",
-  "cantidad": "3"
- },
- {
-  "name": "Vino barato 1",
-  "precio": "500",
-  "id_cat": "1",
-  "cantindad": "2",
-  "descuento": "Sin oferta",
-  "descripcion": "Vino demasiado barato ",
-  "id": 6,
-  "img": "img1661989276762.jpg",
-=======
-  "name": "Budweiser pack",
-  "precio": "$1500",
-  "descuento": "Sin oferta",
-  "img": "producto-cerveza2.jpg",
-  "descripcion": "Budweiser es una de las cervezas más icónicas e internacionales. Esta American Lager se mantiene fiel a su receta original de 1876. Además de la malta y el lúpulo, el ingrediente clave es el arroz, que le aporta ese frescor característico y sabor ligero."
- },
+
  {
   "id": 6,
   "name": "Patagonia Amber Lager",
@@ -132,6 +102,5 @@
   "descuento": "Sin oferta",
   "img": "producto-vino6.jpg",
   "descripcion": "En nariz presenta aromas de buena madera, con apariciones de fruta madura como la ciruela y toques de chocolate y moka. En boca, un ataque brutal al paladar. Algo dulce y carnoso de muy buen equilibrio y acidez con taninos muy marcados pero suaves, que dan un final persistente."
->>>>>>> 57564ec456b10a820bb760859a1ab0b5d2024b14
  }
 ]
