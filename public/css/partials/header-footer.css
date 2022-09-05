@@ -1,4 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&display=swap');
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.body {
+    background-image: url("/image/banner2.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
 header {
     background-color: rgba(30, 30, 30);
 }
@@ -37,27 +56,9 @@ header a:hover {
     color: white;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
-h1 {
-    font-size: 3.5em;
-}
-
-h2 {
-    font-size: 3em;
-}
-
-h3 {
-    font-size: 2em;
-}
-
-p {
-    font-size: 2em;
-}
-
 footer {
+    position: relative;
+    bottom: 0%;
     width: 100%;
     background-color: rgba(230, 230, 230);
 }
@@ -73,4 +74,31 @@ footer .container {
     display: flex;
     justify-content: center;
     align-items: flex-end;
+}
+
+@media (min-width:720px) {
+    header {
+        width: 100%;
+    }
+
+    header .container {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: center;
+    }
+
+    header nav {
+        flex-direction: row;
+        padding-bottom: 0;
+        padding-right: 30px;
+    }
+
+    #hero h1 {
+        font-size: 3.8em;
+    }
+
+
+    footer .container {
+        justify-content: flex-end;
+    }
 }

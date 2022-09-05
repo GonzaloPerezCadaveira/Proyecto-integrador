@@ -10,7 +10,7 @@ const controller={
         res.render('index', {
             productoBase,
             titulo:'Carpincho Drinks',
-            enlace:'css/index.css'
+            enlace:'/css/index.css'
         });
     }
 

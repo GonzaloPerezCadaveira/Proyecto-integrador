@@ -1,23 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
-}
-
-.body {
-    background-image: url("/image/banner2.jpg");
-    background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: center center;
-}
 
 html {
     scroll-behavior: smooth;
@@ -61,43 +42,6 @@ button:hover {
     margin: auto;
 }
 
-header {
-    background-color: rgba(30, 30, 30);
-}
-
-header #logo {
-    margin: 0;
-    padding: 25px 30px;
-    color: white;
-    font-weight: bold;
-    font-size: 2em;
-}
-
-header .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-header nav {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    padding-bottom: 25px;
-    align-items: center;
-}
-
-header a {
-    padding: 5px 12px;
-    text-decoration: none;
-    font-style: normal;
-    font-weight: bold;
-    color: yellow
-}
-
-header a:hover {
-    color: white;
-}
 
 #hero {
     display: flex;
@@ -176,147 +120,13 @@ header a:hover {
             rgba(0, 0, 0, 0.5)), url("/image/index-gin.jpg");
 }
 
-footer {
-    width: 100%;
-    background-color: rgba(230, 230, 230);
-}
 
-footer p {
-    margin: 0;
-    color: rgba(100, 100, 100);
-    padding: 12px;
-}
-
-footer .container {
-    height: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-}
 
 .main_create {
     justify-content: center;
     margin: auto;
     text-align: center;
 }
-
-/* ESTILOS DE LA SECCIÓN DE PRODUCTOS */
-
-/* .titular {
-    font-size: 20px;
-    color: white;
-    text-align: center;
-    margin: auto;
-    padding: 20px;
-}
-
-.main_products {
-    justify-content: center;
-    margin: auto;
-    background-color: black;
-}
-
-.producto img,
-.producto div {
-    width: 100%;
-}
-
-main article.producto {
-    margin: 10px;
-}
-
-.precio_descripcion {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    justify-content: space-between;
-}
-
-div p.precio {
-    width: 30%;
-    text-align: start;
-}
-
-a {
-    text-decoration: none;
-    color: black;
-    text-align: start
-}
-
-main article div.contenedor-articulo {
-    position: relative;
-    padding: 10px;
-}
-
-main article div.contenedor-articulo i {
-    background-color: #FFF;
-    display: block;
-    color: black;
-    font-size: 15px;
-    padding: 5px;
-    width: 30px;
-    height: 30px;
-    position: absolute;
-    right: 20px;
-    top: -15px;
-}
-
-main article div.contenedor-articulo {
-    width: 100%;
-    background-color: #FFF;
-    border-top: 1px solid #ebebeb;
-    margin-top: -3px;
-    padding: 5px;
-    border-radius: 2px;
-}
-
-.nombre_producto {
-    font-size: 15px;
-    text-align: left;
-    font-weight: bold;
-}
-
-.precio {
-    width: 30%;
-    color: rgb(20, 20, 20);
-    font-size: 15px;
-}
-
-
-main section article {
-    transition: all 800ms;
-}
-
-main section article:hover {
-    box-shadow: 0px 0px 20px white;
-}
-
-
-main article div.contenedor-articulo:hover i {
-    transform: rotateX(1turn);
-    transition: all 800ms;
-}
-
-.productos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-section .producto {
-    width: 60%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-} */
-
-@media (min-width:425px) {
-    /* section .producto {
-        width: 40%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-    } */
 
     @media (min-width:720px) {
         header {
@@ -391,21 +201,4 @@ section .producto {
         footer .container {
             justify-content: flex-end;
         }
-
-        /* section .producto {
-            width: 30%;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-
-        @media (min-width:1200px) {
-            section .producto {
-                width: 20%;
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: space-between;
-            }
-        } */
     }
-}

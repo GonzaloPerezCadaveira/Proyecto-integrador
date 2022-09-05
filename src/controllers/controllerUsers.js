@@ -17,7 +17,7 @@ const controller={
         res.render('register', {
             titulo:'Register',
             registerError:"",
-            enlace:'css/register.css'
+            enlace:'/css/register.css'
         });
     },
     
@@ -25,7 +25,7 @@ const controller={
         res.render('login',{
             titulo:'Login',
             loginError: '',
-            enlace:'css/styles.css'
+            enlace:'/css/register.css'
         });
     },
 
@@ -46,7 +46,7 @@ const controller={
             res.render ('register', {
                 titulo:'Register',
                 registerError:"Email ya registrado",
-                enlace:'css/registro.css'
+                enlace:'/css/register.css'
             })
         }
     },
