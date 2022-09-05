@@ -17,7 +17,7 @@ const controller={
         res.render('register', {
             titulo:'Register',
             registerError:"",
-            enlace:'css/registro.css'
+            enlace:'css/register.css'
         });
     },
     

@@ -13,7 +13,7 @@ const controller = {
         res.render('productsList', {
         titulo: 'Carta de bebidas',
         productos:productoBase,
-        enlace: '/css/productsList'})
+        enlace: '/css/productsList.css'})
     },
     detail: (req, res) => {
         const idprod = req.params.id;

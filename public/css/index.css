@@ -116,7 +116,6 @@ header a:hover {
     color: white;
 }
 
-
 #somosCarpi .container {
     text-align: center;
     padding: 200px 12px
@@ -203,7 +202,7 @@ footer .container {
 
 /* ESTILOS DE LA SECCIÓN DE PRODUCTOS */
 
-.titular {
+/* .titular {
     font-size: 20px;
     color: white;
     text-align: center;
@@ -309,15 +308,15 @@ section .producto {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-}
+} */
 
 @media (min-width:425px) {
-    section .producto {
+    /* section .producto {
         width: 40%;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
-    }
+    } */
 
     @media (min-width:720px) {
         header {
@@ -393,7 +392,7 @@ section .producto {
             justify-content: flex-end;
         }
 
-        section .producto {
+        /* section .producto {
             width: 30%;
             display: flex;
             flex-wrap: wrap;
@@ -407,6 +406,6 @@ section .producto {
                 flex-wrap: wrap;
                 justify-content: space-between;
             }
-        }
+        } */
     }
 }

@@ -5,7 +5,7 @@
   "cantidad": 1,
   "cat": "licores",
   "img": "producto-licor1.jpg",
-  "precio": "549,99",
+  "precio": "$549,99",
   "descuento": "En oferta",
   "descripcion": "Americano Gancia es un aperitivo que se caracteriza por la presencia de sabores herbáceos y cítricos que se combinan con los del vino blanco y el alcohol. El sabor amargo de las hierbas se mezcla con el dulzor del azúcar logrando una bebida amable, agradable al beber, equilibrada y de gran personalidad."
  },
@@ -14,7 +14,7 @@
   "name": "DV Catena Cabernet Malbec",
   "cantidad": 1,
   "img": "producto-vino2.jpg",
-  "precio": "1.620",
+  "precio": "$1.620",
   "descuento": "En oferta",
   "descripcion": "Es un vino elegante y complejo, de color rojo rubí con reflejos violetas. A la nariz, intenso y concentrado, presenta notas de especias aportadas por el Cabernet Sauvignon del viñedo La Pirámide, y notas de moras maduras y ciruelas, características del Malbec del viñedo Angélica, acompañadas por vainilla, tabaco y licor aportadas por la crianza en roble."
  },
@@ -23,13 +23,13 @@
   "name": "Beefeater Pink",
   "cantidad": 1,
   "img": "producto-licor2.jpg",
-  "precio": "3.800",
+  "precio": "$3.800",
   "descuento": "Sin oferta",
   "descripcion": "Beefeater Pink Strawberry es la nueva ginebra rosa fabricada con la receta original de Beefeater London Dry más el aroma de fresa natural para darle un intenso y delicioso sabor a fresa."
  },
  {
   "name": "Cerveza industrial",
-  "precio": "450",
+  "precio": "$450",
   "usuario": "6",
   "id_cat": 1,
   "descuento": "En oferta",
@@ -39,7 +39,7 @@
  },
  {
   "name": "Chandon 1l",
-  "precio": "2200",
+  "precio": "$2200",
   "usuario": "10",
   "id": 4,
   "descuento": "Sin oferta",
