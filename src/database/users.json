@@ -40,5 +40,25 @@
   "email": "alvarezagusnx@gmail.com",
   "password": "$2a$10$3AlSUc2utYUeT63Gq3Q1dumwgdoNb33AyV2j.XVI1Szg3aovVehXK",
   "id": "c322bbf4-508a-4d7f-a4a8-fa674721c900"
+ },
+ {
+  "user_name": "Mariano Girondo",
+  "user_email": "mgirondo@gmail.com",
+  "user_password": "12345",
+  "password": "$2a$10$PUVZ/s5gqf7KUjqoBH./pORqNZl6QDv0U72Gpjifa0Kt9l12zh60q",
+  "id": "22765873-c489-4ff6-8a6b-1cc7fa929fb9"
+ },
+ {
+  "user_name": "Ignacio Paruolo",
+  "user_email": "ignap@hotmail.com",
+  "user_password": "12345",
+  "password": "$2a$10$Jh85NT8R4iK7YexHsx9KD.mviiRy0l.3LBT.L/76tR.Iy946eflKG",
+  "id": "75c08b7d-862a-43ab-b3cb-15b26eb85c43"
+ },
+ {
+  "user_name": "Emilio Rodriguez",
+  "user_email": "emiliorod@hotmail.com",
+  "user_password": "$2a$10$lE.pqlHBh./bQjaqy45Mc.sZigdv2z0GYr89B7.dKNAG04hkpAB36",
+  "id": "a1d937c9-0977-43c4-9289-303644cc2118"
  }
 ]

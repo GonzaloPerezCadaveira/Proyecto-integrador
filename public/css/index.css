@@ -1,5 +1,4 @@
 
-
 html {
     scroll-behavior: smooth;
 }
@@ -120,13 +119,6 @@ button:hover {
             rgba(0, 0, 0, 0.5)), url("/image/index-gin.jpg");
 }
 
-
-
-.main_create {
-    justify-content: center;
-    margin: auto;
-    text-align: center;
-}
 
     @media (min-width:720px) {
         header {

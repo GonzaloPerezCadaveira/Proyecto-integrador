@@ -1,14 +1,16 @@
 const express = require ('express');
-const app = express()
-const methodOverride= require('method-override')
+const app = express();
+const methodOverride= require('method-override');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
-const { verifyAuth } = require('./src/middlewares/auth')
+const { verifyAuth } = require('./src/middlewares/auth');
+
+// Routers
 const homeRouter = require("./routers/home");
 const productsRouter = require("./routers/products");
 const usersRouter = require('./routers/users')
 
-
+// Template engine
 app.set('view engine', 'ejs');
 
 // En caso de que querramos llamar a la carpeta con otro nombre :
@@ -26,15 +28,12 @@ app.use(methodOverride('_method'));
 app.use(verifyAuth)
 
 app.listen (3050, () => { 
-console.log ('servidor corriendo')
+console.log ('Servidor corriendo en puerto 3050')
 })
 
 app.use("/", homeRouter);
-
 app.use("/products", productsRouter);
-
 app.use("/user", usersRouter);
-
 app.use("/", usersRouter)
 
 

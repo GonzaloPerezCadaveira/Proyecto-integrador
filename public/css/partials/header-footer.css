@@ -20,6 +20,7 @@ body {
 }
 header {
     background-color: rgba(30, 30, 30);
+    width: 100%;
 }
 
 header #logo {
@@ -100,5 +101,6 @@ footer .container {
 
     footer .container {
         justify-content: flex-end;
+        width:100%
     }
 }

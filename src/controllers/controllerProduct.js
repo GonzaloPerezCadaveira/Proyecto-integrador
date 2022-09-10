@@ -28,7 +28,7 @@ const controller = {
         res.render('create-product', {
             catBase,
             titulo: 'Creacion de Producto',
-            enlace: '/css/crear_prod.css'
+            enlace: '/css/register.css'
         });
     },
     carrito: (req, res) => {

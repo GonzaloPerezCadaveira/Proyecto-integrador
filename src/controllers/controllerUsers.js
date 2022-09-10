@@ -1,8 +1,9 @@
 const path = require("path");
 const fs = require("fs");
-const bcrypt = require("bcryptjs")
+const bcrypt = require("bcryptjs");
 const { v4: uuidv4 } = require('uuid');
-const session = require("express-session")
+const session = require("express-session");
+const { validationResult } = require('express-validator')
 
 const userData= path.join(__dirname, '../database/users.json')
 
@@ -31,11 +32,11 @@ const controller={
 
     nuevoUser:(req,res)=>{
         const nuevoUser = req.body;
-        const emailExist = userBase.find (user => user.email === nuevoUser.email);
+        const emailExist = userBase.find (user => user.user_email === nuevoUser.user_email);
         if (!emailExist) {
             const nuevoUserId = uuidv4();
-            const passEncriptada = bcrypt.hashSync(req.body.password,10);
-            nuevoUser.password = passEncriptada;
+            const passEncriptada = bcrypt.hashSync(req.body.user_password, 10);
+            nuevoUser.user_password = passEncriptada;
             nuevoUser.id = nuevoUserId;
             console.log(nuevoUser);
             userBase.push(nuevoUser);

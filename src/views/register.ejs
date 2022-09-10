@@ -4,25 +4,32 @@
 
     <body class="bodyRegister">
         <%- include('partials/header') %>
-
-            <form class="formulario" action="/register" method="POST">
+        
+            <form class="formulario" action="/register" method="POST" enctype="multipart/form-data">
                 <h1>Registrate</h1>
+                <p class="etiqueta">Nombre y apellido</p>
                 <div class="contenedor">
-                    <div class="input-contenedor"></div>
                     <i class="fa-solid fa-user icon"></i>
-                    <input type="text" placeholder="Nombre y Apellido" name="name">
+                    <input type="text" name="user_name" required>
+                    <div class="text-error">
+                    </div>
                 </div>
-
+                <p class="etiqueta">Correo electrónico</p>
                 <div class="contenedor">
-                    <div class="input-contenedor"></div>
                     <i class="fa-solid fa-at icon"></i>
-                    <input type="text" placeholder="Correo electrónico" name="email">
+                    <input type="email" name="user_email" required>
+                    <div class="text-error">
+                    </div>
                 </div>
-
+                <p class="etiqueta">Contraseña</p>
                 <div class="contenedor">
-                    <div class="input-contenedor"></div>
                     <i class="fa-solid fa-key icon"></i>
-                    <input type="password" placeholder="Contraseña" name="password">
+                    <input type="password" name="user_password" required>
+                </div>
+                <p class="etiqueta">Imagen de perfil</p>
+                <div class="contenedor">
+                    <i class="fa-regular fa-image icon"></i>
+                    <input type="file" name="user_img" accept=".jpg, .png, jpng" required>
                 </div>
                 <div class="register-error">
                     <p> <%=registerError%>
@@ -30,7 +37,9 @@
                 </div>
                 <input type="submit" value="Registrate" class="button">
                 <p>Al registrarte como usuario aceptas nuestras condiciones de uso y politica de Privacidad</p>
-                <p>¿Ya tenés cuenta?<a class="link" href="/user/login">Iniciar sesión</a></p>
+                <p>¿Ya tenés cuenta?
+                    <a class="link" href="/user/login">Iniciar sesión</a>
+                </p>
             </div> 
         </form>
         <%- include('partials/footer')%>

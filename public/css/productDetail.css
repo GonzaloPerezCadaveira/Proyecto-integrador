@@ -29,6 +29,11 @@ main #photo{
     width: 100%;
 }
 
+.container.product{
+    display:flex;
+    flex-direction: row;
+}
+
 #photo img{
     width: 80%;
     margin:0 2vw;

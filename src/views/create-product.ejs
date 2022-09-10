@@ -1,49 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('partials/head') %>
-<<<<<<< HEAD
-<body>
-    <%- include('partials/header')%>
-    <main>
-        <form method="POST" action="/products/create" enctype='multipart/form-data'>
-            <div class="formulario">
-                <input type="text" name="name" placeholder="Nombre del Producto">
-                <input type="number" name="price" placeholder="Precio">
-                <select name="id_cat" id="">
-                    <% catBase.forEach(function(element){ %>
-                        <option value="<%= element.id %>"><%= element.name %></option>
-                    <% })%>
-                </select>               
-            </div>
-            <div class="formulario">
-                <input type="number" name="cant" placeholder="Cantidad">
-                <input type="text" name="desc" placeholder="Descuento">
-            </div>
-            <div class="formulario" id="form-footer">
-
-                <input type="file" name="img">
-                <input type="text" name="description" placeholder="Descripcion del Producto">
-                <button id="creado" type="submit" >Guardar Producto</button>
-            </div>        
-        </form>
-    </main>
-    <%- include('partials/footer')%>
-</body>
-=======
 
     <body>
         <%- include('partials/header')%>
-            <main class="main_create">
+            
                 <body class="bodyRegister">
                         <form method="POST" action="/products/create" enctype='multipart/form-data' class="formulario">
                             <h1>Formulario de creación de productos</h1>
+                            <p class="etiqueta">Nombre del producto</p>
                             <div class="contenedor">
                                 <div class="input-contenedor"></div>
-                                <input type="text" placeholder="Nombre del producto" name="name">
+                                <input type="text" name="name">
                             </div>
+                            <p class="etiqueta">Descripción</p>
                             <div class="contenedor">
                                 <div class="input-contenedor"></div>
-                                <input type="text" placeholder="Descripción" name="description">
+                                <textarea type="text" name="description"> </textarea>
                             </div>
                             <div class="contenedor">
                                 <div class="input-contenedor"></div>
@@ -63,7 +36,7 @@
                             </div>
                             <input type="submit" value="Guardar producto" class="button">
              </form>
+           
          <%- include('partials/footer')%>
      </body>
->>>>>>> 57564ec456b10a820bb760859a1ab0b5d2024b14
 </html>

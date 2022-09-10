@@ -46,7 +46,6 @@
   "img": "producto-champagne2.jpg",
   "descripcion": "Chandon de las ovas mas fianas de mendoza , seleccionada tallo por tallo"
  },
-
  {
   "id": 6,
   "name": "Patagonia Amber Lager",
@@ -103,4 +102,5 @@
   "img": "producto-vino6.jpg",
   "descripcion": "En nariz presenta aromas de buena madera, con apariciones de fruta madura como la ciruela y toques de chocolate y moka. En boca, un ataque brutal al paladar. Algo dulce y carnoso de muy buen equilibrio y acidez con taninos muy marcados pero suaves, que dan un final persistente."
  }
+
 ]
