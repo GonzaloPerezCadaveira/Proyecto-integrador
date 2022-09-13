@@ -31,18 +31,19 @@ main #photo{
 
 .container.product{
     display:flex;
+    flex-wrap: wrap;
     flex-direction: row;
 }
 
 #photo img{
-    width: 80%;
+    width: 50%;
     margin:0 2vw;
     min-width: 300px;
     min-height: 300px;
 }
 
 #descripcion{
-    width: 100%;
+    width: 50%;
     flex-grow: 1;
     margin:0px 2%;
 }

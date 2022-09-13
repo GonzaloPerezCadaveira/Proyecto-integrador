@@ -4,44 +4,65 @@
 
     <body class="bodyRegister">
         <%- include('partials/header') %>
-        
             <form class="formulario" action="/register" method="POST" enctype="multipart/form-data">
-                <h1>Registrate</h1>
+                <h1>¡Creá tu cuenta!</h1>
                 <p class="etiqueta">Nombre y apellido</p>
                 <div class="contenedor">
                     <i class="fa-solid fa-user icon"></i>
-                    <input type="text" name="user_name" required>
-                    <div class="text-error">
+                    <input type="text" name="user_name" value="<%= locals.old && old.user_name? old.user_name : '' %>">
+                    <% if(locals.errors && errors.user_name){ %>
+                        <p class="erroresLocales">
+                            <%= errors.user_name.msg %>
+                        </p>
+                        <% }; %>
+                </div>
+                
+                    <p class="etiqueta">Correo electrónico</p>
+                    <div class="contenedor">
+                        <i class="fa-solid fa-at icon"></i>
+                        <input type="email" name="user_email"
+                            value="<%= locals.old && old.user_email? old.user_email : '' %>">
+                            <% if(locals.errors && errors.user_email){ %>
+                                <p class="erroresLocales">
+                                    <%= errors.user_email.msg %>
+                                </p>
+                            <% } %>
                     </div>
-                </div>
-                <p class="etiqueta">Correo electrónico</p>
-                <div class="contenedor">
-                    <i class="fa-solid fa-at icon"></i>
-                    <input type="email" name="user_email" required>
-                    <div class="text-error">
-                    </div>
-                </div>
-                <p class="etiqueta">Contraseña</p>
-                <div class="contenedor">
-                    <i class="fa-solid fa-key icon"></i>
-                    <input type="password" name="user_password" required>
-                </div>
-                <p class="etiqueta">Imagen de perfil</p>
-                <div class="contenedor">
-                    <i class="fa-regular fa-image icon"></i>
-                    <input type="file" name="user_img" accept=".jpg, .png, jpng" required>
-                </div>
-                <div class="register-error">
-                    <p> <%=registerError%>
-                    </p>
-                </div>
-                <input type="submit" value="Registrate" class="button">
-                <p>Al registrarte como usuario aceptas nuestras condiciones de uso y politica de Privacidad</p>
-                <p>¿Ya tenés cuenta?
-                    <a class="link" href="/user/login">Iniciar sesión</a>
-                </p>
-            </div> 
-        </form>
-        <%- include('partials/footer')%>
-</body>
+                            <p class="etiqueta">Contraseña</p>
+                            <div class="contenedor">
+                                <i class="fa-solid fa-key icon"></i>
+                                <input type="password" name="user_password" autocorrect="off" autocapitalize="off"
+                                    value="<%= locals.old && old.user_password? old.user_password : '' %>">
+                                    <% if(locals.errors && errors.user_password){ %>
+                                        <p class="erroresLocales">
+                                            <%= errors.user_password.msg %>
+                                        </p>
+                                        <% }; %>
+                            </div>
+                                    <p class="etiqueta">Imagen de perfil</p>
+                                    <div class="contenedor">
+                                        <i class="fa-regular fa-image icon"></i>
+                                        <input type="file" name="user_img" accept=".jpg, .png, .jpng" required>
+                                    </div>
+                                    <% if(locals.error){ %>
+                                        <p class="erroresLocales">
+                                            <%= locals.error %>
+                                        </p>
+                                        <% } %>
+                                            <div class="register-error">
+                                                <p class="erroresLocales">
+                                                    <%=registerError%>
+                                                </p>
+                                            </div>
+                                            <input type="submit" value="Registrate" class="button">
+                                            <p>Al registrarte como usuario aceptas nuestras condiciones de uso y
+                                                politica de Privacidad</p>
+                                            <p>¿Ya tenés cuenta?
+                                                <a class="link" href="/user/login">Iniciar sesión</a>
+                                            </p>
+                                            </div>
+            </form>
+            <%- include('partials/footer')%>
+    </body>
+
 </html>

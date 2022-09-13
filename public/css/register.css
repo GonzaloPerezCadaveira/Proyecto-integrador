@@ -43,6 +43,13 @@ body{
     text-align: center;
 }
 
+.erroresLocales{
+    color:red;
+    font-size:14px;
+    text-align: center;
+    padding:5px;
+}
+
 h1{
     text-align: center;
     color:#1a2537;
@@ -69,6 +76,7 @@ input .contenedor{
     margin-bottom: 15px;
     border:1px solid #aaa;
 }
+
 
 .icon{
     min-width: 50px;

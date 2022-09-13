@@ -18,9 +18,9 @@ router.get("/login", userController.login)
 router.get("/register", userController.register)
 
 // Procesar el registro
-router.post("/register", uploadFile.single('user_img'), validations.reg, userController.nuevoUser)
+router.post("/register", uploadFile.single('user_img'), validations, userController.nuevoUser)
 
 // Valida el ingreso de un usuario
-router.post("/login", validations.log, userController.validateUser)
+router.post("/login", userController.validateUser)
 
 module.exports = router;
