@@ -1,37 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
     <%- include('partials/head') %>
-<body>
+<body class="bodyChart">
     <%- include('partials/header') %>
 <main class="principal">
-    <h1>Carrito</h1>
-    <br> </br>
-    <div> <ul class="main">
-        <li class="producto">Producto 
+    <form class="formulario">
+        <h1>Carrito</h1>
         <br> </br>
-       <img width = 30% src="/image/vino.jpeg"> 
-       <span class= "Vino">Descripcion del producto</span></li> 
-        <li class="cantidad"> Cantidad <div> 
-            <br></br>
-            <input type="button" value="-">
-            <input type="button" value= "cantidad">
-            <input type="button" value="+" > </div> 
-            <br></br>
-            <br></br>
-            <div>Total del Carrito</div>
-        </li>
-        <li class="subtotal"> Subtotal <div> 
+        <div class="product">
+            <h3>Nombre producto</h3> 
+            <br> </br>
+            <div class="productData">
+                <div class="divImg">
+                    <img src="/image/vino.jpeg" class="img"> 
+                </div>
+                <div class="divDescription">
+                    <span class="description">Descripcion del producto</span>
+                </div>
+                <div class="divAmount">
+                    <br></br>
+                    <p>Cantidad</p>
+                    <div>
+                        <input type="button" value="-">
+                        <input type="button" value= "cantidad">
+                        <input type="button" value="+">
+                    </div>
+                </div>
+                <div class="divSubtotal">
+                    <br></br>
+                    <p>Subotal</p>
+                    <i class="fa-solid fa-dollar-sign"></i>
+                    <input type="button" value="textarea">
+                </div>
+            </div>               
+        </div>
+        <br>
+        <div class="product">
+            <h3>Nombre producto</h3> 
+            <br> </br>
+            <div class="productData">
+                <div class="divImg">
+                    <img src="/image/producto-cerveza2.jpg" class="img"> 
+                </div>
+                <div class="divDescription">
+                    <span class="description">Descripcion del producto</span>
+                </div>
+                <div class="divAmount">
+                    <br></br>
+                    <p>Cantidad</p>
+                    <div>
+                        <input type="button" value="-">
+                        <input type="button" value= "cantidad">
+                        <input type="button" value="+">
+                    </div>
+                </div>
+                <div class="divSubtotal">
+                    <br></br>
+                    <p>Subotal</p>
+                    <i class="fa-solid fa-dollar-sign"></i>
+                    <input type="button" value="textarea">
+                </div>
+            </div>               
+        </div>
+
         <br></br>
-        <i class="fa-solid fa-dollar-sign"></i>
-        <input type="button" value="textarea"></div>
         <br></br>
-        <br></br>
-        <div><i class="fa-solid fa-dollar-sign"></i>
-        <input type="button" value="textarea">
-        </div></li>
-        </ul> </div>
-        <br></br>
-        <div class="botonDePago" ><button class="pagar">Pagar</button></div>
+        <div class="total">
+            <div class="divTotal">
+                <h3>Total del Carrito</h3>
+                <i class="fa-solid fa-dollar-sign"></i>
+                <input type="button" value="textarea">
+            </div>
+            <div class="payButton" ><button class="pagar">Pagar</button></div>
+        </div>
+    </form>
 </main>
 <%- include('partials/footer')%>
 </body>

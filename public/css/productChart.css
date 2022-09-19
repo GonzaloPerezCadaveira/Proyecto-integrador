@@ -1,0 +1,56 @@
+*{
+    box-sizing: border-box;
+}
+
+.bodyChart{
+    background:url("/image/banner3.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.formulario{
+    max-width: 80%;
+    
+    margin: 10% auto;
+    padding:3px;
+}
+.product{
+    background-color: lightgrey;
+    border: black 5px solid;
+    border-radius: 3%;
+    padding: 10px;
+}
+.img{
+    width: 100%;
+}
+.productData{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(10px, auto);
+}
+.divImg{
+    grid-column: 1;
+    grid-row: 1 / 5;
+}
+.divDescription{
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+.divAmount{
+    grid-column: 2;
+    grid-row: 3 / 4;
+    align-items: auto;
+}
+.divSubtotal{
+    grid-column: 3;
+    grid-row: 3 / 5;
+}
+
+.total{
+    background-color: lightgrey;
+    border: black 5px solid;
+    border-radius: 3%;
+    padding: 10px;
+}

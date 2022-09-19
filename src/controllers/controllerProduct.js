@@ -34,7 +34,7 @@ const controller = {
     carrito: (req, res) => {
         res.render('carritoDeCompras', {
             titulo: 'Carrito',
-            enlace: 'css/styles.css'
+            enlace: '/css/productChart.css'
         });
     },
     store: (req, res) => {
