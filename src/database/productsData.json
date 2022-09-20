@@ -2,20 +2,20 @@
  {
   "id": 0,
   "name": "Aperitivo Gancia",
+  "categoría":3,
   "cantidad": 1,
-  "cat": "licores",
-  "img": "producto-licor1.jpg",
-  "precio": "$549,99",
-  "descuento": "En oferta",
-  "descripcion": "Americano Gancia es un aperitivo que se caracteriza por la presencia de sabores herbáceos y cítricos que se combinan con los del vino blanco y el alcohol. El sabor amargo de las hierbas se mezcla con el dulzor del azúcar logrando una bebida amable, agradable al beber, equilibrada y de gran personalidad."
+  "precio": "549",
+  "descuento": 0,
+  "descripcion": "Americano Gancia es un aperitivo que se caracteriza por la presencia de sabores herbáceos y cítricos que se combinan con los del vino blanco y el alcohol. El sabor amargo de las hierbas se mezcla con el dulzor del azúcar logrando una bebida amable, agradable al beber, equilibrada y de gran personalidad.",
+  "img": "producto-licor1.jpg"
  },
  {
   "id": 1,
   "name": "DV Catena Cabernet Malbec",
   "cantidad": 1,
   "img": "producto-vino2.jpg",
-  "precio": "$1.620",
-  "descuento": "En oferta",
+  "precio": "1620",
+  "descuento": 15,
   "descripcion": "Es un vino elegante y complejo, de color rojo rubí con reflejos violetas. A la nariz, intenso y concentrado, presenta notas de especias aportadas por el Cabernet Sauvignon del viñedo La Pirámide, y notas de moras maduras y ciruelas, características del Malbec del viñedo Angélica, acompañadas por vainilla, tabaco y licor aportadas por la crianza en roble."
  },
  {
@@ -23,82 +23,82 @@
   "name": "Beefeater Pink",
   "cantidad": 1,
   "img": "producto-licor2.jpg",
-  "precio": "$3.800",
-  "descuento": "Sin oferta",
+  "precio": "3800",
+  "descuento": 10,
   "descripcion": "Beefeater Pink Strawberry es la nueva ginebra rosa fabricada con la receta original de Beefeater London Dry más el aroma de fresa natural para darle un intenso y delicioso sabor a fresa."
  },
  {
   "name": "Cerveza industrial",
-  "precio": "$450",
+  "precio": "450",
   "usuario": "6",
   "id_cat": 1,
-  "descuento": "En oferta",
+  "descuento": 0,
   "img": "producto-cerveza2.jpg",
   "descripcion": "Cerveza artezanal del monte cordobes",
   "id": 3
  },
  {
-  "name": "Chandon 1l",
-  "precio": "$2200",
+  "name": "Chandon Delice",
+  "precio": "2200",
   "usuario": "10",
   "id": 4,
-  "descuento": "Sin oferta",
+  "descuento": 30,
   "img": "producto-champagne2.jpg",
   "descripcion": "Chandon de las ovas mas fianas de mendoza , seleccionada tallo por tallo"
  },
  {
-  "id": 6,
+  "id": 5,
   "name": "Patagonia Amber Lager",
-  "precio": "$800",
-  "descuento": "Sin oferta",
+  "precio": "800",
+  "descuento":0,
   "img": "producto-cerveza3.jpg",
   "descripcion": "Patagonia es una marca argentina de cerveza perteneciente a Patagonia Brewing Company. La misma apunta al sector de cervezas “premium”, produciendo variedades poco comunes como la Bohemian Pilsener y la Weisse."
  },
  {
-  "id": 7,
+  "id": 6,
   "name": "Baron B",
-  "precio": "$3500",
-  "descuento": "Sin oferta",
+  "precio": "3500",
+  "descuento": 20,
   "img": "producto-champagne1.jpeg",
   "descripcion": "Elaborado con las mejores uvas Chardonnay y Pinot Noir de nuestros excepcionales viñedos, Baron B Extra Brut se caracteriza por sus delicados aromas a damascos y frutos cítricos, en armonía con notas de pan tostado y frutos secos."
  },
  {
-  "id": 8,
+  "id": 7,
   "name": "Dom Perignon",
-  "precio": "$72000",
-  "descuento": "Sin oferta",
+  "precio": "72000",
+  "descuento": 0,
   "img": "producto-champagne3.jpg",
   "descripcion": "Dom Perignon es una de las marcas de referencia en la Champaña francesa. Producida por Moët & Chandon, su primera cosecha data de 1921, y fue puesta a la venta en 1936. Dom Pérignon sólo se elabora en las mejores añadas, utilizando únicamente uvas de dicha cosecha."
  },
  {
-  "id": 9,
+  "id": 8,
   "name": "Bombay Sapphire",
-  "precio": "$4500",
-  "descuento": "Sin oferta",
+  "precio": "4500",
+  "descuento": 5,
   "img": "producto-licor3.jpg",
   "descripcion": "Al paladar, transmite piel de limón y una dulzura media, seguidas de un enebro intenso y una dulzura ácida de limón, apoyados por notas de salida de cilantro y regaliz, equilibradas por las notas más profundas y especiadas que definen la base del paladar."
  },
  {
-  "id": 10,
+  "id": 9,
   "name": "Tanqueray",
-  "precio": "$5000",
-  "descuento": "Sin oferta",
+  "precio": "5000",
+  "descuento": 0,
   "img": "producto-licor4.jpg",
   "descripcion": "Desde su creación por Charles Tanqueray en la década de 1830, la ginebra Tanqueray London Dry Gin siempre ha utilizado la misma receta galardonada* y se elabora con los cuatro ingredientes botánicos clásicos de la ginebra: enebro con aroma a pino, cilantro especiado, angélica aromática y regaliz dulce."
  },
  {
-  "id": 11,
+  "id": 10,
   "name": "Mosquita Muerta",
-  "precio": "$4000",
-  "descuento": "Sin oferta",
+  "precio": "4000", 
+  "descuento": 15,
   "img": "producto-vino5.jpg",
   "descripcion": "Cuenta con un color rojo profundo con notas violáceas. Mosquita Muerta es uno de los vinos actuales que está revolucionando el mercado. Con un estilo propio y desafiante, el vino propone un interesante recorrido por prestigiosos terruños. Un vino equilibrado, fresco, floral y con gran presencia de fruta."
  },
  {
-  "id": 12,
+  "id": 11,
   "name": "El Enemigo",
-  "precio": "$3600",
-  "descuento": "Sin oferta",
+  "precio": "3600",
+  "descuento": 0,
   "img": "producto-vino6.jpg",
   "descripcion": "En nariz presenta aromas de buena madera, con apariciones de fruta madura como la ciruela y toques de chocolate y moka. En boca, un ataque brutal al paladar. Algo dulce y carnoso de muy buen equilibrio y acidez con taninos muy marcados pero suaves, que dan un final persistente."
  }

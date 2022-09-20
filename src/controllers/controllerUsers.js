@@ -1,7 +1,6 @@
 const path = require("path");
 const fs = require("fs");
 const bcrypt = require("bcryptjs");
-const { v4: uuidv4 } = require('uuid');
 const session = require("express-session");
 const { validationResult } = require('express-validator')
 

@@ -1,51 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include('partials/head') %>
+    <%- include('partials/head') %> 
 <body>
     <%- include('partials/header') %>
     <main>
-        <div class="container-product">
-        <div id="photo">
-            <img src="/image/<%= producto.img %>" alt="<%= producto.name %>">
-        </div>
-        <div id="descripcion">
-            <section>
-                <h2><%= producto.name %></h2>
-                <b><%= producto.precio %></b>
-            </section>
-            <div class="envio-retiro">
-                <ul type="none">
-                    <li><i class="fa-solid fa-shop"></i><p><%= producto.descripcion %></p></li>
-                    <li><i class="fa-solid fa-truck"></i><p> Envío gratis </p></li>
-                </ul>
+
+
+        <article class="article-producto">
+
+            <div class="div-img-producto">
+                <img src="/image/<%= producto.img %>">
             </div>
-        </div>
+
+            <div class="div-datos-producto">
+
+                <h4 class="h4-nombre-producto"><%= producto.name %></h4>
+
+
+                <% if (producto.descuento != 0) { %>
+
+                    <div class="div-precio-con-descuento">
+
+                        <p class="p-precio"><small>ANTES </small>$<%= toThousand (producto.precio) %></p>
+                        <p class="p-descuento"><%= producto.descuento %>% <small> </small>OFF</p>
+                        <h5 class="p-precio-final">$<%= toThousand(producto.precio * (1 - producto.descuento / 100)) %></h5>
+
+                    </div>
+
+                <% } else { %>
+
+                    <h5 class="p-precio-final">$<%= toThousand(producto.precio) %></h5> 
+                    
+                <% } %>
+
+                <div class="div-formas-pago">
+
+                    <i class="fa-solid fa-credit-card i-tarjeta"></i>
+                    <span><strong>6 cuotas sin interés</strong> de $<%= toThousand((producto.precio / 6).toFixed(2)) %></span>
+
+                </div>
+
+                <form class="form-comprar" action="/products/carritoDeCompras/<%= producto.id %>"     method="POST">
+                    
+                    <i class="fa-solid fa-cart-shopping i-carrito"></i>
+                    <span><button class="button-agregar-al-carrito" type="submit">Agregar al carrito</button></span>
+                </form>
+
+                
+
+                <div class="div-envio-gratis">
+
+                    <i class="fa-solid fa-truck i-camion"></i>
+
+                    <span><strong>Envío gratis</strong> a partir de $10.000,00</span>
+
+                </div>
+
+                <form action="" method="">
+
+                    <div class="shipping-cost">
+                        <input type="number" min="0" name="postal-code" placeholder="Tu código postal">
+
+                        <button type="submit">Calcular</button>
+                    </div>
+
+                </form>
+
+                <div class="div-descripcion-producto">
+
+                    <p><%= producto.descripcion%></p>
+
+
+                </div>
+            </div> 
+        </article>
     
-            <div id="opcion-bebida">
-                <!--<label for="opcion-bebida">Opcion</label>
-                 <select name="opcion-bebida" id="envio-retiro">
-                    <% productoBase.forEach(function(element){ %>
-                        <option value="<%= element %>"><%= element.name %></option>
-                    <%}) %>
-                </select> -->
-            </div>
-            <div id="sel-cant">
-                <!-- <label for="">Cantidades</label>
-                <select name="cantidad" id="cantidades">
-                    <% for(var i=0;i<=producto.cantidad;i++){ %>
-                        <option value="<%= i %>"><%= i  %></option>
-                    <% } %>
-                </select> -->
-            </div>
-            <div id="boton-compra">
-                <button>Comprar</button>
-                <a href="/products/edit/<%=producto.id %>"><button>Editar</button></a>
-                <a href="/products/create"><button>Crear</button></a>
-                <a href="/products/delete/<%= producto.id %>"><button>Borrar</button></a>
-            </div>
-    </div>
-</div>
     </main>
-    <%- include('partials/footer')%>
+
+    <%- include ('partials/footer') %>
+   
 </body>
-</html>
+</html> 
+    
+<!-- <main>
+
+ <div class="card">
+    <div class="imgBox">
+        <img src="/image/<%= producto.img %>" alt="<%= producto.name %>">
+    </div>
+    <div class="details">
+        <div class="title">
+            <h3><%= producto.name %></h3>
+            <small><%producto.categoria %></small>
+        </div>
+        <div class="description"></div>
+        <div class="quantity"></div>
+        <div class="buy"></div>
+    </div>
+ </div>
+
+</main>
+    <%- include('partials/footer')%> -->
+
+
+
+
+<!-- <section>
+    <h2><%= producto.name %></h2>
+    <b><%= producto.precio %></b>
+</section>
+<div class="envio-retiro">
+    <ul type="none">
+        <li><i class="fa-solid fa-shop"></i><p><%= producto.descripcion %></p></li>
+        <li><i class="fa-solid fa-truck"></i><p> Envío gratis </p></li>
+    </ul> -->

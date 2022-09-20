@@ -1,14 +1,18 @@
 [
     {
         "id":1,
-        "name":"cerveza"
+        "name":"Cervezas"
     },
     {
         "id":2,
-        "name":"vino"
+        "name":"Vinos"
     },
     {
         "id":3,
-        "name":"licor"
+        "name":"Licores"
+    },
+    {
+        "id":4,
+        "name":"Espumantes"
     }
 ]

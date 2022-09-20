@@ -3,36 +3,94 @@
     <%- include('partials/head') %>
 <body>
     <%- include('partials/header') %>
-<main class="principal">
-    <h1>Carrito</h1>
-    <br> </br>
-    <div> <ul class="main">
-        <li class="producto">Producto 
-        <br> </br>
-       <img width = 30% src="/image/vino.jpeg"> 
-       <span class= "Vino">Descripcion del producto</span></li> 
-        <li class="cantidad"> Cantidad <div> 
-            <br></br>
-            <input type="button" value="-">
-            <input type="button" value= "cantidad">
-            <input type="button" value="+" > </div> 
-            <br></br>
-            <br></br>
-            <div>Total del Carrito</div>
-        </li>
-        <li class="subtotal"> Subtotal <div> 
-        <br></br>
-        <i class="fa-solid fa-dollar-sign"></i>
-        <input type="button" value="textarea"></div>
-        <br></br>
-        <br></br>
-        <div><i class="fa-solid fa-dollar-sign"></i>
-        <input type="button" value="textarea">
-        </div></li>
-        </ul> </div>
-        <br></br>
-        <div class="botonDePago" ><button class="pagar">Pagar</button></div>
-</main>
+    <main>
+       
+        <div class="div-contenido-carrito">  
+
+            <% if (!locals.shoppingCart) { %> 
+
+                <div class="mensaje">
+                    <p>El carrito está vacío.</p>
+
+                    <div class="more-products">
+                        <a href="/productsList.ejs">Ver todos los productos</a>
+                    </div>
+                </div>
+
+            <% } else { %>
+
+                <section class="products">
+                <% shoppingCart.forEach (product => { %> 
+                    <article>
+                        <div class="product">
+                            <a href="/products/productDetail/<%= producto.id %>" class="ir-a-detail">
+                                <img src="<%= producto.image %>" alt="Product Image">
+                            </a>
+                            <p><%= product.name %></p>
+                            <form action="/products/shoppingCart/delete/<%= product.id %>?_method=DELETE" method="POST">
+                                <button type="submit" class="i-borrar">
+                                    <i class="fa-solid fa-trash-can"></i>
+                                </button>
+                            <!-- <button><a class="i-borrar" href="/products/shoppingCart/<%= product.id %>"><i class="fa-solid fa-trash-can"></i></a></button> -->
+                            </form>
+                        </div>
+                        <% if (!product.discount || product.discount == 0) { %> 
+                            <p class="price">$<%= toThousand(product.price * (1 - product.discount / 100))%></p>
+                        <% } else { %>
+                            <div class="price-discount">
+                                <span class="orig-price">$<%= toThousand(product.price) %></span>
+                                <span class="final-price">$<%= toThousand(product.price * (1 - product.discount / 100)) %></span>
+                            </div>
+                        <% } %>
+                    </article>
+                <% }) %>
+            
+                </section>
+
+                <section class="shipping">
+                    <div class="free-shipping">
+                        <button><i class="fa-solid fa-truck i-camion"></i></button>
+                        <h6>Envío gratis</h6>
+                        <p>superando los $15.000,00</p>
+                    </div>
+
+                    <form action="" method="">
+                        <div class="shipping-cost">
+                            <input type="number" name="postal-code" placeholder="Tu código postal">
+                            <button type="submit">Calcular</button>
+                        </div>
+                    </form>
+
+                    <div class="searh-postal-code">
+                        <a href="https://www.correoargentino.com.ar/formularios/cpa" target="_blank">No sé mi código postal</a>
+                    </div>
+                    
+                    <div class="subtotal">
+                        <p>Subtotal (sin envío):</p>
+                        <h3>$<%= toThousand(subtotal) %></h3>
+                    </div>
+
+                    <div class="total">
+                        <h2>Total:</h2>
+                        <h2>$<%= toThousand(subtotal) %></h2>
+                    </div>
+
+                    <div class="div-formas-pago">
+                        <i class="fa-solid fa-credit-card i-tarjeta"></i>
+                        <strong>6 cuotas sin interés</strong><span> de $<%= toThousand((subtotal/6).toFixed(2)) %></span>
+                    </div>
+
+                    <div  class="start-the-buy">
+                        <button>Iniciar Compra</button>
+                    </div>
+
+                    <div class="more-products">
+                        <a href="/products/productsList">Ver más productos</a>
+                    </div>
+                </section>
+            <% } %>
+        </div>   
+    </main>
 <%- include('partials/footer')%>
 </body>
 </html>

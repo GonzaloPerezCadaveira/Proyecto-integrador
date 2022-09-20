@@ -1,6 +1,7 @@
 const path = require('path');
 const fs = require('fs');
 const { nextTick } = require('process');
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const productoData = path.join(__dirname, '../database/productsData.json')
 const catData = path.join(__dirname, '../database/categories.json')
@@ -13,13 +14,15 @@ const controller = {
         res.render('productsList', {
         titulo: 'Carta de bebidas',
         productos:productoBase,
-        enlace: '/css/productsList.css'})
+        enlace: '/css/productsList.css'
+        })
     },
     detail: (req, res) => {
         const idprod = req.params.id;
         res.render('productDetail', {
             producto: productoBase[idprod],
             productoBase,
+            toThousand,
             titulo: 'Detalle de Producto',
             enlace: '/css/productDetail.css',
         });
@@ -28,13 +31,13 @@ const controller = {
         res.render('create-product', {
             catBase,
             titulo: 'Creacion de Producto',
-            enlace: '/css/register.css'
+            enlace: '/css/createProduct.css'
         });
     },
     carrito: (req, res) => {
         res.render('carritoDeCompras', {
             titulo: 'Carrito',
-            enlace: 'css/styles.css'
+            enlace: 'css/productDetail.css'
         });
     },
     store: (req, res) => {
@@ -79,6 +82,6 @@ const controller = {
         fs.writeFileSync(productoData, data);
         res.redirect('/')
     }
-};
+}
 
 module.exports = controller;

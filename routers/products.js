@@ -26,7 +26,7 @@ router.get('/create', productController.create);
 
 router.post('/create', upload.single('img'), productController.store);
 
-router.get('/carrito', productController.carrito);
+router.get('/carrito/:id', productController.carrito);
 
 router.get('/edit/:id', productController.edit);
 

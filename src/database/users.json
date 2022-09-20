@@ -86,5 +86,12 @@
   "user_password": "$2a$10$/rH9miRqYJmyZKZSN9BlPesA/an5SF2QanpqIsMbrWBIGeB2AQJoC",
   "user_img": "1663111399707_img.jpg",
   "id": "039f81f3-cd85-4ca9-b56e-2ec7188e99b011"
+ },
+ {
+  "user_name": "Juan María Cáceres",
+  "user_email": "juanma@hotmail.com",
+  "user_password": "$2a$10$o2E7MgPXeV5pd9SnBKF3HuUwk9WFTpn/iKlIzvgJI6Bl0pg2AWPIK",
+  "user_img": "1663709146161_img.jpg",
+  "id": "039f81f3-cd85-4ca9-b56e-2ec7188e99b0111"
  }
 ]
