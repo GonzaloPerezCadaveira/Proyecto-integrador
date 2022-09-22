@@ -1,35 +1,43 @@
 const path = require('path');
 const fs = require('fs');
-const { nextTick } = require('process');
 
-const productoData = path.join(__dirname, '../database/productsData.json')
-const catData = path.join(__dirname, '../database/categories.json')
+const db = require('../database/models')
 
-const productoBase = JSON.parse(fs.readFileSync(productoData, 'utf-8'))
-const catBase = JSON.parse(fs.readFileSync(catData, 'utf-8'))
 
 const controller = {
     productsList: (req, res) => {
-        res.render('productsList', {
-        titulo: 'Carta de bebidas',
-        productos:productoBase,
-        enlace: '/css/productsList.css'})
+        db.Product.findAll()
+        .then(function(products){
+            res.render('productsList', {
+                titulo: 'Carta de bebidas',
+                products,
+                enlace: '/css/productsList.css'})
+        })
+        
     },
     detail: (req, res) => {
-        const idprod = req.params.id;
-        res.render('productDetail', {
-            producto: productoBase[idprod],
-            productoBase,
-            titulo: 'Detalle de Producto',
-            enlace: '/css/productDetail.css',
-        });
+        let idParams= req.params.id
+        db.Product.findOne({
+            where:{id:idParams}
+        })
+        .then(function(products) {
+            res.render('productDetail',{
+                titulo:'Detalle de Producto',
+                enlace:'/css/productDetail.css',
+                products
+
+            })
+        })
     },
     create: (req, res) => {
-        res.render('create-product', {
-            catBase,
-            titulo: 'Creacion de Producto',
-            enlace: '/css/register.css'
-        });
+        db.Category.findAll()
+        .then(function(categories){
+                res.render('create-product', {
+                categories:categories,
+                titulo: 'Creacion de Producto',
+                enlace: '/css/register.css'
+            })
+        })
     },
     carrito: (req, res) => {
         res.render('carritoDeCompras', {
@@ -38,46 +46,56 @@ const controller = {
         });
     },
     store: (req, res) => {
-        const nuevoProducto = req.body;
-        nuevoProducto.id = productoBase.length;
-        console.log(nuevoProducto);
-        if (req.file) {
-            nuevoProducto.img = req.file.filename
-        }
-        productoBase.push(nuevoProducto);
-        fs.writeFileSync(productoData, JSON.stringify(productoBase, null, ' '));
-        res.redirect('/')
+        db.Product.create({
+            description:req.body.description,
+            price:req.body.price,
+            quantity:req.body.quantity,
+            discount:req.body.discount,
+            cat_id:req.body.category,
+            name: req.body.name
+        }).then(function () {
+            res.redirect('/');
+        })  
     },
     edit: (req, res) => {
-        const idProduc = req.params.id;
-        const productEdit = productoBase.find(item => item.id == idProduc)
-        res.render('edit-product', {
-            producto: productEdit,
-            titulo: 'Edicion de Producto',
-            enlace: '/css/crear_prod.css'
+        let idParams= req.params.id
+        let pedidoProduct = db.Product.findOne({
+            where:{id:idParams}
+        })
+        let pedidoCat = db.Category.findAll()
+        Promise.all([pedidoProduct,pedidoCat])
+        .then(function([product, categories]){
+            res.render('edit-product',{
+                product,
+                categories,
+                titulo: 'Edicion de Producto',
+                enlace: '/css/register.css'
+            })
         })
     },
     editComplete: (req, res) => {
-        const idProduc = req.params.id
-        const product = productoBase.find(item => item.id == idProduc);
-        product.name = req.body.name
-        product.cantidad = req.body.cantidad
-        product.precio = req.body.precio
-        product.descripcion = req.body.descripcion
-        const data = JSON.stringify(productoBase, null, ' ')
-        fs.writeFileSync(productoData, data);
-        res.redirect('/')
+        db.Product.update(
+            {
+                description:req.body.description,
+                price:req.body.price,
+                quantity:req.body.quantity,
+                discount:req.body.discount,
+                cat_id:req.body.category,
+                name: req.body.name
+            },{
+            where:{id:req.params.id}
+        })
+        .then(function () {
+            res.redirect('/')
+        })
     },
     destroy: (req, res) => {
-        var i = 0;
-        const idProd = req.params.id;
-        const productFilter = productoBase.filter(item => item.id != idProd);
-        productFilter.forEach(element => {
-            element.id = i++
-        });
-        const data = JSON.stringify(productFilter, null, " ");
-        fs.writeFileSync(productoData, data);
-        res.redirect('/')
+        db.Product.destroy({
+            where:{id: req.params.id}
+        })
+        .then(function () {
+            res.redirect('/')
+        })
     }
 };
 

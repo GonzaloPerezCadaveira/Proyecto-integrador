@@ -101,6 +101,14 @@
   "descuento": "Sin oferta",
   "img": "producto-vino6.jpg",
   "descripcion": "En nariz presenta aromas de buena madera, con apariciones de fruta madura como la ciruela y toques de chocolate y moka. En boca, un ataque brutal al paladar. Algo dulce y carnoso de muy buen equilibrio y acidez con taninos muy marcados pero suaves, que dan un final persistente."
+ },
+ {
+  "name": "Amarula 1L",
+  "description": " Amarula de 1 litro , edicion limitada",
+  "price": "2000",
+  "cantidad": "3",
+  "category": "3",
+  "id": 12,
+  "img": "img1663553777729.jpg"
  }
-
 ]

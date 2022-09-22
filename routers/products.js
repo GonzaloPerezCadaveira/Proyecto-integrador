@@ -15,7 +15,7 @@ const storage= multer.diskStorage({
     }
 })
 
-const upload = multer({storage});
+const upload = multer({storage:storage});
 
 
 router.get("/detail/:id", productController.detail);
@@ -32,6 +32,6 @@ router.get('/edit/:id', productController.edit);
 
 router.put('/actualizar/:id', productController.editComplete);
 
-router.post('/delete/:id', productController.destroy)
+router.delete('/delete/:id', productController.destroy)
 
 module.exports= router;

@@ -27,8 +27,8 @@ app.use(methodOverride('_method'));
 //Middlewares
 app.use(verifyAuth)
 
-app.listen (3050, () => { 
-console.log ('Servidor corriendo en puerto 3050')
+app.listen (3020, () => { 
+console.log ('Servidor corriendo en puerto 3020')
 })
 
 app.use("/", homeRouter);
