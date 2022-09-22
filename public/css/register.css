@@ -29,8 +29,8 @@ body{
 .contenedor{
     width: 100%;
     padding:15px;
-    text-align: center;
 }
+
 
 .login-error {
     color: red;
@@ -41,6 +41,8 @@ body{
     margin: 10% 0%;
     padding:3px;
     text-align: center;
+    width: 100%;
+    border-radius: 5px;
 }
 
 .erroresLocales{
@@ -132,7 +134,7 @@ p{
 
     .formulario{
         width: 500px;
-        border-radius:2%;
+        border-radius:5px;
     }
 
 

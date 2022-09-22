@@ -30,7 +30,7 @@ const controller={
     },
 
     nuevoUser: function (req, res) {
-        const error = "Tenés que subir una imagen de perfil";
+        const error = "Debes subir una imagen de perfil";
         const check = "check";
         const errors = validationResult(req);
         let file = req.file;
@@ -87,7 +87,14 @@ const controller={
             });
         }
     },
-    validateUser: (req,res) => {
+
+    profile: (req, res) => {
+            res.render("profile", {
+            titulo: 'Profile',
+            enlace: '/css/profile.css'
+    })
+}
+    // validateUser: (req,res) => {
 
             //     res.render('index',{
             //         productoBase,
@@ -103,8 +110,5 @@ const controller={
             //     loginError: 'Credenciales inválidas',
             //     enlace:'css/styles.css'
             // })
-        }
-    
-};
-
+}
 module.exports = controller;

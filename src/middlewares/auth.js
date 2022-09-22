@@ -3,13 +3,13 @@ const verifyAuth = (req, res, next) => {
         if(req.cookies.auth === 'true') {
             res.render('carritoDeCompras',{
                 titulo:'Carrito',
-                enlace:'css/styles.css'
+                enlace:'css/productChart.css'
             })
         } else {
             res.render('login', {
                 titulo:'Login',
                 loginError: '',
-                enlace:'css/styles.css'
+                enlace:'css/register.css'
             })
         }
     }

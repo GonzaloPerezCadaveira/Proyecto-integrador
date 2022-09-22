@@ -56,8 +56,9 @@ const controller = {
         const productEdit = productoBase.find(item => item.id == idProduc)
         res.render('edit-product', {
             producto: productEdit,
+            catBase,
             titulo: 'Edicion de Producto',
-            enlace: '/css/crear_prod.css'
+            enlace: '/css/createProduct.css'
         })
     },
     editComplete: (req, res) => {

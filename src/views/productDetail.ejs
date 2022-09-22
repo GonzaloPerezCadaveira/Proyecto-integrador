@@ -69,8 +69,15 @@
                 <div class="div-descripcion-producto">
 
                     <p><%= producto.descripcion%></p>
+                    
+                </div>
 
+                <div class="div-botones-final">
+						<a href="/products/edit/<%= producto.id %>" class="button-edit">EDITAR PRODUCTO</a>
 
+						<form action="/products/delete/<%= producto.id %>?_method=DELETE" method="POST">
+							<button type="submit" class="button-delete">ELIMINAR PRODUCTO</button>
+						</form>
                 </div>
             </div> 
         </article>
@@ -81,36 +88,3 @@
    
 </body>
 </html> 
-    
-<!-- <main>
-
- <div class="card">
-    <div class="imgBox">
-        <img src="/image/<%= producto.img %>" alt="<%= producto.name %>">
-    </div>
-    <div class="details">
-        <div class="title">
-            <h3><%= producto.name %></h3>
-            <small><%producto.categoria %></small>
-        </div>
-        <div class="description"></div>
-        <div class="quantity"></div>
-        <div class="buy"></div>
-    </div>
- </div>
-
-</main>
-    <%- include('partials/footer')%> -->
-
-
-
-
-<!-- <section>
-    <h2><%= producto.name %></h2>
-    <b><%= producto.precio %></b>
-</section>
-<div class="envio-retiro">
-    <ul type="none">
-        <li><i class="fa-solid fa-shop"></i><p><%= producto.descripcion %></p></li>
-        <li><i class="fa-solid fa-truck"></i><p> Envío gratis </p></li>
-    </ul> -->
