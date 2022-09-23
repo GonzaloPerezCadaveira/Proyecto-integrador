@@ -4,39 +4,60 @@
 
     <body>
         <%- include('partials/header')%>
-            
-                <body class="bodyRegister">
-                        <form method="POST" action="/products/create" enctype='multipart/form-data' class="formulario">
-                            <h1>Formulario de creación de productos</h1>
-                            <p class="etiqueta">Nombre del producto</p>
-                            <div class="contenedor">
-                                <div class="input-contenedor"></div>
-                                <input type="text" name="name">
-                            </div>
-                            <p class="etiqueta">Descripción</p>
-                            <div class="contenedor">
-                                <div class="input-contenedor"></div>
-                                <textarea type="text" name="description"> </textarea>
-                            </div>
-                            <div class="contenedor">
-                                <div class="input-contenedor"></div>
-                                <input type="text" placeholder="Precio" name="price">
-                            </div>
-                            <div class="contenedor">
-                                <div class="input-contenedor"></div>
-                                <input type="text" placeholder="Cantidad" name="cantidad">
-                            </div>
-                            <div class="contenedor">
-                                <div class="input-contenedor"></div>
-                                <input type="text" placeholder="Categoría" name="category">
-                            </div>
-                            <div class="contenedor">
-                                <div class="input-contenedor"></div>
-                                <input type="file" name="img">
-                            </div>
-                            <input type="submit" value="Guardar producto" class="button">
-             </form>
-           
-         <%- include('partials/footer')%>
-     </body>
+
+            <body class="bodyRegister">
+                <form method="POST" action="/products/create" enctype='multipart/form-data' class="formulario">
+                    <h1>Formulario de creación de productos</h1>
+
+                    <p class="etiqueta">Nombre del producto</p>
+                    <div class="contenedor">
+                        <div class="input-contenedor"></div>
+                        <input type="text" name="name">
+                    </div>
+
+                    <p class="etiqueta">Descripción</p>
+                    <div class="contenedor">
+                        <div class="input-contenedor"></div>
+                        <textarea type="text" name="descripcion"></textarea>
+                    </div>
+
+                    <p class="etiqueta">Precio</p>
+                    <div class="contenedor">
+                        <div class="input-contenedor"></div>
+                        <input type="number" min="0" name="precio">
+                    </div>
+
+                    <p class="etiqueta">Descuento</p>
+                    <div class="contenedor">
+                        <div class="input-contenedor">
+                            <input type="number" min="0" max="50" name="descuento">
+                        </div>
+                    </div>
+
+                    <p class="etiqueta">Categoría</p>
+                    <div class="contenedor">
+                        <div class="input-contenedor">
+                            <select name="category">
+                                <option selected disabled>Selecciona la categoría</option>
+                                <% catBase.forEach (category=> { %>
+                                    <option value="<%= category.id %>">
+                                        <%= category.name %>
+                                    </option>
+                                    <% }) %>
+                            </select>
+                        </div>
+                    </div>
+
+                    <p class="etiqueta">Imagen del producto</p>
+                    <div class="contenedor">
+                        <div class="input-contenedor">
+                            <input type="file" name="img">
+                        </div>
+                    </div>
+                    <input type="submit" class="button" value="Guardar producto">
+                </form>
+
+                <%- include('partials/footer')%>
+            </body>
+
 </html>

@@ -18,51 +18,21 @@ body{
     background-position: center center;
 }
 
-.bodyLogin{
-    background:url("/image/banner3.jpg");
-    background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: center center;
-}
-
-.contenedor{
-    width: 100%;
-    padding:15px;
-}
-
-
-.login-error {
-    color: red;
-}
-
 .formulario{
     background: white;
     margin: 10% 0%;
     padding:3px;
     text-align: center;
-    width: 100%;
-    border-radius: 5px;
-}
-
-.erroresLocales{
-    color:red;
-    font-size:14px;
-    text-align: center;
-    padding:5px;
-}
-
-h1{
-    text-align: center;
-    color:#1a2537;
-    font-size:50px;
 }
 
 input[type="text"],
 input[type="password"],
 input[type="file"],
 input[type="email"],
-textarea{
+input[type="number"],
+textarea,
+select,
+option{
     font-size: 20px;
     width: 82%;
     padding:10px;
@@ -79,17 +49,11 @@ input .contenedor{
     border:1px solid #aaa;
 }
 
-
-.icon{
-    min-width: 50px;
-    text-align: center;
-    color:#999
-}
-
 .etiqueta{
     text-align: center;
     font-size: 25px;
     margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 .button{
@@ -115,26 +79,11 @@ p{
     font-weight: bold;
 }
 
-.link{
-    text-decoration: none;
-    color:black;
-    font-weight: 600px;
-}
-
-.link:hover {
-    color:rgb(193, 192, 192)
-}
-
-.register-error {
-    color:red
-}
-
-
 @media (min-width:720px){
 
     .formulario{
         width: 500px;
-        border-radius:5px;
+        border-radius:2%;
     }
 
 

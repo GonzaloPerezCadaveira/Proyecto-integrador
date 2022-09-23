@@ -30,6 +30,8 @@ router.get('/carrito', productController.carrito);
 
 router.get('/edit/:id', productController.edit);
 
+router.delete('/delete/:id', productController.destroy); 
+
 router.put('/actualizar/:id', productController.editComplete);
 
 router.delete('/delete/:id', productController.destroy)

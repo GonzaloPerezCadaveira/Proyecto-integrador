@@ -30,6 +30,8 @@ main {
 
 main article.producto {
     margin: 10px;
+    border: 0.2px solid rgb(194, 194, 194);
+    border-radius: 5px;
 }
 
 

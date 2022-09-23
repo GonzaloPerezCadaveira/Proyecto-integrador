@@ -1,5 +1,7 @@
 const path = require('path');
 const fs = require('fs');
+const { nextTick } = require('process');
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const db = require('../database/models')
 
@@ -42,7 +44,7 @@ const controller = {
     carrito: (req, res) => {
         res.render('carritoDeCompras', {
             titulo: 'Carrito',
-            enlace: 'css/styles.css'
+            enlace: '/css/productChart.css'
         });
     },
     store: (req, res) => {
@@ -97,6 +99,6 @@ const controller = {
             res.redirect('/')
         })
     }
-};
+}
 
 module.exports = controller;

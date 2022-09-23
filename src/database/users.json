@@ -60,5 +60,38 @@
   "user_email": "emiliorod@hotmail.com",
   "user_password": "$2a$10$lE.pqlHBh./bQjaqy45Mc.sZigdv2z0GYr89B7.dKNAG04hkpAB36",
   "id": "a1d937c9-0977-43c4-9289-303644cc2118"
+ },
+ {
+  "user_name": "dad",
+  "user_email": "aw@fgafa",
+  "user_password": "$2a$10$ZEQnrK1l0oYyQ2S.Ac2cAe2BZFCdlDzKsrx/bjR.9b3saLX/hSXLK",
+  "id": "c9888baf-7bed-4c67-bc80-50d42f9efdfb"
+ },
+ {
+  "user_name": "da",
+  "user_email": "fafd@dawdwa",
+  "user_password": "$2a$10$tXxJy6emk4qzdZ7J1fvS9.6EckODMexrJj/tMfQgn57p.MpwSSqc6",
+  "id": "039f81f3-cd85-4ca9-b56e-2ec7188e99b0"
+ },
+ {
+  "user_name": "Gonzalo Perez",
+  "user_email": "gonzalop@gmail.com",
+  "user_password": "$2a$10$uDoTn8Q2kBDit3pXkjMj.OW625AfGq85ZgY/UtbWUkFmsL7EopRN.",
+  "user_img": "1663110098250_img.jpg",
+  "id": "039f81f3-cd85-4ca9-b56e-2ec7188e99b01"
+ },
+ {
+  "user_name": "Mariano Girondo",
+  "user_email": "legalesfc@gmail.com",
+  "user_password": "$2a$10$/rH9miRqYJmyZKZSN9BlPesA/an5SF2QanpqIsMbrWBIGeB2AQJoC",
+  "user_img": "1663111399707_img.jpg",
+  "id": "039f81f3-cd85-4ca9-b56e-2ec7188e99b011"
+ },
+ {
+  "user_name": "Juan María Cáceres",
+  "user_email": "juanma@hotmail.com",
+  "user_password": "$2a$10$o2E7MgPXeV5pd9SnBKF3HuUwk9WFTpn/iKlIzvgJI6Bl0pg2AWPIK",
+  "user_img": "1663709146161_img.jpg",
+  "id": "039f81f3-cd85-4ca9-b56e-2ec7188e99b0111"
  }
 ]

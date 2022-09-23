@@ -3,31 +3,58 @@
 <%- include('partials/head') %>
 <body>
     <%- include('partials/header')%>
-    <main>
-        <form method="POST" action="/products/actualizar/<%= producto.id %>?_method=PUT">
-            <div class="formulario">
-                <label for="name">Nombre de Producto</label>
-                <input type="text" name="name" placeholder="Nombre del Producto">
-            </div>
-            <div class="formulario">
-                <label for="precio">Precio del Producto</label>
-                <input type="text" name="precio" placeholder="Precio">
-            </div>
-            <div class="formulario">
-                <label for="descuento">Descuento</label>
-                <input type="text" name="descuento" placeholder="Descuento">
-            </div>
-            <div class="formulario">
-                <label for="cantidad">cantidad</label>
-                <input type="number" name="cantidad" placeholder="Cantidad">
-            </div>
-            <div class="formulario" id="form-footer">
-                <label for="descripcion">Descripcion</label>
-                <input type="text" name="descripcion" placeholder="Descripcion del Producto">
-                <button id="creado" type="submit" >Guardar Producto</button>
-            </div>        
-        </form>
-    </main>
+
+        <body class="bodyRegister">
+            <form method="POST" action="/products/create" enctype='multipart/form-data' class="formulario">
+                <h1>Formulario de edición de productos</h1>
+                    
+                <p class="etiqueta">Nombre del producto</p>
+                <div class="contenedor">
+                    <div class="input-contenedor"></div>
+                    <input type="text" name="name">
+                </div>
+
+                <p class="etiqueta">Descripción</p>
+                <div class="contenedor">
+                    <div class="input-contenedor"></div>
+                    <textarea type="text" name="descripcion"></textarea>
+                </div>
+
+                <p class="etiqueta">Precio</p>
+                <div class="contenedor">
+                    <div class="input-contenedor"></div>
+                    <input type="number" min="0" name="precio">
+                </div>
+
+                <p class="etiqueta">Descuento</p>
+                <div class="contenedor">
+                    <div class="input-contenedor">
+                        <input type="number" min="0" max="50" name="descuento">
+                    </div>
+                </div>
+
+                <p class="etiqueta">Categoría</p>
+                <div class="contenedor">
+                    <div class="input-contenedor">
+                        <select name="category">
+                            <option selected disabled>Selecciona la categoría</option>
+                            <% catBase.forEach (category=> { %>
+                                <option value="<%= category.id %>">
+                                    <%= category.name %>
+                                </option>
+                                <% }) %>
+                        </select>
+                    </div>
+                </div>
+
+                <p class="etiqueta">Imagen del producto</p>
+                <div class="contenedor">
+                    <div class="input-contenedor">
+                        <input type="file" name="img">
+                    </div>
+                </div>
+                <input type="submit" class="button" value="Guardar producto">
+            </form>
     <%- include('partials/footer')%>
 </body>
 </html>
