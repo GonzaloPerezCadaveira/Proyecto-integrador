@@ -9,10 +9,11 @@ const db = require('../database/models')
 const controller = {
     productsList: (req, res) => {
         db.Product.findAll()
-        .then(function(products){
+        .then(function(productos){
             res.render('productsList', {
                 titulo: 'Carta de bebidas',
-                products,
+                toThousand,
+                productos,
                 enlace: '/css/productsList.css'})
         })
         
@@ -22,11 +23,12 @@ const controller = {
         db.Product.findOne({
             where:{id:idParams}
         })
-        .then(function(products) {
+        .then(function(productos) {
             res.render('productDetail',{
                 titulo:'Detalle de Producto',
                 enlace:'/css/productDetail.css',
-                products
+                productos,
+                toThousand
 
             })
         })
@@ -35,7 +37,7 @@ const controller = {
         db.Category.findAll()
         .then(function(categories){
                 res.render('create-product', {
-                categories:categories,
+                categories,
                 titulo: 'Creacion de Producto',
                 enlace: '/css/register.css'
             })
@@ -53,8 +55,9 @@ const controller = {
             price:req.body.price,
             quantity:req.body.quantity,
             discount:req.body.discount,
-            cat_id:req.body.category,
-            name: req.body.name
+            cat_id:req.body.cat_id,
+            name: req.body.name,
+            img: req.file.filename
         }).then(function () {
             res.redirect('/');
         })  
@@ -76,20 +79,41 @@ const controller = {
         })
     },
     editComplete: (req, res) => {
-        db.Product.update(
-            {
-                description:req.body.description,
-                price:req.body.price,
-                quantity:req.body.quantity,
-                discount:req.body.discount,
-                cat_id:req.body.category,
-                name: req.body.name
-            },{
-            where:{id:req.params.id}
-        })
-        .then(function () {
-            res.redirect('/')
-        })
+        if(req.file.filename==null){
+            db.Product.update(
+                {
+                    description:req.body.description,
+                    price:req.body.price,
+                    quantity:req.body.quantity,
+                    discount:req.body.discount,
+                    cat_id:req.body.category,
+                    name: req.body.name,
+                    
+                },{
+                where:{id:req.params.id}
+            })
+            .then(function () {
+                res.redirect('/')
+            })
+        }
+        else{
+            db.Product.update(
+                {
+                    description:req.body.description,
+                    price:req.body.price,
+                    quantity:req.body.quantity,
+                    discount:req.body.discount,
+                    cat_id:req.body.category,
+                    name: req.body.name,
+                    img:req.file.filename
+                    
+                },{
+                where:{id:req.params.id}
+            })
+            .then(function () {
+                res.redirect('/')
+            })
+        }
     },
     destroy: (req, res) => {
         db.Product.destroy({

@@ -18,32 +18,32 @@
                     <p class="etiqueta">Descripción</p>
                     <div class="contenedor">
                         <div class="input-contenedor"></div>
-                        <textarea type="text" name="descripcion"></textarea>
+                        <textarea type="text" name="description"></textarea>
                     </div>
 
                     <p class="etiqueta">Precio</p>
                     <div class="contenedor">
                         <div class="input-contenedor"></div>
-                        <input type="number" min="0" name="precio">
+                        <input type="number" min="0" name="price">
                     </div>
 
                     <p class="etiqueta">Descuento</p>
                     <div class="contenedor">
                         <div class="input-contenedor">
-                            <input type="number" min="0" max="50" name="descuento">
+                            <input type="number" min="0" max="50" name="discount">
                         </div>
                     </div>
 
                     <p class="etiqueta">Categoría</p>
                     <div class="contenedor">
                         <div class="input-contenedor">
-                            <select name="category">
+                            <select name="cat_id">
                                 <option selected disabled>Selecciona la categoría</option>
-                                <% catBase.forEach (category=> { %>
+                                <% categories.forEach (category=> { %>
                                     <option value="<%= category.id %>">
-                                        <%= category.name %>
+                                        <%= category.cat_name %>
                                     </option>
-                                    <% }) %>
+                                <% }) %>
                             </select>
                         </div>
                     </div>
@@ -54,7 +54,7 @@
                             <input type="file" name="img">
                         </div>
                     </div>
-                    <input type="submit" class="button" value="Guardar producto">
+                    <button type="submit" class="button">Guardar producto</button>
                 </form>
 
                 <%- include('partials/footer')%>

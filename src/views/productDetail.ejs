@@ -9,38 +9,38 @@
         <article class="article-producto">
 
             <div class="div-img-producto">
-                <img src="/image/<%= producto.img %>">
+                <img src="/image/<%= productos.img %>">
             </div>
 
             <div class="div-datos-producto">
 
-                <h4 class="h4-nombre-producto"><%= producto.name %></h4>
+                <h4 class="h4-nombre-producto"><%= productos.name %></h4>
 
 
-                <% if (producto.descuento != 0) { %>
+                <% if (productos.discount != 0) { %>
 
                     <div class="div-precio-con-descuento">
 
-                        <p class="p-precio"><small>ANTES </small>$<%= toThousand (producto.precio) %></p>
-                        <p class="p-descuento"><%= producto.descuento %>% <small> </small>OFF</p>
-                        <h5 class="p-precio-final">$<%= toThousand(producto.precio * (1 - producto.descuento / 100)) %></h5>
+                        <p class="p-precio"><small>ANTES </small>$<%= toThousand(productos.price) %></p>
+                        <p class="p-descuento"><%= productos.discount %>% <small> </small>OFF</p>
+                        <h5 class="p-precio-final">$<%= toThousand(productos.price * (1 - productos.discount / 100)) %></h5>
 
                     </div>
 
                 <% } else { %>
 
-                    <h5 class="p-precio-final">$<%= toThousand(producto.precio) %></h5> 
+                    <h5 class="p-precio-final">$<%= toThousand(productos.price) %></h5> 
                     
                 <% } %>
 
                 <div class="div-formas-pago">
 
                     <i class="fa-solid fa-credit-card i-tarjeta"></i>
-                    <span><strong>6 cuotas sin interés</strong> de $<%= toThousand((producto.precio / 6).toFixed(2)) %></span>
+                    <span><strong>6 cuotas sin interés</strong> de $<%= toThousand((productos.price / 6).toFixed(2)) %></span>
 
                 </div>
 
-                <form class="form-comprar" action="/products/carritoDeCompras/<%= producto.id %>"     method="POST">
+                <form class="form-comprar" action="/products/carritoDeCompras/<%= productos.id %>"     method="POST">
                     
                     <i class="fa-solid fa-cart-shopping i-carrito"></i>
                     <span><button class="button-agregar-al-carrito" type="submit">Agregar al carrito</button></span>
@@ -68,14 +68,14 @@
 
                 <div class="div-descripcion-producto">
 
-                    <p><%= producto.descripcion%></p>
+                    <p><%= productos.description%></p>
                     
                 </div>
 
                 <div class="div-botones-final">
-						<a href="/products/edit/<%= producto.id %>" class="button-edit">EDITAR PRODUCTO</a>
+						<a href="/products/edit/<%= productos.id %>" class="button-edit">EDITAR PRODUCTO</a>
 
-						<form action="/products/delete/<%= producto.id %>?_method=DELETE" method="POST">
+						<form action="/products/delete/<%= productos.id %>?_method=DELETE" method="POST">
 							<button type="submit" class="button-delete">ELIMINAR PRODUCTO</button>
 						</form>
                 </div>
