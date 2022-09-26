@@ -8,11 +8,19 @@ module.exports= function(sequelize, dataTypes){
             undefined:'true',
             autoIncrement:'true'
         },
+        cat_id:{
+            type:dataTypes.INTEGER(10),
+            undefined:'true'
+        },
+        name:{
+            type:dataTypes.STRING(100)
+        },
         description:{
             type:dataTypes.STRING(500)
         },
-        img:{
-            type:dataTypes.STRING(500)
+        price:{
+            type:dataTypes.DECIMAL(7,2),
+            undefined:'true'
         },
         discount:{
             type:dataTypes.INTEGER(10),
@@ -22,17 +30,9 @@ module.exports= function(sequelize, dataTypes){
             type:dataTypes.INTEGER(10),
             undefined:'true'
         },
-        price:{
-            type:dataTypes.DECIMAL(7,2),
-            undefined:'true'
+        img:{
+            type:dataTypes.STRING(500)
         },
-        cat_id:{
-            type:dataTypes.INTEGER(10),
-            undefined:'true'
-        },
-        name:{
-            type:dataTypes.STRING(100)
-        }
     }
 
     let config = {

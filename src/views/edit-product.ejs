@@ -5,31 +5,31 @@
     <%- include('partials/header')%>
 
         <body class="bodyRegister">
-            <form method="POST" action="/products/actualizar/:id?_method=PUT" enctype='multipart/form-data' class="formulario">
-                <h1>Formulario de edición de productos</h1>
+            <form  action="/products/actualizar/<%= product.id %>" method="POST" enctype='multipart/form-data' class="formulario">
+                <h1>Formulario de edición del producto: <%= product.name %> </h1>
                     
                 <p class="etiqueta">Nombre del producto</p>
                 <div class="contenedor">
                     <div class="input-contenedor"></div>
-                    <input type="text" name="name">
+                    <input type="text" name="name" value="<%= product.name %>">
                 </div>
 
                 <p class="etiqueta">Descripción</p>
                 <div class="contenedor">
                     <div class="input-contenedor"></div>
-                    <textarea type="text" name="description"></textarea>
+                    <textarea type="text" name="description"><%= product.description %></textarea>
                 </div>
 
                 <p class="etiqueta">Precio</p>
                 <div class="contenedor">
                     <div class="input-contenedor"></div>
-                    <input type="number" min="0" name="price">
+                    <input type="number" min="0" name="price" value="<%= product.price %>">
                 </div>
 
                 <p class="etiqueta">Descuento</p>
                 <div class="contenedor">
                     <div class="input-contenedor">
-                        <input type="number" min="0" max="50" name="discount">
+                        <input type="number" min="0" max="50" name="discount" value="<%= product.discount %>">
                     </div>
                 </div>
 
@@ -47,13 +47,20 @@
                     </div>
                 </div>
 
+                <p class="etiqueta">Cantidad</p>
+                <div class="contenedor">
+                    <div class="input-contenedor">
+                        <input type="number" min="0" max="50" name="quantity" value="<%= product.quantity %>">
+                    </div>
+                </div>
+
                 <p class="etiqueta">Imagen del producto</p>
                 <div class="contenedor">
                     <div class="input-contenedor">
                         <input type="file" name="img">
                     </div>
                 </div>
-                <button type="submit" class="button">Guardar producto</button>
+                <button type="submit" class="button">Editar producto</button>
             </form>
     <%- include('partials/footer')%>
 </body>
