@@ -15,17 +15,18 @@ const validationUser = require ("../src/middlewares/user")
 const validations = require("../src/middlewares/validations")
 
 
-// Formulario de Login
-router.get("/login", userController.login)
 
 // Formulario de Registro
 router.get("/register", userController.register)
 
 // Procesar el registro
-router.post("/register", uploadFile.single('user_img'), validations, userController.nuevoUser)
+router.post("/register", uploadFile.single('user_img'), validations, userController.store)
+
+// Formulario de Login
+router.get("/login", userController.login)
 
 // Valida el ingreso de un usuario
-// router.post("/login", userController.validateUser)
+router.post("/login", userController.log)
 
 // Perfil de usuario
 router.get("/user/profile", userController.profile)

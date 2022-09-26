@@ -11,11 +11,29 @@
                     <i class="fa-solid fa-at icon"></i>
                     <input type="text" name="email">
                 </div>
+                <div class="erroresLocales">
+                <% if(locals.errors && errors.email) { %>
+                    <p>
+                        <%= errors.email.msg %>
+                    </p>
+                    <% } %>
+                </div>
                 <p class="etiqueta">Ingresá tu contraseña</p>
                 <div class="contenedor">    
                     <i class="fa-solid fa-key icon"></i>
                     <input type="password"  name="password">
                 </div>
+                <div class="erroresLocales">
+                    <% if(locals.errors && errors.password) { %>
+                        <p>
+                            <%= errors.password.msg %>
+                        </p>
+                </div>
+                
+                <p class="etiqueta">Recordar mi usuario</p>
+                <input type="checkbox" class="checkbox" name="rememberUser">
+            
+           
                 <input type="submit" value="Ingresar" class="button">
                 <p>¿Todavía no tenés cuenta?<a class="link" href="/user/register"> Registrate</a></p>
                 <div class="login-error">
