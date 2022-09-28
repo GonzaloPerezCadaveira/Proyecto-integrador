@@ -40,11 +40,11 @@
                             
                 </div>
                 
-                <form  action="/products/carrito"     method="POST">            
+                <form  action="/products/carrito" method="POST">            
                     <div class="form-comprar">
                         <select name="quantity">
-                            <% for(let i=0;i<=producto.quantity;i++){ %>
-                                <option value="<%= i %>"><%= i %></option>
+                            <% for(let i = 0; i <= producto.quantity; i++){ %>
+                                <p>Selecciona la cantidad</p> <option value="<%= i %>"><%= i %></option> 
                             <% } %>
                         </select>
                     </div>

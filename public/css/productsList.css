@@ -5,14 +5,12 @@
 }
 
 body {
-    margin: 0;
     font-family: 'Roboto', sans-serif;
 }
 
 main {
     background-color: rgb(39, 39, 39);
 }
-
 
 .titular {
     font-size: 30px;
@@ -21,7 +19,6 @@ main {
     margin: auto;
     padding: 20px;
 }
-
 
 .producto img,
 .producto div {
@@ -40,7 +37,7 @@ div p.precio {
     text-align: start;
 }
 
-a {
+a .hipervinculo-productos {
     text-decoration: none;
     color: black;
     width:100%;
@@ -87,7 +84,6 @@ main article div.contenedor-articulo {
     font-size: 15px;
 }
 
-
 main article {
     transition: all 800ms;
 }
@@ -123,78 +119,6 @@ section .producto {
     }
 
     @media (min-width:720px) {
-        header {
-            width: 100%;
-        }
-
-        header .container {
-            flex-direction: row;
-            justify-content: space-between;
-            text-align: center;
-        }
-
-        header nav {
-            flex-direction: row;
-            padding-bottom: 0;
-            padding-right: 30px;
-        }
-
-        #somosCarpi .container {
-            display: flex;
-            justify-content: space-evenly;
-        }
-
-        #somosCarpi .texto {
-            width: 50%;
-            max-width: 600px;
-            text-align: initial;
-            padding-left: 30px;
-        }
-
-        #somosCarpi h2 {
-            margin-top: 0px;
-        }
-
-        #hero h1 {
-            font-size: 3.8em;
-        }
-
-        #somosCarpi .img-container {
-            background-image: url("/image/banner.jpg");
-            background-size: cover;
-            background-position: center;
-            height: 500px;
-            width: 400px;
-        }
-
-        #nuestrasBebidas .cartasProd {
-            display: flex;
-            justify-content: center;
-        }
-
-        #nuestrasBebidas p {
-            display: block;
-            font-size: 1.10em;
-            margin-top: 20px;
-            margin-bottom: 30px;
-        }
-
-        #nuestrasBebidas h3 {
-            margin-top: 0px;
-        }
-
-        #nuestrasBebidas .carta {
-            padding: 50px;
-
-        }
-
-        #nuestrasBebidas .carta:hover {
-            box-shadow: 1px 1px 12px rgb(251, 250, 250);
-        }
-
-        footer .container {
-            justify-content: flex-end;
-        }
 
         section .producto {
             width: 30%;

@@ -45,12 +45,6 @@ body{
     border-radius: 5px;
 }
 
-.erroresLocales{
-    color:red;
-    font-size:13px;
-    text-align: center;
-    padding:5px;
-}
 
 h1{
     text-align: center;
@@ -79,6 +73,11 @@ input .contenedor{
     border:1px solid #aaa;
 }
 
+.erroresLocales{
+    color:red;
+    font-size:15px;
+    padding:5px;
+}
 
 .icon{
     min-width: 50px;

@@ -10,7 +10,7 @@
                     <div class="productos">
                         <% productos.forEach(function(element){ %>
                             <article class="producto">
-                                    <a href="/products/<%= element.id%>">
+                                    <a class="hipervinculo-productos" href="/products/<%= element.id%>">
                                         <img src="/image/<%= element.img %>">
                                         <div class="contenedor-articulo">
                                             <p class="nombre_producto"><%= element.name %></p>

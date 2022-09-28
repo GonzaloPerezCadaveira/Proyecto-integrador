@@ -19,7 +19,7 @@ const validation = [
     }),
     check('user_password').notEmpty().withMessage('Debes escribir una contraseña').bail()
     .isLength({min:8}).withMessage('La contraseña debe tener un mínimo de 8 caracteres'),
-    check('user_img').notEmpty().withMessage('Debe subir una imagen de perfil').bail()
+    check('user_img').notEmpty().withMessage('Debes subir una imagen de perfil').bail()
 ]
 
 module.exports = validation;
