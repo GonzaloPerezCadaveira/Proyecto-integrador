@@ -42,14 +42,15 @@
                 
                 <form  action="/products/carrito" method="POST">            
                     <div class="form-comprar">
-                        <select name="quantity">
+                        <span><strong>Cantidad:</strong></span>
+                        <select class="select-quantity" name="quantity">
                             <% for(let i = 0; i <= producto.quantity; i++){ %>
-                                <p>Selecciona la cantidad</p> <option value="<%= i %>"><%= i %></option> 
+                                <option value="<%= i %>"><%= i %></option>
                             <% } %>
                         </select>
                     </div>
                     <div>
-                        <input type="number" disabled name="product_id" value="<%= producto.id %>">
+                        <input class="input-productoId" type="number" disabled name="product_id" value="<%= producto.id %>">
                     </div>
                     <div class="form-comprar">
                         <i class="fa-solid fa-cart-shopping i-carrito"></i>

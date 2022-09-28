@@ -103,6 +103,14 @@ small {
     cursor: pointer;
 }
 
+.select-quantity {
+    width:37px;
+}
+
+.input-productoId {
+    display:none;   
+}
+
 .div-costo-envio {
     margin: 25px 0;
 }
@@ -145,18 +153,6 @@ small {
     font-weight:bolder;
 }
 
-/* .button-edit, 
-.button-delete{
-    font-size: 10px;
-    font-weight: bold;
-    padding: 10px 30px;
-    border-radius: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.5);
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-    color: #EEEEEE;
-    background-color: #222831;
-    cursor: pointer;
-} */
 
 .div-botones-final{
     display: flex;
