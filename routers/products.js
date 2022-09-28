@@ -34,12 +34,14 @@ router.get("/:id", productController.detail);
 // Actualización de producto (U)
 router.get('/edit/:id', productController.edit);
 
-router.post('/actualizar/:id', productController.editComplete);
+router.put('/actualizar/:id', validacionImg.single('img'), productController.editComplete);
 
 // Borrado de producto (D)
 router.delete('/delete/:id', productController.destroy); 
 
 
-router.get('/carrito', productController.carrito);
+router.post('/carrito', productController.carrito);
+
+router.post('/carrito', productController.carritoBuy);
 
 module.exports= router;

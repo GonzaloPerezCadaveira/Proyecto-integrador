@@ -43,13 +43,13 @@
                                     <p class="etiqueta">Imagen de perfil</p>
                                     <div class="contenedor">
                                         <i class="fa-regular fa-image icon"></i>
-                                        <input type="file" name="user_img" accept=".jpg, .png, .jpng" required>
-                                    </div>
-                                    <% if(locals.error){ %>
-                                        <p class="erroresLocales">
-                                            <%= locals.error %>
-                                        </p>
+                                        <input type="file" name="user_img" accept=".jpg, .png, .jpng" >
+                                        <% if(locals.errors && errors.user_img){ %>
+                                            <p class="erroresLocales">
+                                                <%= errors.user_img.msg %>
+                                            </p>
                                         <% } %>
+                                    </div>
 
                                             <input type="submit" value="Registrate" class="button">
                                             <p>Al registrarte como usuario aceptas nuestras condiciones de uso y

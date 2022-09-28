@@ -2,18 +2,28 @@ DROP DATABASE IF EXISTS carpinchodrinks_db;
 CREATE DATABASE carpinchodrinks_db;
 USE carpinchodrinks_db;
 
-CREATE TABLE `users` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `user_name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `user_email` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `user_password` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`)
-);
 
 CREATE TABLE `categories` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `cat_name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `users_categories` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name_category` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `users` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `user_name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `user_email` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `user_password` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `user_img` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `user_cat` int(10) unsigned NOT NULL, 
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (`user_cat`) REFERENCES users_categories (`id`)
 );
 
 CREATE TABLE `products` (

@@ -47,14 +47,15 @@ const controller = {
         db.Product.findOne({
             where: { id: idParams }
         })
-            .then(function (productos) {
-                res.render('productDetail', {
-                    titulo: 'Detalle de Producto',
-                    enlace: '/css/productDetail.css',
-                    productos,
-                    toThousand
-                })
+        .then(function (producto) {
+            res.render('productDetail', 
+            {
+                titulo: 'Detalle de Producto',
+                enlace: '/css/productDetail.css',
+                producto,
+                toThousand
             })
+        })
     },
     edit: (req, res) => {
         let idParams = req.params.id
@@ -81,27 +82,41 @@ const controller = {
                     discount: req.body.discount,
                     cat_id: req.body.category,
                     name: req.body.name,
+                    img: req.file.filename
 
                 }, {
                 where: { id: req.params.id }
             })
                 .then(function () {
-                    res.redirect('/products/' + req.params.id)
+                    res.redirect('/')
                 })
     },
     destroy: (req, res) => {
         db.Product.destroy({
-            where: { id: req.params.id }
+            where: { id:req.params.id }
         })
-            .then(function () {
-                res.redirect('/')
-            })
+        .then(function(){
+            res.redirect('/')
+        })
     },
     carrito: (req, res) => {
-        res.render('carritoDeCompras', {
-            titulo: 'Carrito',
-            enlace: '/css/productChart.css'
-        });
+        db.Product.findOne({
+            where:{id:req.body.product_id}
+        })
+        .then(function(product){
+
+            res.render('carritoDeCompras',{
+                enlace:'/css/productChart.css',
+                titulo:'Carrito',
+                product,
+                cantidad:req.body.quantity
+            })
+        })
+
+    },
+    carritoBuy:(req,res)=>{
+        db.Cart.create
+
     }
 }
 

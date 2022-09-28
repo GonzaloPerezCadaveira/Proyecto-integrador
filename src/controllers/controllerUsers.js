@@ -4,13 +4,13 @@ const bcrypt = require("bcryptjs");
 const session = require("express-session");
 const { validationResult } = require('express-validator')
 
-const userData = path.join(__dirname, '../database/users.json')
+// const userData = path.join(__dirname, '../database/users.json')
 
-const userBase = JSON.parse(fs.readFileSync(userData, 'utf-8'))
+// const userBase = JSON.parse(fs.readFileSync(userData, 'utf-8'))
 
-const productoData = path.join(__dirname, '../database/productsData.json')
+// const productoData = path.join(__dirname, '../database/productsData.json')
 
-const productoBase = JSON.parse(fs.readFileSync(productoData, 'utf-8'))
+// const productoBase = JSON.parse(fs.readFileSync(productoData, 'utf-8'))
 
 const db = require('../database/models');
 
@@ -28,48 +28,76 @@ const controller = {
         });
     },
 
-    store: async (req, res) => {
+    store:function(req, res){
         const errors = validationResult(req);
-        let emailEnUso = await db.User.findOne({ where: { user_email: req.body.user_email } });
-        let nameEnUso = await db.User.findOne({ where: { user_name: req.body.user_name } })
+        let emailError=db.User.findOne({
+             where: { user_email: req.body.user_email } 
+            });
+        let nombreError=db.User.findOne({
+             where: { user_name: req.body.user_name } 
+            });
         if (!errors.isEmpty()) {
-            res.render('register', {
+                res.render('register', {
                 titulo: "Register",
                 enlace: "/css/register.css",
                 errors: errors.mapped(),
                 old: req.body
             });
-        } else if (emailEnUso && nameEnUso) {
-            res.render('register', {
-                titulo: "Register",
-                enlace: "/css/register.css",
-                errors:
-                {
-                    user_email: { msg: 'La dirección de correo electronico no se encuentra disponible' },
-                    user_name: { msg: 'El nombre seleccionado no se encuentra disponible' }
-                }
-            });
-        } else {
-            await db.User.create({
+        }
+        else{
+            db.User.create({
                 user_name: req.body.user_name,
                 user_email: req.body.user_email,
                 password: bcrypt.hashSync(req.body.user_password, 10),
                 user_img: req.file.filename,
-                id_type: 2
+                user_cat:''
             })
-                .then((user) => {
-                    res.redirect('login'), {
-                        titulo: "Login",
-                        enlace: "/css/login.css",
-                        errors,
-                        old: req.body
-                    };
-                })
+            .then(function(){
+                res.redirect('/')
+            })
         }
+
+        // const errors = validationResult(req);
+        // let emailEnUso = await db.User.findOne({ where: { user_email: req.body.user_email } });
+        // let nameEnUso = await db.User.findOne({ where: { user_name: req.body.user_name } })
+        // if (!errors.isEmpty()) {
+        //     res.render('register', {
+        //         titulo: "Register",
+        //         enlace: "/css/register.css",
+        //         errors: errors.mapped(),
+        //         old: req.body
+        //     });
+        // } else if (emailEnUso && nameEnUso) {
+        //     res.render('register', {
+        //         titulo: "Register",
+        //         enlace: "/css/register.css",
+        //         errors:
+        //         {
+        //             user_email: { msg: 'La dirección de correo electronico no se encuentra disponible' },
+        //             user_name: { msg: 'El nombre seleccionado no se encuentra disponible' }
+        //         }
+        //     });
+        // } else {
+        //     await db.User.create({
+        //         user_name: req.body.user_name,
+        //         user_email: req.body.user_email,
+        //         password: bcrypt.hashSync(req.body.user_password, 10),
+        //         user_img: req.file.filename,
+        //         id_type: 2
+        //     })
+        //         .then((user) => {
+        //             res.redirect('login'), {
+        //                 titulo: "Login",
+        //                 enlace: "/css/login.css",
+        //                 errors,
+        //                 old: req.body
+        //             };
+        //         })
+        // }
     },
     login: (req, res) => {
         res.render('login', {
-            titulo: 'Login',
+            titulo: 'login',
             loginError: '',
             enlace: '/css/login.css'
         });
@@ -79,7 +107,7 @@ const controller = {
         if (!errors.isEmpty()) {
             res.render('login', { errors: errors.mapped(), old: req.body });
         };
-        let foundUser = await db.User.findOne({ where: { user_email: { [Op.like]: req.body.user_email } } });
+        let foundUser = await db.User.findOne({ where: { user_email: { [Op.like]:'<%'+req.body.user_email+'%>' } } });
         let foundPassword = bcrypt.compareSync(req.body.password, foundPassword.password);
         if (!foundUser) {
             res.render('login', {
