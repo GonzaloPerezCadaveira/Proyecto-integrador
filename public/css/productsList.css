@@ -37,7 +37,7 @@ div p.precio {
     text-align: start;
 }
 
-a .hipervinculo-productos {
+a.hipervinculo-productos {
     text-decoration: none;
     color: black;
     width:100%;
