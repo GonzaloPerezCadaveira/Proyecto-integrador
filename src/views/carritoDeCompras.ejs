@@ -1,80 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
-    <%- include('partials/head') %>
-<body class="bodyChart">
-    <%- include('partials/header') %>
-<main class="principal">
-    <form class="formulario">
-        <h1>Carrito</h1>
-        <br> </br>
-        <div class="product">
-            <h3>Nombre producto</h3> 
-            <br> </br>
-            <div class="productData">
-                <div class="divImg">
-                    <img src="/image/vino.jpeg" class="img"> 
-                </div>
-                <div class="divDescription">
-                    <span class="description">Descripcion del producto</span>
-                </div>
-                <div class="divAmount">
-                    <br></br>
-                    <p>Cantidad</p>
-                    <div>
-                        <input type="button" value="-">
-                        <input type="button" value= "cantidad">
-                        <input type="button" value="+">
-                    </div>
-                </div>
-                <div class="divSubtotal">
-                    <br></br>
-                    <p>Subotal</p>
-                    <i class="fa-solid fa-dollar-sign"></i>
-                    <input type="button" value="textarea">
-                </div>
-            </div>               
-        </div>
-        <br>
-        <div class="product">
-            <h3>Nombre producto</h3> 
-            <br> </br>
-            <div class="productData">
-                <div class="divImg">
-                    <img src="/image/producto-cerveza2.jpg" class="img"> 
-                </div>
-                <div class="divDescription">
-                    <span class="description">Descripcion del producto</span>
-                </div>
-                <div class="divAmount">
-                    <br></br>
-                    <p>Cantidad</p>
-                    <div>
-                        <input type="button" value="-">
-                        <input type="button" value= "cantidad">
-                        <input type="button" value="+">
-                    </div>
-                </div>
-                <div class="divSubtotal">
-                    <br></br>
-                    <p>Subotal</p>
-                    <i class="fa-solid fa-dollar-sign"></i>
-                    <input type="button" value="textarea">
-                </div>
-            </div>               
-        </div>
+<html lang="es">
+  <%- include('partials/head') %>
 
-        <br></br>
-        <br></br>
-        <div class="total">
-            <div class="divTotal">
-                <h3>Total del Carrito</h3>
-                <i class="fa-solid fa-dollar-sign"></i>
-                <input type="button" value="textarea">
-            </div>
-            <div class="payButton" ><button class="pagar">Pagar</button></div>
+  <body>
+    <%- include('partials/header') %>
+
+    <main class="contenedor-cart">
+
+      <div id="vacio" class="vacio"></div>
+
+      <section class="sumario-cart">
+        <h4>Resumen de tu compra</h4>
+        
+    
+        <div class="totales">
+          <div class="titulos">
+            <h3>TOTAL:</h3>
+          </div>
+          <div class="cantidades">
+            <h3 id="precioTotal">$</h3>
+          </div>
         </div>
-    </form>
-</main>
-<%- include('partials/footer')%>
-</body>
+    
+        <button id="botonBorrar" type="button" onclick="">Vaciar Carrito</button>
+      
+        <a href="/products">
+          <button type="submit">Agregar más productos</button>
+        </a>
+      </section>
+
+    </main>
+
+    
+    <script src="/js/carrito.js"></script>
+
+    <%- include('partials/footer') %>
+  </body>
 </html>

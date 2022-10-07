@@ -40,8 +40,7 @@ router.put('/actualizar/:id', validacionImg.single('img'), productController.edi
 router.delete('/delete/:id', productController.destroy); 
 
 
-router.post('/carrito', productController.carrito);
+router.get('/carrito', productController.carrito);
 
-router.post('/carrito', productController.carritoBuy);
 
 module.exports= router;

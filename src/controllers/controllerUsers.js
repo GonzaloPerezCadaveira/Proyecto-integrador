@@ -139,7 +139,7 @@ const controller = {
     profile: (req, res) => {
         res.render("profile", {
             titulo: 'Profile',
-            enlace: '/css/profile.css'
+            enlace: '/css/profile.css',
         })
     }
 }

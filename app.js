@@ -24,6 +24,8 @@ app.use(logger('dev'));
 app.use(cookieParser())
 app.use(methodOverride('_method'));
 
+
+
 //Middlewares
 app.use(verifyAuth)
 
@@ -36,5 +38,9 @@ app.use("/products", productsRouter);
 app.use("/user", usersRouter);
 app.use("/", usersRouter)
 
+// Error (404):
+app.use((req, res, next) => {
+    res.status(404).render('error');
+})
 
 module.exports = app

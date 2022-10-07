@@ -1,56 +1,127 @@
-*{
-    box-sizing: border-box;
+main {
+    font-family: Roboto, sans-serif;
+    margin: auto;
+    max-width: 750px;
 }
 
-.bodyChart{
-    background:url("/image/banner3.jpg");
-    background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: center center;
+.checkout-cart {
+    display: flex;
+    flex-grow: 1;
+    padding: 15px;
 }
-.formulario{
-    max-width: 80%;
-    
-    margin: 10% auto;
-    padding:3px;
+
+.descripcion-cart {
+    font-size: 15px;
+    line-height: 18px;
 }
-.product{
-    background-color: lightgrey;
-    border: black 5px solid;
-    border-radius: 3%;
+
+.item-cart {
+    display: flex;
+    flex-grow: 0.8;
     padding: 10px;
 }
-.img{
+
+.precio-cart {
+    color: black;
+    font-weight:bolder
+}
+
+.cant-cart {
+    flex-grow: 0.2;
+    padding: 10px;
+}
+
+.item-cart button {
+    flex-grow: 0.1;
+    border: none;
+    background-color: #fff;
+    color: black
+}
+
+.item-cart div {
+    margin: 0 5px;
+}
+
+.cant-prod {
+    width: 29px;
+    margin-top: 10px;
+    margin-left: 20px;
+    border: solid 1px black
+}
+
+main h4 {
+    display: block;
+    font-size: 20px;
+    padding: 10px;
+    text-align: center;
+}
+
+.fa-times {
+    cursor: pointer !important;
+}
+
+#count {
+    width: 15px;
+}
+
+.img-cart img {
     width: 100%;
-}
-.productData{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
-    grid-auto-rows: minmax(10px, auto);
-}
-.divImg{
-    grid-column: 1;
-    grid-row: 1 / 5;
-}
-.divDescription{
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
-}
-.divAmount{
-    grid-column: 2;
-    grid-row: 3 / 4;
-    align-items: auto;
-}
-.divSubtotal{
-    grid-column: 3;
-    grid-row: 3 / 5;
+    min-width: 70px;
+    max-width: 150px;
 }
 
-.total{
-    background-color: lightgrey;
-    border: black 5px solid;
-    border-radius: 3%;
-    padding: 10px;
+.sumario-cart {
+    background-color: #ebecee;
+    padding: 30px;
+    margin-top: 30px;
+    margin-bottom: 70px;
+}
+
+.descuento-cart {
+    padding: 10px 0;
+}
+
+
+.descuento-cart input {
+    margin-top: 10px;
+    width: 100%;
+    outline: none;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.sumario-cart p {
+    padding: 15px 0;
+    font-size: 15px;
+    line-height: 22px;
+}
+
+.totales {
+    display: flex;
+    justify-content: space-between;
+}
+
+.totales h3, 
+.totales h5 {
+    padding: 5px 0;
+}
+
+.sumario-cart button {
+    width: 100%;
+    margin-top: 15px;
+    padding: 15px;
+    background-color: rgba(30,30,30);
+    border: none;
+    color: #ffffff;
+    border-radius: 8px;
+}
+
+.sumario-cart button:hover {
+    background-color: rgba(30,30,30);
+    cursor: pointer;
+}
+
+h2{
+    text-align: center;
+    margin-top:20px;
 }
