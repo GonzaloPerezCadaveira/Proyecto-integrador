@@ -7,15 +7,13 @@
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
+    position: relative;
+    display:flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-.body {
-    background-image: url("/image/banner2.jpg");
-    background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: center center;
-}
+
 header {
     background-color: rgba(30, 30, 30);
     width: 100%;
@@ -86,10 +84,11 @@ header a:hover {
 }
 
 footer {
-    position: relative;
-    bottom: 0%;
+    position: absolute;
+    bottom: 0;
     width: 100%;
     background-color: rgba(230, 230, 230);
+    margin-top:auto
 }
 
 footer p {
@@ -99,7 +98,6 @@ footer p {
 }
 
 footer .container {
-    height: 150px;
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -126,9 +124,8 @@ footer .container {
         font-size: 3.8em;
     }
 
-
     footer .container {
         justify-content: flex-end;
-        width:100%
+        margin-top:auto
     }
 }

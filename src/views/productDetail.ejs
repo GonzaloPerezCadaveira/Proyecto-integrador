@@ -1,101 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
-    <%- include('partials/head') %> 
+<html lang="es">
+    <%- include("partials/head") %>
 <body>
-    <%- include('partials/header') %>
-    <main>
-
-
-        <article class="article-producto">
-            
-            <div class="div-img-producto">
-                <img src="/image/<%= producto.img %>">
+    <%- include('partials/header') %> 
+    <main class="main-producto">
+        <% let precioFinal = producto.discount ? (producto.price - producto.price * producto.discount / 100).toFixed(0) : producto.price; %>
+        <div class="producto">
+            <h1><%= producto.name %></h1>
+            <img src="/image/<%= producto.img %>"  alt="Imagen del producto">
+        </div>
+        <div class="barra-precio">
+            <h2>Descripción</h2>
+            <p> <%= producto.description %> </p>    
+            <h2>$<%= toThousand(precioFinal) %> </h2>
+            <span class="precio" style="display: none"><%=precioFinal%></span>
+            <p class="descuento"><%= producto.discount + " %OFF"%> </p>
+            <p class="color">12 cuotas s/interés</p>
+            <div class="cant">
+                <label class="count">Cantidad</label>
+                <button class="menos" onclick="contadormenos()">-</button>
+                <input id="count" type="text" value="1" style="text-align: center; width: 30px;" >
+                <button class="menos" onclick="contadormas()">+</button>
             </div>
-            
-            <div class="div-datos-producto">
-                
-                <h4 class="h4-nombre-producto"><%= producto.name %></h4>
-                
-                
-                <% if (producto.discount != 0) { %>
+        </div>
+        
+        <div class="botones">
 
-                    <div class="div-precio-con-descuento">
-                        
-                        <p class="p-precio"><small>ANTES </small>$<%= toThousand(producto.price) %></p>
-                        <p class="p-descuento"><%= producto.discount %>% <small> </small>OFF</p>
-                        <h5 class="p-precio-final">$<%= toThousand(producto.price * (1 - producto.discount / 100)) %></h5>
-                        
-                    </div>
-                    
-                    <% } else { %>
-                        
-                        <h5 class="p-precio-final">$<%= toThousand(producto.price) %></h5> 
-                        
-                <% } %>
-                        
-                <div class="div-formas-pago">
-                            
-                    <i class="fa-solid fa-credit-card i-tarjeta"></i>
-                    <span><strong>6 cuotas sin interés</strong> de $<%= toThousand((producto.price / 6).toFixed(2)) %></span>
-                            
-                </div>
-                
-                <form  action="/products/carrito" method="POST">            
-                    <div class="form-comprar">
-                        <span><strong>Cantidad:</strong></span>
-                        <select class="select-quantity" name="quantity">
-                            <% for(let i = 0; i <= producto.quantity; i++){ %>
-                                <option value="<%= i %>"><%= i %></option>
-                            <% } %>
-                        </select>
-                    </div>
-                    <div>
-                        <input class="input-productoId" type="number" disabled name="product_id" value="<%= producto.id %>">
-                    </div>
-                    <div class="form-comprar">
-                        <i class="fa-solid fa-cart-shopping i-carrito"></i>
-                        <span><button class="button-agregar-al-carrito" type="submit">Agregar al carrito</button></span>    
-                    </div>
+                <a href="/products/edit/<%= producto.id %>"><button type="submit"class="boton-formulario"><i class="fas fa-edit"></i></button></a>
+
+                <form action="/products/delete/<%= producto.id %>?_method=DELETE" method="POST">
+
+                    <button type="submit" class="boton-formulario"><i class="fas fa-trash-alt"></i></button>
                 </form>
-                
-                
-                
-                <div class="div-envio-gratis">
 
-                    <i class="fa-solid fa-truck i-camion"></i>
-
-                    <span><strong>Envío gratis</strong> a partir de $10.000,00</span>
-
-                </div>
-<!-- 
-                <form action="" method="">
-
-                    <div class="shipping-cost">
-                        <input type="number" min="0" name="postal-code" placeholder="Tu código postal">
-                        <button type="submit">Calcular</button>
-                    </div>
-                </form> -->
-
-
-                <div class="div-descripcion-producto">
-
-                    <p><%= producto.description%></p>
-                    
-                </div>
-
-                <div class="div-botones-final">
-						<a href="/products/edit/<%= producto.id %>" class="button-edit">EDITAR PRODUCTO</a>
-
-						<form action="/products/delete/<%= producto.id %>?_method=DELETE" method="POST">
-							<button type="submit" class="button-delete">ELIMINAR PRODUCTO</button>
-						</form>
-                </div>
-            </div> 
-        </article>
-    
+                    <a href=""><button type="submit"class="boton-formulario-shop"><i class="fas fa-shopping-cart"></i></button></a>
+        </div>
     </main>
 
-    <%- include ('partials/footer') %>
-   
+    <%- include('partials/footer') %> 
+
+    <script src="/js/agregar.js"></script>
+    <script src="/js/contador.js"></script>
 </body>
-</html> 
+
+</html>

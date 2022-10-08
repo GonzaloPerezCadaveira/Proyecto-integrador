@@ -155,23 +155,12 @@ const controller = {
         })
     },
     carrito: (req, res) => {
-        db.Product.findOne({
-            where:{id:req.body.product_id}
+        db.Product.findAll()
+        .then(response => {
+         res.render('products/carritoDeCompras', {carritoDeCompras:response, toThousand});
+        }).catch(function(e) {
+            res.render('error', { titulo: '404', enlace: 'css/error.css'})
         })
-        .then(function(product){
-
-            res.render('carritoDeCompras',{
-                enlace:'/css/productChart.css',
-                titulo:'Carrito',
-                product,
-                cantidad:req.body.quantity
-            })
-        })
-
-    },
-    carritoBuy:(req,res)=>{
-        db.Cart.create
-
     }
 }
 

@@ -41,6 +41,14 @@ button:hover {
     margin: auto;
 }
 
+.body {
+    background-image: url("/image/banner2.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
 
 #hero {
     display: flex;
