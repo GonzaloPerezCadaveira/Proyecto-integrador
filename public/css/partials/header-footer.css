@@ -33,7 +33,7 @@ header #logo {
 header .container {
     display: flex;
     flex-direction: column;
-    align-items: center;
+
 }
 
 header nav {
@@ -42,6 +42,35 @@ header nav {
 
     padding-bottom: 25px;
     align-items: center;
+}
+
+#navbar{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#navbar img{
+    max-width: 60px;
+    margin: 3%;
+    border-radius: 50%;
+}
+
+#navbar .avatar{
+    display: flex;
+    width: 27%;
+    color:white; 
+    justify-content: center;
+    align-items: center;   
+}
+
+.avatar{
+    width: 15%;
+}
+
+.avatar h3{
+    margin:2% 0;
+
 }
 
 header a {

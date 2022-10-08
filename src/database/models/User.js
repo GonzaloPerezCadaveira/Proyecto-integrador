@@ -18,6 +18,9 @@ module.exports= function(sequelize, dataTypes){
         },
         user_img:{
             type:dataTypes.STRING(100)
+        },
+        user_cat:{
+            type: dataTypes.INTEGER(10)
         }
     }
 

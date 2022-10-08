@@ -2,8 +2,9 @@ const express = require ('express');
 const app = express();
 const methodOverride= require('method-override');
 const logger = require('morgan');
+const session = require("express-session");
 const cookieParser = require('cookie-parser');
-const { verifyAuth } = require('./src/middlewares/auth');
+const userConnectedLogged=require('./src/middlewares/userConnectedLogged')
 
 // Routers
 const homeRouter = require("./routers/home");
@@ -21,11 +22,16 @@ app.use(express.static('public'));
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 app.use(logger('dev'));
+app.use(session({
+    secret:'Its secrets',
+    resave:false,
+    saveUninitialized:false
+}))
 app.use(cookieParser())
 app.use(methodOverride('_method'));
 
 //Middlewares
-app.use(verifyAuth)
+app.use(userConnectedLogged)
 
 app.listen (3020, () => { 
 console.log ('Servidor corriendo en puerto 3020')

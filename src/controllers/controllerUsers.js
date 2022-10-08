@@ -1,7 +1,7 @@
 const path = require("path");
 const fs = require("fs");
 const bcrypt = require("bcryptjs");
-const session = require("express-session");
+
 const { validationResult } = require('express-validator')
 
 // const userData = path.join(__dirname, '../database/users.json')
@@ -30,14 +30,9 @@ const controller = {
 
     store:function(req, res){
         const errors = validationResult(req);
-        let emailError=db.User.findOne({
-             where: { user_email: req.body.user_email } 
-            });
-        let nombreError=db.User.findOne({
-             where: { user_name: req.body.user_name } 
-            });
+        console.log(req.body);
         if (!errors.isEmpty()) {
-                res.render('register', {
+            res.render('register', {
                 titulo: "Register",
                 enlace: "/css/register.css",
                 errors: errors.mapped(),
@@ -45,111 +40,152 @@ const controller = {
             });
         }
         else{
-            db.User.create({
-                user_name: req.body.user_name,
-                user_email: req.body.user_email,
-                password: bcrypt.hashSync(req.body.user_password, 10),
-                user_img: req.file.filename,
-                user_cat:''
+            db.User.findOne({
+                where:{
+                    user_email:req.body.user_email,
+                    user_password:bcrypt.hashSync(req.body.user_password, 10)
+                }
             })
-            .then(function(){
-                res.redirect('/')
+            .then(function(usuario){
+                if(!usuario){
+                    db.User.create({
+                        user_name: req.body.user_name,
+                        user_email: req.body.user_email,
+                        user_password: bcrypt.hashSync(req.body.user_password, 10),
+                        user_img: req.file.filename,
+                        user_cat:1
+                    })
+                    .then(function(){
+                        res.redirect('/')
+                    })
+                }
+                else{
+                    res.render('register', {
+                    titulo: "Register",
+                    enlace: "/css/register.css",
+                    errors: errors.mapped(),
+                    errors: {
+                            user_email: { msg: 'El email '+usuario.user_email+' ya se encuentra registrado' }    
+                        },
+                    old: req.body
+                    });
+                }
             })
         }
-
-        // const errors = validationResult(req);
-        // let emailEnUso = await db.User.findOne({ where: { user_email: req.body.user_email } });
-        // let nameEnUso = await db.User.findOne({ where: { user_name: req.body.user_name } })
-        // if (!errors.isEmpty()) {
-        //     res.render('register', {
-        //         titulo: "Register",
-        //         enlace: "/css/register.css",
-        //         errors: errors.mapped(),
-        //         old: req.body
-        //     });
-        // } else if (emailEnUso && nameEnUso) {
-        //     res.render('register', {
-        //         titulo: "Register",
-        //         enlace: "/css/register.css",
-        //         errors:
-        //         {
-        //             user_email: { msg: 'La dirección de correo electronico no se encuentra disponible' },
-        //             user_name: { msg: 'El nombre seleccionado no se encuentra disponible' }
-        //         }
-        //     });
-        // } else {
-        //     await db.User.create({
-        //         user_name: req.body.user_name,
-        //         user_email: req.body.user_email,
-        //         password: bcrypt.hashSync(req.body.user_password, 10),
-        //         user_img: req.file.filename,
-        //         id_type: 2
-        //     })
-        //         .then((user) => {
-        //             res.redirect('login'), {
-        //                 titulo: "Login",
-        //                 enlace: "/css/login.css",
-        //                 errors,
-        //                 old: req.body
-        //             };
-        //         })
-        // }
     },
     login: (req, res) => {
+        
         res.render('login', {
             titulo: 'login',
             loginError: '',
-            enlace: '/css/login.css'
+            enlace: '/css/login.css',
         });
     },
-    log: async (req, res) => {
+    loginSucces:function(req,res){
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
-            res.render('login', { errors: errors.mapped(), old: req.body });
-        };
-        let foundUser = await db.User.findOne({ where: { user_email: { [Op.like]:'<%'+req.body.user_email+'%>' } } });
-        let foundPassword = bcrypt.compareSync(req.body.password, foundPassword.password);
-        if (!foundUser) {
             res.render('login', {
-                errors: {
-                    user_email: {
-                        msg: 'No se encuentra el email'
-                    }
+                titulo: "login",
+                enlace: "/css/login.css",
+                errors: errors.mapped(),
+                old: req.body
+            });
+        }
+        else{
+            db.User.findOne({
+                where:{
+                    user_email:req.body.user_email
                 }
             })
-        };
-        if (foundUser && !foundPassword) {
-            res.render('login', {
-                errors: {
-                    password: {
-                        msg: 'La contraseña es incorrecta'
-                    }
+            .then(function (usuario) {
+                let check=bcrypt.compareSync(req.body.user_password,usuario.user_password)
+                if(check){
+                    req.session.userLogged = usuario
+                    res.redirect("/profile")
+                }
+                else
+                {
+                    res.render('login', {
+                        titulo: "login",
+                        enlace: "/css/login.css",
+                        errors:{
+                            user_password:{msg:'La contraseña ingresada es incorrecta'}
+                        }, 
+                        old: req.body
+                    });   
                 }
             })
-        };
-        if (foundUser && foundPassword) {
-            delete foundUser.password;
-            req.session.userLog = foundUser;
-            if (req.body.rememberUser) {
-                res.cookie('userEmail', req.body.email, { maxAge: 86400000 });
-            };
-            res.redirect('/');
-        };
+        }
     },
     profile: (req, res) => {
-        res.render("profile", {
-            titulo: 'Profile',
-            enlace: '/css/profile.css'
-        })
+        if(req.session.userLogged){
+            const usuario=req.session.userLogged
+            console.log(usuario);
+            db.User.findOne({
+                where:{id:usuario.id}
+            })
+            .then(function(user) {
+                res.render('profile',{
+                    titulo:'Profile',
+                    enlace:'/css/profile.css',
+                    user
+                })
+            })
+        }
+        else{
+            res.render('profile',{
+                titulo:'Profile',
+                enlace:'/css/profile.css',
+            })
+        }
+    },
+    logout:(req,res)=>{
+        req.session.destroy();
+        return res.redirect('/')
     }
 }
 
+module.exports = controller;
 
 // Controladores con archivo JSON.
 
 // nuevoUser: function (req, res) {
-//     const error = "Debes subir una imagen de perfil";
-//     const check = "check";
+    //     const error = "Debes subir una imagen de perfil";
+    //     const check = "check";
+    // async (req, res) => {
+    //     const errors = validationResult(req);
+    //     if (!errors.isEmpty()) {
+    //         res.render('login', { errors: errors.mapped(), old: req.body });
+    //     };
+    //     let foundUser = await db.User.findOne({ where: { user_email: { [Op.like]:'<%'+req.body.user_email+'%>' } } });
+    //     let foundPassword = bcrypt.compareSync(req.body.password, foundPassword.password);
+    //     if (!foundUser) {
+    //         res.render('login', {
+    //             errors: {
+    //                 user_email: {
+    //                     msg: 'No se encuentra el email'
+    //                 }
+    //             }
+    //         })
+    //     };
+    //     if (foundUser && !foundPassword) {
+    //         res.render('login', {
+    //             errors: {
+    //                 password: {
+    //                     msg: 'La contraseña es incorrecta'
+    //                 }
+    //             }
+    //         })
+    //     };
+    //     if (foundUser && foundPassword) {
+    //         delete foundUser.password;
+    //         req.session.userLog = foundUser;
+    //         if (req.body.rememberUser) {
+    //             res.cookie('userEmail', req.body.email, { maxAge: 86400000 });
+    //         };
+    //         res.redirect('/');
+    //     };
+    // },
 //     const errors = validationResult(req);
 //     let file = req.file;
 
@@ -222,4 +258,46 @@ const controller = {
 //     enlace:'css/styles.css'
 // })
 
-module.exports = controller;
+
+
+
+
+
+// const errors = validationResult(req);
+        // let emailEnUso = await db.User.findOne({ where: { user_email: req.body.user_email } });
+        // let nameEnUso = await db.User.findOne({ where: { user_name: req.body.user_name } })
+        // if (!errors.isEmpty()) {
+        //     res.render('register', {
+        //         titulo: "Register",
+        //         enlace: "/css/register.css",
+        //         errors: errors.mapped(),
+        //         old: req.body
+        //     });
+        // } else if (emailEnUso && nameEnUso) {
+        //     res.render('register', {
+        //         titulo: "Register",
+        //         enlace: "/css/register.css",
+        //         errors:
+        //         {
+        //             user_email: { msg: 'La dirección de correo electronico no se encuentra disponible' },
+        //             user_name: { msg: 'El nombre seleccionado no se encuentra disponible' }
+        //         }
+        //     });
+        // } else {
+        //     await db.User.create({
+        //         user_name: req.body.user_name,
+        //         user_email: req.body.user_email,
+        //         password: bcrypt.hashSync(req.body.user_password, 10),
+        //         user_img: req.file.filename,
+        //         id_type: 2
+        //     })
+        //         .then((user) => {
+        //             res.redirect('login'), {
+        //                 titulo: "Login",
+        //                 enlace: "/css/login.css",
+        //                 errors,
+        //                 old: req.body
+        //             };
+        //         })
+        // }
+    

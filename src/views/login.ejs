@@ -4,44 +4,37 @@
 
     <body class="bodyLogin">
         <%- include('partials/header') %>
-            <form class="formulario" action="/user/login" method="POST">
+            <form class="formulario" action="/login" method="POST">
                 <h1>Ingresá a tu cuenta</h1>
                 <p class="etiqueta">Correo electrónico</p>
                 <div class="contenedor">
                     <i class="fa-solid fa-at icon"></i>
-                    <input type="text" name="email">
-                </div>
-                <div class="erroresLocales">
-                <% if(locals.errors && errors.email) { %>
-                    <p>
-                        <%= errors.email.msg %>
-                    </p>
+                    <input type="email" name="user_email" value="<%= locals.emailBef && emailBef? emailBef : '' %>">
+                    <% if(locals.errors && errors.user_email) { %>
+                        <p class="erroresLocales">
+                            <%= errors.user_email.msg %>
+                        </p>
                     <% } %>
                 </div>
                 <p class="etiqueta">Ingresá tu contraseña</p>
                 <div class="contenedor">    
                     <i class="fa-solid fa-key icon"></i>
-                    <input type="password"  name="password">
-                </div>
-                <div class="erroresLocales">
-                    <% if(locals.errors && errors.password) { %>
-                        <p>
-                            <%= errors.password.msg %>
-                        </p>
-                    <% } %>
+                    <input type="password"  name="user_password" >
+                    <div class="erroresLocales">
+                        <% if(locals.errors && errors.user_password) { %>
+                            <p>
+                                <%= errors.user_password.msg %>
+                            </p>
+                        <% } %>
+                    </div>
                 </div>
                 
                 <p class="etiqueta">Recordar mi usuario</p>
                 <input type="checkbox" class="checkbox" name="rememberUser">
             
-           
-                <input type="submit" value="Ingresar" class="button">
+                <button type="submit" class="button">Ingresar!!</button>
                 <p>¿Todavía no tenés cuenta?<a class="link" href="/user/register"> Registrate</a></p>
-                <div class="login-error">
-                    <p>
-                     <%= loginError %>
-                    </p>
-                </div>
+
             </form>
         <%- include('partials/footer') %>
     </body>

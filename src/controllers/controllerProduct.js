@@ -6,16 +6,30 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const db = require('../database/models')
 
 
+
 const controller = {
     create: (req, res) => {
-        db.Category.findAll()
-            .then(function (categories) {
+        const usuario=req.session.userLogged
+        if(usuario){
+            db.User.findOne({
+                where:{id:usuario.id}
+            })
+            .then(function(user){
                 res.render('create-product', {
                     categories,
                     titulo: 'Creacion de Producto',
-                    enlace: '/css/createProduct.css'
+                    enlace: '/css/createProduct.css',
+                    user
                 })
             })
+        }else{
+            res.render('create-product', {
+                categories,
+                titulo: 'Creacion de Producto',
+                enlace: '/css/createProduct.css',
+            })
+        }
+            
     },
     store: (req, res) => {
         db.Product.create({
@@ -31,8 +45,27 @@ const controller = {
         })
     },
     productsList: (req, res) => {
-        db.Product.findAll()
-            .then(function (productos) {
+        const usuario=req.session.userLogged
+        if(usuario){
+            db.User.findOne({
+                where:{id:usuario.id}
+            })
+            .then(function(userOn){
+                const user = userOn
+                db.Product.findAll()
+                .then(function(productos){ 
+                    res.render('productsList', {
+                        titulo: 'Carta de bebidas',
+                        enlace: '/css/productsList.css',
+                        toThousand,
+                        productos,
+                        user
+                    })
+                })
+            })
+        }else{
+            db.Product.findAll()
+            .then(function(productos){ 
                 res.render('productsList', {
                     titulo: 'Carta de bebidas',
                     enlace: '/css/productsList.css',
@@ -40,22 +73,44 @@ const controller = {
                     productos
                 })
             })
+        }
+
 
     },
     detail: (req, res) => {
+        
         let idParams = req.params.id
-        db.Product.findOne({
-            where: { id: idParams }
-        })
-        .then(function (producto) {
-            res.render('productDetail', 
-            {
-                titulo: 'Detalle de Producto',
-                enlace: '/css/productDetail.css',
-                producto,
-                toThousand
+
+        const usuario=req.session.userLogged
+        if(usuario){
+            db.Product.findOne({
+                where: { id: idParams }
             })
-        })
+            .then(function (producto) {
+                res.render('productDetail', 
+                {
+                    titulo: 'Detalle de Producto',
+                    enlace: '/css/productDetail.css',
+                    producto,
+                    toThousand,
+                    user
+                })
+            })
+        }else{
+            db.Product.findOne({
+                where: { id: idParams }
+            })
+            .then(function (producto) {
+                res.render('productDetail', 
+                {
+                    titulo: 'Detalle de Producto',
+                    enlace: '/css/productDetail.css',
+                    producto,
+                    toThousand
+                })
+            })
+        }
+
     },
     edit: (req, res) => {
         let idParams = req.params.id

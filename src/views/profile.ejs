@@ -8,7 +8,7 @@
         <div class="perfil-usuario-header">
             <div class="perfil-usuario-portada">
                 <div class="perfil-usuario-avatar">
-                    <img src="http://localhost/multimedia/relleno/img-c9.png" alt="img-avatar">
+                    <img src="/image/avatars/<%= user.user_img %>" alt="img-avatar">
                     <button type="button" class="boton-avatar">
                         <i class="far fa-image"></i>
                     </button>
@@ -17,8 +17,7 @@
         </div>
         <div class="perfil-usuario-body">
             <div class="perfil-usuario-bio">
-                <h3 class="titulo">Nombre de Usuario</h3>
-
+                <h3 class="titulo"><%= user.user_name %></h3>
             </div>
             <div class="perfil-usuario-footer">
                 <ul class="lista-datos">

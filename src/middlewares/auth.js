@@ -1,21 +1,8 @@
-const verifyAuth = (req, res, next) => {
-    if (req.path === '/carrito'){
-        if(req.cookies.auth === 'true') {
-            res.render('carritoDeCompras',{
-                titulo:'Carrito',
-                enlace:'css/productChart.css'
-            })
-        } else {
-            res.render('login', {
-                titulo:'Login',
-                loginError: '',
-                enlace:'css/register.css'
-            })
-        }
+function authMiddleware(req, res, next){
+    if (!req.session.userLogged){
+        return res.redirect('/login')
     }
-    next()
+    next();
 }
 
-module.exports = {
-    verifyAuth
-}
+module.exports = authMiddleware;

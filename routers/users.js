@@ -8,27 +8,36 @@ const userController = require("../src/controllers/controllerUsers");
 
 // Middlewares
 
+
 const uploadFile = require('../src/middlewares/multerUsers')
 
-const validationUser = require ("../src/middlewares/user")
+const validacionLogin = require ("../src/middlewares/validationsLogin")
 
-const validations = require("../src/middlewares/validations")
+const validationsRegister = require("../src/middlewares/validationsRegister")
+
+const autentificacion=require('../src/middlewares/auth')
+
+const userOn = require('../src/middlewares/userConnected')
+
+
 
 
 
 // Formulario de Registro
-router.get("/register", userController.register)
+router.get("/register",userOn,userController.register)
 
 // Procesar el registro
-router.post("/register", uploadFile.single('user_img'), validations, userController.store)
+router.post("/register", uploadFile.single('user_img'), validationsRegister, userController.store)
 
 // Formulario de Login
-router.get("/login", userController.login)
+router.get("/login",userOn, userController.login)
 
 // Valida el ingreso de un usuario
-router.post("/login", userController.log)
+router.post("/login",validacionLogin, userController.loginSucces)
 
 // Perfil de usuario
-router.get("/user/profile", userController.profile)
+router.get("/profile",autentificacion, userController.profile)
+
+router.get('/logout',userController.logout)
 
 module.exports = router;
