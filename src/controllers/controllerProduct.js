@@ -81,8 +81,8 @@ const controller = {
         
         let idParams = req.params.id
 
-        const usuario=req.session.userLogged
-        if(usuario){
+        const user=req.session.userLogged
+        if(user){
             db.Product.findOne({
                 where: { id: idParams }
             })

@@ -118,7 +118,6 @@ const controller = {
         }
     },
     profile: (req, res) => {
-<<<<<<< HEAD
         if(req.session.userLogged){
             const usuario=req.session.userLogged
             console.log(usuario);
@@ -143,12 +142,6 @@ const controller = {
     logout:(req,res)=>{
         req.session.destroy();
         return res.redirect('/')
-=======
-        res.render("profile", {
-            titulo: 'Profile',
-            enlace: '/css/profile.css',
-        })
->>>>>>> 37446dd9bd46e53b9b4193c2156ce9f6a0e17edb
     }
 }
 
