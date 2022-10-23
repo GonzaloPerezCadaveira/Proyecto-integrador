@@ -6,7 +6,7 @@
 }
 
 .footer-title{
-    border-bottom: 1px dotted #555;
+    border-bottom: 1px solid #555;
     padding-bottom: 20px;
 }
 
@@ -30,4 +30,16 @@
 
 .copy{
     color: #555;
+}
+
+@media screen and (min-width:1024px) {
+    .main-footer{
+        display:grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap:20px
+    }
+    .copy{
+        grid-column-start: span 4;
+        text-align: center;
+    }
 }
