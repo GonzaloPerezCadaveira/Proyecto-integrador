@@ -4,33 +4,20 @@
     box-sizing: border-box;
 }
 
-body{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.bodyRegister{
-    background:url("/image/banner.jpg");
-    background-size: cover;
-    background-attachment: fixed;
+.main-login{
+    background-image:url("/image/slider2.jpg") ;
     background-repeat: no-repeat;
-    background-position: center center;
-}
-
-.bodyLogin{
-    background:url("/image/banner3.jpg");
-    background-size: cover;
     background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: center center;
+    background-size:contain;
+    background-size:cover;
+    padding:10px;
+    margin:auto;
 }
 
 .contenedor{
     width: 100%;
     padding:15px;
 }
-
 
 .login-error {
     color: red;
@@ -39,10 +26,15 @@ body{
 .formulario{
     background: white;
     margin: 10% 0%;
-    padding:3px;
-    text-align: center;
+    padding:10px;
     width: 100%;
+    border:0.5px solid #212121;
     border-radius: 5px;
+}
+
+.login-form{
+    text-align: -webkit-center;
+    padding-bottom: 20px;
 }
 
 .erroresLocales{
@@ -52,16 +44,13 @@ body{
     padding:5px;
 }
 
-h1{
+.login-title{
     text-align: center;
     color:#1a2537;
-    font-size:50px;
+    font-size:40px;
 }
 
-input[type="text"],
-input[type="password"],
-input[type="file"],
-input[type="email"]{
+.input-login{
     font-size: 20px;
     width: 82%;
     padding:10px;
@@ -129,7 +118,7 @@ p{
 @media (min-width:720px){
 
     .formulario{
-        width: 500px;
+        width: 50%;
         border-radius:5px;
     }
 }

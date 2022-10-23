@@ -1,31 +1,64 @@
-<header>    
-    <div class="conteiner">
-        <a href="/" id="logo">Carpincho Drinks <i class="fa-solid fa-wine-glass"></i> </a>
-        <div id="navbar">
-          <nav>
-              <a href="/">Home</a>
-              <a href="/#somosCarpi">¿Quienes Somos?</a>
-              <a href="/products">Nuestras bebidas</a>
-          </nav>
+<header class="main-header">
+  <div class="container">
+    <div class="main-header-container">
+      <!-- LOGO -->
+      <h1 class="main-header-title"> <a href="/" class="enlace-titulo">CARPINCHO DRINKS</a></h1>
+      <!-- BURGER BUTTON -->
+      <span class="icon-menu" id="btn-menu"><i class="fas fa-bars"></i></span>
+      <!-- BARRA DE NAVEGACION -->
+      <nav class="main-nav" id="main-nav">
+        <ul class="menu" id="menu">
+          <li class="menu-item"><a href="/" class="menu-link">INICIO</a></li>
+          <li class="menu-item"><a href="/products" class="menu-link">PRODUCTOS</a></li>
+          <li class="menu-item"><a href="/#nosotros" class="menu-link">NOSOTROS</a></li>
+          <li class="menu-item"><a href="/#contacto" class="menu-link">CONTACTO</a></li>
+          <% if(locals.isLogged){ %>
+          <li class="menu-item"><a href="/user/register" class="menu-link">REGISTRO</a></li>
+          <li class="menu-item"><a href="/user/login" class="menu-link">INGRESAR</a></li>
+          <% } %>
           <% if(locals.user){ %>
-              <div class="avatar">
-                  <img src="/image/avatars/<%= user.user_img %>" alt="<%= user.user_name %> Foto">
-                  <h3>Hi <%= user.user_name%></h3>
-                  <a href="/products/carrito"><i class="fa-solid fa-cart-shopping"></i></a>
-                  <a href="/user/logout">Cerrar cuenta</a>
-              </div>
-          <% }else{ %>
-            <div class="avatar">
-              <img src="/image/avatars/1664421839976_img.jpg" alt="avatar">
-              <a href="/products/carrito"><i class="fa-solid fa-cart-shopping"></i></a>
-              <div>
-                <% if(locals.isLogged){ %>
-                  <a href="/user/login">Iniciar sesión <i class="fa-solid fa-right-to-bracket"></i> </a>
-                  <a href="/user/register">Crear cuenta <i class="fa-regular fa-address-card"></i></a>
-                <% }%>  
-              </div>              
-            </div>
-        <% } %>
-      </div>
+          <li class="menu-item"><a href="/user/logout" class="menu-link">CERRAR CUENTA</a></li>
+          <% } %>
+        </ul>
+      </nav>
+    </div>
+    <!-- CARRITO Y BARRA DE BUSQUEDA -->
+    <div class="main-header-container">
+      <% if(locals.user){ %>
+      <a href="/user/login" class="main-header-link"><i class="fa-solid fa-user"></i></a><p>Hola, <%= user.user_name%> </p>
+      <a href="/carrito" class="main-header-btn">Carrito<i class="fa-solid fa-cart-shopping"></i></a>
+      <% } %>
+      <input type="search" class="main-header-input" placeholder="Buscar productos"><i class="search-icon fas fa-search"></i>
+    </div>
   </div>
 </header>
+
+<!-- <header>
+  <div class="container-left">
+    <a href="/"> <img src="/image/logo-cd.png" class="logo"></a>
+  </div>
+  <div id="navbar">
+    <nav>
+      <a href="/">Home</a>
+      <a href="/#somosCarpi">¿Quienes Somos?</a>
+      <a href="/products">Nuestras bebidas</a>
+
+      <% if(locals.user){ %>
+        <img src="/image/avatars/<%= user.user_img %>" alt="<%= user.user_name %> Foto">
+        <h3>Hi <%= user.user_name%>
+        </h3>
+        <a href="/products/carrito"><i class="fa-solid fa-cart-shopping"></i></a>
+        <a href="/user/logout">Cerrar cuenta</a>
+        <% }else{ %>
+
+          <img src="/image/avatars/1664421839976_img.jpg" alt="avatar">
+          <a href="/products/carrito"><i class="fa-solid fa-cart-shopping"></i></a>
+          <% if(locals.isLogged){ %>
+            <a href="/user/login">Iniciar sesión <i class="fa-solid fa-right-to-bracket"></i> </a>
+            <a href="/user/register">Crear cuenta <i class="fa-regular fa-address-card"></i></a>
+            <% }%>
+              <% } %>
+    </nav>
+  </div>
+
+</header> -->

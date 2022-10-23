@@ -5,41 +5,41 @@
     <body>
         <%- include('partials/header')%>
 
-            <body class="bodyRegister">
+            <body class="main">
                 <form method="POST" action="/products/create" enctype='multipart/form-data' class="formulario">
                     <h1>Formulario de creación de productos</h1>
 
-                    <p class="etiqueta">Nombre del producto</p>
                     <div class="contenedor">
+                    <p class="etiqueta">Nombre del producto</p>
                         <div class="input-contenedor"></div>
                         <input type="text" name="name">
                     </div>
 
-                    <p class="etiqueta">Descripción</p>
                     <div class="contenedor">
+                    <p class="etiqueta">Descripción</p>
                         <div class="input-contenedor"></div>
                         <textarea type="text" name="description"></textarea>
                     </div>
 
-                    <p class="etiqueta">Precio</p>
                     <div class="contenedor">
+                    <p class="etiqueta">Precio</p>
                         <div class="input-contenedor"></div>
                         <input type="number" min="0" name="price">
                     </div>
 
-                    <p class="etiqueta">Descuento</p>
                     <div class="contenedor">
+                    <p class="etiqueta">Descuento</p>
                         <div class="input-contenedor">
                             <input type="number" min="0" max="50" name="discount">
                         </div>
                     </div>
 
-                    <p class="etiqueta">Categoría</p>
                     <div class="contenedor">
+                    <p class="etiqueta">Categoría</p>
                         <div class="input-contenedor">
                             <select name="cat_id">
                                 <option selected disabled>Selecciona la categoría</option>
-                                <% categories.forEach (category=> { %>
+                                <% categories.forEach(category=> { %>
                                     <option value="<%= category.id %>">
                                         <%= category.cat_name %>
                                     </option>
@@ -48,15 +48,15 @@
                         </div>
                     </div>
 
-                    <p class="etiqueta">Cantidad</p>
                     <div class="contenedor">
+                    <p class="etiqueta">Cantidad</p>
                         <div class="input-contenedor">
                             <input type="number" min="0" max="50" name="quantity">
                         </div>
                     </div>
 
-                    <p class="etiqueta">Imagen del producto</p>
                     <div class="contenedor">
+                    <p class="etiqueta">Imagen del producto</p>
                         <div class="input-contenedor">
                             <input type="file" name="img">
                         </div>

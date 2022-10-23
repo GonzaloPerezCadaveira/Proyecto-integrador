@@ -1,35 +1,32 @@
 const path = require('path');
 const fs = require('fs');
+const db = require('../database/models')
+const sequelize = db.sequelize;
 const { nextTick } = require('process');
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-
-const db = require('../database/models')
-
 
 
 const controller = {
     create: (req, res) => {
-        const usuario=req.session.userLogged
+        db.Category.findAll()
+        .then(function(categories){
+        const usuario= req.session.userLogged;
         if(usuario){
             db.User.findOne({
-                where:{id:usuario.id}
+                where:{ id: req.usuario.id}
             })
             .then(function(user){
                 res.render('create-product', {
                     categories,
-                    titulo: 'Creacion de Producto',
-                    enlace: '/css/createProduct.css',
+                    titulo:'Creacion de producto',
+                    enlace:'/css/createProduct.css',
                     user
                 })
             })
-        }else{
-            res.render('create-product', {
-                categories,
-                titulo: 'Creacion de Producto',
-                enlace: '/css/createProduct.css',
-            })
+        } else {
+            res.redirect('/user/register')
         }
-            
+        })
     },
     store: (req, res) => {
         db.Product.create({
@@ -77,11 +74,9 @@ const controller = {
 
 
     },
-    detail: (req, res) => {
-        
-        let idParams = req.params.id
-
-        const user=req.session.userLogged
+    detail: async (req, res) => {
+        let idParams = req.params.id;
+        const user= req.session.userLogged;
         if(user){
             db.Product.findOne({
                 where: { id: idParams }
@@ -91,7 +86,7 @@ const controller = {
                 {
                     titulo: 'Detalle de Producto',
                     enlace: '/css/productDetail.css',
-                    producto,
+                    producto:producto,
                     toThousand,
                     user
                 })
@@ -100,12 +95,12 @@ const controller = {
             db.Product.findOne({
                 where: { id: idParams }
             })
-            .then(function (producto) {
+            .then(function(producto){
                 res.render('productDetail', 
                 {
                     titulo: 'Detalle de Producto',
                     enlace: '/css/productDetail.css',
-                    producto,
+                    producto:producto,
                     toThousand
                 })
             })
