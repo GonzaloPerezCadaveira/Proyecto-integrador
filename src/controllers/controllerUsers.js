@@ -21,6 +21,7 @@ const { Op } = require('sequelize');
 
 const controller = {
     register: (req, res) => {
+
         res.render('register', {
             titulo: "Register",
             registerError: "",
@@ -74,14 +75,25 @@ const controller = {
         }
     },
     login: (req, res) => {
+        console.log(req.cookies);
+        if(req.cookies.userLogueado){
+            res.render('login', {
+                titulo: 'login',
+                loginError: '',
+                enlace: '/css/login.css',
+                user_email:req.cookies.userLogueado
+            });
+        }
+        else{
+            res.render('login', {
+                titulo: 'login',
+                loginError: '',
+                enlace: '/css/login.css',
+            });
+        }
         
-        res.render('login', {
-            titulo: 'login',
-            loginError: '',
-            enlace: '/css/login.css',
-        });
     },
-    loginSucces:function(req,res){
+    loginSucces:(req,res)=>{
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
             res.render('login', {
@@ -100,6 +112,9 @@ const controller = {
             .then(function (usuario) {
                 let check=bcrypt.compareSync(req.body.user_password,usuario.user_password)
                 if(check){
+                    if(req.body.rememberUser){
+                        res.cookie('userLogueado',usuario.user_email, {maxAge:1000*60} )
+                    }
                     req.session.userLogged = usuario
                     res.redirect("/profile")
                 }
@@ -120,7 +135,6 @@ const controller = {
     profile: (req, res) => {
         if(req.session.userLogged){
             const usuario=req.session.userLogged
-            console.log(usuario);
             db.User.findOne({
                 where:{id:usuario.id}
             })
@@ -140,6 +154,7 @@ const controller = {
         }
     },
     logout:(req,res)=>{
+        res.clearCookie('userLogueado')
         req.session.destroy();
         return res.redirect('/')
     }

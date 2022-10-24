@@ -1,34 +1,32 @@
 const path = require('path');
 const fs = require('fs');
-const { nextTick } = require('process');
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-
+const { validationResult } = require('express-validator')
 const db = require('../database/models')
 
 
 
 const controller = {
     create: (req, res) => {
-        const usuario=req.session.userLogged
-        if(usuario){
-            db.User.findOne({
-                where:{id:usuario.id}
-            })
-            .then(function(user){
-                res.render('create-product', {
-                    categories,
-                    titulo: 'Creacion de Producto',
-                    enlace: '/css/createProduct.css',
-                    user
+        db.Category.findAll()
+        .then(function(categories) {
+            const usuario=req.session.userLogged
+            if(usuario){
+                db.User.findOne({
+                    where:{id:usuario.id}
                 })
-            })
-        }else{
-            res.render('create-product', {
-                categories,
-                titulo: 'Creacion de Producto',
-                enlace: '/css/createProduct.css',
-            })
-        }
+                .then(function(user){
+                    res.render('create-product', {
+                        categories,
+                        titulo: 'Creacion de Producto',
+                        enlace: '/css/createProduct.css',
+                        user
+                    })
+                })
+            }else{
+                res.redirect('/user/register')
+            }
+        })
             
     },
     store: (req, res) => {
@@ -81,19 +79,28 @@ const controller = {
         
         let idParams = req.params.id
 
-        const user=req.session.userLogged
-        if(user){
-            db.Product.findOne({
-                where: { id: idParams }
+        const usuario=req.session.userLogged
+        if(usuario){
+            db.User.findOne({
+                where:{id:usuario.id}
             })
-            .then(function (producto) {
-                res.render('productDetail', 
-                {
-                    titulo: 'Detalle de Producto',
-                    enlace: '/css/productDetail.css',
-                    producto,
-                    toThousand,
-                    user
+            .then(function (user) {
+                
+                db.Product.findOne({
+                    where: { id: idParams }
+                })
+                .then(function (response) {
+                    res.render('productDetail', 
+                        {
+                        titulo: 'Detalle de Producto',
+                        enlace: '/css/productDetail.css',
+                        producto:response,
+                        toThousand,
+                        user
+                    })
+                })
+                .catch(function(e) {
+                    res.render('error', { titulo: '404', enlace: 'css/error.css'})
                 })
             })
         }else{
@@ -109,42 +116,91 @@ const controller = {
                     toThousand
                 })
             })
+            .catch(function(e) {
+                res.render('error', { titulo: '404', enlace: 'css/error.css'})
+            })
         }
 
     },
     edit: (req, res) => {
+        let errors= validationResult(req)
+        console.log(req.params.id)
         let idParams = req.params.id
-        let pedidoProduct = db.Product.findOne({
-            where: { id: idParams }
-        })
-        let pedidoCat = db.Category.findAll()
-        Promise.all([pedidoProduct, pedidoCat])
-            .then(function ([product, categories]) {
-                res.render('edit-product', {
-                    titulo: 'Edicion de Producto',
-                    enlace: '/css/editProduct.css',
-                    product,
-                    categories,
-                })
+        const usuario=req.session.userLogged
+        if(usuario){
+            db.User.findOne({
+                where:{id:usuario.id}
             })
+            .then(function(user){
+                let pedidoProduct = {}
+                if(req.params){
+                    pedidoProduct = db.Product.findOne({
+                        where: { id: idParams }
+                    })
+                }
+                else{
+                    res.redirect('/login')
+                }     
+                let pedidoCat = db.Category.findAll()
+                Promise.all([pedidoProduct, pedidoCat])
+                    .then(function ([product, categories]) {
+                        res.render('edit-product', {
+                            titulo: 'Edicion de Producto',
+                            enlace: '/css/editProduct.css',
+                            product,
+                            categories,
+                            user,
+                            errors:errors.mapped()
+                        })
+                    })
+            })
+        } 
+        else {
+            let pedidoProduct = db.Product.findOne({
+                where: { id: idParams }
+            })
+            let pedidoCat = db.Category.findAll()
+            Promise.all([pedidoProduct, pedidoCat])
+                .then(function ([product, categories]) {
+                    res.render('edit-product', {
+                        titulo: 'Edicion de Producto',
+                        enlace: '/css/editProduct.css',
+                        product,
+                        categories
+                    })
+                })
+        }   
     },
     editComplete: (req, res) => {
-            db.Product.update(
-                {
-                    description: req.body.description,
-                    price: req.body.price,
-                    quantity: req.body.quantity,
-                    discount: req.body.discount,
-                    cat_id: req.body.category,
-                    name: req.body.name,
-                    img: req.file.filename
-
-                }, {
-                where: { id: req.params.id }
-            })
-                .then(function () {
-                    res.redirect('/')
+        const errors = validationResult(req);
+        const usuario=req.session.userLogged
+        console.log(usuario);
+        if (usuario){
+            if (!errors.isEmpty()) {
+                req.params.id = usuario.id
+                console.log(req.params.id);
+                res.redirect('/edit/'+req.params.id)
+            }
+            else{
+                db.Product.update(
+                    {
+                        description: req.body.description,
+                        price: req.body.price,
+                        quantity: req.body.quantity,
+                        discount: req.body.discount,
+                        cat_id: req.body.category,
+                        name: req.body.name,
+                        img: req.file.filename
+    
+                    }, {
+                    where: { id: req.params.id }
                 })
+                    .then(function () {
+                        res.redirect('/')
+                    })
+            }
+
+        }
     },
     destroy: (req, res) => {
         db.Product.destroy({
@@ -155,9 +211,10 @@ const controller = {
         })
     },
     carrito: (req, res) => {
+        
         db.Product.findAll()
         .then(response => {
-         res.render('products/carritoDeCompras', {carritoDeCompras:response, toThousand});
+         res.render('carritoDeCompras', {carritoDeCompras:response, toThousand});
         }).catch(function(e) {
             res.render('error', { titulo: '404', enlace: 'css/error.css'})
         })

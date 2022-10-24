@@ -2,18 +2,19 @@ const db = require('../database/models')
 
 function userConnectedLogged(req,res,next) { 
     let emailInCookie = req.cookies.userLogueado
+    console.log(emailInCookie);
     if(emailInCookie && emailInCookie!==undefined){
+        console.log(emailInCookie);
         db.User.findOne({
             where:{user_email:emailInCookie}
         })
         .then(function(usuario){
-            if(req.session){
-                req.session.userLogged=usuario     
+            if(usuario.user_cat=2){
+                if(req.session.userLogged){
+                    req.session.userLogged=usuario
+                }
+                console.log(req.session.userLogged);     
             }
-            else
-            {
-                return usuario
-            } 
         })
     }
     if(req.session.userLogged){
@@ -26,5 +27,3 @@ function userConnectedLogged(req,res,next) {
 }
 
 module.exports=userConnectedLogged;
-
-//middleware que verifica si esta conectado el usuario, no muertre las opciones de iniciar sesion ni register
