@@ -5,24 +5,28 @@
     <body>
         <%- include('partials/header') %>
             <main>
-                <section class="lastvisit">
+                <section>
                     <div class="productos">
                         <% productos.forEach(function(element){ %>
                             <article class="producto">
-                                    <a class="hipervinculo-productos" href="/products/<%= element.id%>">
-                                        <img src="/image/<%= element.img %>">
-                                        <div class="contenedor-articulo">
-                                            <p class="nombre_producto"><%= element.name %></p>
-                                                <i class="fa-solid fa-cart-shopping"></i>
-                                                <div class="precio_descripcion">
-                                                    <p class="precio"> $<%= element.price %></p>
-                                                </div>
+                                <a class="hipervinculo-productos" href="/products/<%= element.id%>">
+                                    <img src="/image/<%= element.img %>">
+                                    <div class="contenedor-articulo">
+                                        <p class="nombre_producto">
+                                            <%= element.name %>
+                                        </p>
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                        <div class="precio_descripcion">
+                                            <p class="precio"> $<%= element.price %>
+                                            </p>
                                         </div>
-                                    </a>
-                                </article>
-                        <%})%>
+                                    </div>
+                                </a>
+                            </article>
+                            <%})%>
                     </div>
             </main>
             <%- include('partials/footer') %>
     </body>
+    <script src="/js/menu.js"></script>
 </html>

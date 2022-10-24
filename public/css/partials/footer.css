@@ -1,0 +1,45 @@
+.main-footer {
+    background: #151515;
+    color: white;
+    padding: 30px 20px;
+    margin-top:30px
+}
+
+.footer-title{
+    border-bottom: 1px solid #555;
+    padding-bottom: 20px;
+}
+
+.footer-txt {
+    color: #555;
+}
+
+.icon-footer {
+    color: white;
+    padding: 10px;
+    display: inline-block
+}
+
+.footer-input {
+    background: #151515;
+    width: 100%;
+    padding: 20px;
+    display: block;
+    border: 1px solid #555;
+}
+
+.copy{
+    color: #555;
+}
+
+@media screen and (min-width:1024px) {
+    .main-footer{
+        display:grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap:20px
+    }
+    .copy{
+        grid-column-start: span 4;
+        text-align: center;
+    }
+}

@@ -1,10 +1,8 @@
 const path = require('path');
 const fs = require('fs');
+
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const { validationResult } = require('express-validator')
-const db = require('../database/models')
-
-
 
 const controller = {
     create: (req, res) => {
@@ -107,12 +105,12 @@ const controller = {
             db.Product.findOne({
                 where: { id: idParams }
             })
-            .then(function (producto) {
+            .then(function(producto){
                 res.render('productDetail', 
                 {
                     titulo: 'Detalle de Producto',
                     enlace: '/css/productDetail.css',
-                    producto,
+                    producto:producto,
                     toThousand
                 })
             })

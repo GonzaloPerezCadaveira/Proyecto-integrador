@@ -4,18 +4,14 @@
     box-sizing: border-box;
 }
 
-body{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.bodyRegister{
-    background:url("/image/banner.jpg");
-    background-size: cover;
-    background-attachment: fixed;
+.main{
+    background-image:url("/image/slider2.jpg") ;
     background-repeat: no-repeat;
-    background-position: center center;
+    background-attachment: fixed;
+    background-size:contain;
+    background-size:cover;
+    padding:10px;
+    margin:auto;
 }
 
 .formulario{

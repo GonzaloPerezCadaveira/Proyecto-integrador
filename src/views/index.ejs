@@ -1,53 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('partials/head') %>
-<body class="body">
-    
-    <%- include('partials/header') %>
-    <section id="hero">
-        <h1>Lo querés? Lo tenemos...<br></h1>
-        <p>Tinto, hay. Cerveza? Tenemos.<br>
-        Ese trago explosivo que probaste en tu bar favorito?<br>
-        También.</p>
-        <a href="/products"><button>Accedé a nuestra carta de bebidas</button></a>
-    </section>
+<%- include('partials/head') %>
 
-    <section id="somosCarpi">
-    <div class="container">
+    <body class="main-body">
 
-        <div class="img-container"></div>
-        <div class="texto">
-        <h2>Somos Carpincho Drinks</h2>
-        <p>Un almacén online de bebidas, donde podrás encontrar absolutamente
-             todo lo que necesites para la juntada con tus amigos, contamos
-             con una gran cantidad de productos tanto nacionales como importados.
-        </p>
-      </div>
-     </div>
-    </section>
+        <%- include('partials/header') %>
 
-    <section id="nuestrasBebidas">
-        <div class="container">
-            <h2>Nuestras bebidas</h2>
-            <div class="cartasProd">
-            <div class="carta">
-                <h3 class="drink-type">Cervezas</h3>
-                <p>Ofrecemos las mejores marcas de cervezas del mercado nacional e internacional, para que no tengas que buscar en otro lugar.</p>
-                <button>Quiero mi birra</button>
+            <div class="container-slider">
+                <div class="slider" id="slider">
+                    <div class="slider-section">
+                        <img src="/image/slider1.jpg" alt="" class="slider-img">
+                    </div>
+                    <div class="slider-content">
+                        <button class="slider-btn"></button>
+                    </div>
+                    <div class="slider-section">
+                        <img src="/image/slider2.jpg" alt="" class="slider-img">
+                    </div>
+                    <div class="slider-section">
+                        <img src="/image/slider3.jpg" alt="" class="slider-img">
+                    </div>
+                    <div class="slider-section">
+                        <img src="/image/slider4.jpg" alt="" class="slider-img">
+                    </div>
+                </div>
+                <div class="slider-btn slider-btn--right" id="btn-right">&#62;</div>
+                <div class="slider-btn slider-btn--left" id="btn-left">&#60;</div>
             </div>
-            <div class="carta">
-                <h3 class="drink-type">Vinos</h3>
-                <p>Contamos con los tintos de las mejores bodegas del país, si preferís rosado, blanco o incluso un buen espumante acá podes encontrar varias opciones para tu deleite.</p>
-                <button>Quiero mi vino</button>
-            </div>
-            <div class="carta">
-                <h3 class="drink-type">Licores</h3>
-                <p>Si lo que buscás es ese vodka o gin importado que no lo conseguís en cualquier lugar, acá vas a encontrar más de lo que necesitas.</p>
-                <button>Quiero un trago</button>
-            </div>
-        </div>
-    </div>
-    </section>
-    <%- include('partials/footer') %>
-</body>
+
+            <%- include('partials/footer') %>
+    </body>
+    <script src="/js/slider.js"></script>
+    <script src="/js/menu.js"></script>
+
 </html>

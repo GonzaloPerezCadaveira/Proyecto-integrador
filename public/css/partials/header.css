@@ -1,0 +1,197 @@
+/*====== Fonts ======*/
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap');
+
+:root {
+  --base-font-family: 'Kanit', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Kanit', sans-serif;
+}
+
+body {
+  margin: 0
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+
+.main-header {
+  padding: 0 10px;
+}
+
+.main-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-header-title {
+  text-align: center;
+  font-size: 2.5em;
+  margin: 10px 0;
+  color: #454546;
+  font-weight: bold;
+}
+
+.enlace-titulo {
+  text-decoration: none;
+  color: #454546
+}
+
+/* Estilos para el menú de navegación*/
+
+.main-nav {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s;
+  z-index: 999999;
+}
+
+.menu {
+  position: absolute;
+  top: 145px;
+  left: 0;
+  background: #212121;
+  width: 100%;
+  list-style: none;
+  padding: 0px;
+  margin: 0;
+}
+
+.menu-item {
+  text-align: center;
+  margin: auto
+}
+
+.menu-link {
+  padding: 20px;
+  color: white;
+  text-decoration: none;
+  position: relative;
+  display: block;
+}
+
+.menu-link:hover {
+  background-color: white;
+  color: #212121;
+}
+
+.mostrar {
+  opacity: 1;
+  visibility: visible;
+  display: block;
+}
+
+.icon-menu {
+  font-size: 1.5em;
+  border: 1px solid #454546;
+  display: block;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.main-header-link {
+  color: #333
+}
+
+.main-header-btn {
+  padding:10px 30px;
+  display: block;
+  color: #454546;
+  border: 1px solid #454546;
+  text-decoration: none;
+}
+
+.main-header-input {
+  display: block;
+  padding: 10px;
+  width: 100%;
+  position: relative;
+}
+
+.search-icon{
+  position: absolute;
+  right: 70px;
+}
+
+@media screen and (min-width:1024px) {
+
+  .container{
+    width:1100px;
+    margin:auto;
+  }
+
+  .icon-menu {
+    display: none;
+  }
+
+  .main-header .container {
+    display: flex;
+    align-items: center;
+  }
+
+  .main-header-container {
+    flex-wrap: wrap;
+    align-content: flex-start;
+  }
+
+  .main-header-container:nth-child(1) {
+    width: 60%;
+  }
+
+  .main-header-container:nth-child(2) {
+    width: 40%;
+    padding: 0 20px;
+  }
+
+  .main-header-btn {
+    width: 100px;
+    padding: 10px;
+  }
+
+  .main-header-input{
+    width: 100%;
+  }
+
+  .search-icon{
+    position: absolute;
+    right: 230px;
+  }
+
+  .main-header-title {
+    border-bottom: 1px solid rgb(188, 188, 188);
+    width: 100%;
+    font-size: 4em;
+  }
+
+  .main-nav {
+    visibility: visible;
+    opacity: 1;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .menu {
+    position: static;
+    width: 100%;
+    display: flex;
+    background: none;
+  }
+
+  .menu-link {
+    color: #333;
+    width: 100%;
+  }
+
+  .menu-link:hover {
+    background: #333;
+    color: white;
+  }
+
+}

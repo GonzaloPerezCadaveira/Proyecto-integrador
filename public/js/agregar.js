@@ -9,10 +9,10 @@ window.onload = function() {
         let id = url [url.length -1]
         
         let imagen = document.querySelector('.producto img').getAttribute("src")
-        let tituloProd = document.querySelector('h1').innerText
+        let tituloProd = document.querySelector('.titulo-prod').innerText
         let precio = document.querySelector('.precio').innerText
         let descuento = document.querySelector('.descuento').innerText
-        let inputCantidad = document.querySelector('#count').value
+        let inputCantidad = document.querySelector('.count').value
 
         let producto = {
             idProducto: id, 
