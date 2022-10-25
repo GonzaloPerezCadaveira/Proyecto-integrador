@@ -38,11 +38,11 @@
                     <div class="input-contenedor">
                         <select name="cat_id">
                             <option selected disabled>Selecciona la categoría</option>
-                            <% categories.forEach (category=> { %>
+                            <% categories.forEach (function(category){ %>
                                 <option value="<%= category.id %>">
                                     <%= category.cat_name %>
                                 </option>
-                                <% }) %>
+                            <% }) %>
                         </select>
                     </div>
                 </div>
@@ -57,7 +57,12 @@
                 <p class="etiqueta">Imagen del producto</p>
                 <div class="contenedor">
                     <div class="input-contenedor">
-                        <input type="file" name="img">
+                        <input type="file" name="img" value="<%= product.img %>">
+                        <% if(locals.errors && errors.img){ %>
+                            <p class="erroresLocales">
+                                <%= errors.img.msg %>
+                            </p>
+                        <% } %>
                     </div>
                 </div>
                 <button type="submit" class="button">Editar producto</button>

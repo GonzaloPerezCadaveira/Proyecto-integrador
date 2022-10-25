@@ -1,3 +1,8 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 main {
     font-family: 'Roboto', sans-serif;
 }
@@ -103,6 +108,10 @@ div.botones {
     font-size: 18px;
     text-align: center;
     margin: 20px;
+}
+
+#id_producto{
+    display: none;
 }
 
 @media (min-width: 768px) {

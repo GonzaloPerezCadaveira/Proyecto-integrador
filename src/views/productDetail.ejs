@@ -1,57 +1,46 @@
 <!DOCTYPE html>
 <html lang="es">
-<%- include("partials/head") %>
-
-    <body>
-        <%- include('partials/header') %>
-            <main class="main-producto">
-                <% let precioFinal=producto.discount ? (producto.price - producto.price * producto.discount /
-                    100).toFixed(0) : producto.price; %>
-                    <div class="producto">
-                        <h1 class="titulo-prod">
-                            <%= producto.name %>
-                        </h1>
-                        <img src="/image/<%= producto.img %>" alt="Imagen del producto">
-                    </div>
-                    <div class="barra-precio">
-                        <h2>Descripción</h2>
-                        <p>
-                            <%= producto.description %>
-                        </p>
-                        <h2>$<%= toThousand(precioFinal) %>
-                        </h2>
-                        <span class="precio" style="display: none">
-                            <%=precioFinal%>
-                        </span>
-                        <p class="descuento">
-                            <%= producto.discount + " %OFF" %>
-                        </p>
-                        <p class="color">12 cuotas s/interés</p>
-                        <div class="cant">
-                            <label class="count">Cantidad</label>
-                            <button class="menos" onclick="contadormenos()">-</button>
-                            <input id="count" type="text" value="1" style="text-align: center; width: 30px;">
-                            <button class="menos" onclick="contadormas()">+</button>
-                        </div>
-                    </div>
-
-                    <div class="botones">
-
-                        <a href="/products/edit/<%= producto.id %>"><button type="submit" class="boton-formulario"><i
-                                    class="fas fa-edit"></i></button></a>
-
-                        <form action="/products/delete/<%= producto.id %>?_method=DELETE" method="POST">
-
-                            <button type="submit" class="boton-formulario"><i class="fas fa-trash-alt"></i></button>
-                        </form>
-
-                        <a href=""><button type="submit" class="boton-formulario-shop"><i
-                                    class="fas fa-shopping-cart"></i></button></a>
-                    </div>
-            </main>
-
-            <%- include('partials/footer') %>
-
+    <%- include("partials/head") %>
+<body>
+    <%- include('partials/header') %> 
+    <main class="main-producto">
+        <% let precioFinal = locals.producto.discount ? (producto.price - producto.price * producto.discount / 100).toFixed(0) : producto.price; %>
+        <div class="producto">
+            <h1><%= producto.name %></h1>
+            <img src="/image/<%= producto.img %>"  alt="Imagen del producto">
+        </div>
+        <div class="barra-precio">
+            <h2>Descripción</h2>
+            <p> <%= producto.description %> </p>    
+            <h2>$<%= toThousand(precioFinal) %> </h2>
+            <span class="precio" style="display: none"><%=precioFinal%></span>
+            <p class="descuento"><%= producto.discount + " %OFF"%> </p>
+            <p class="color">12 cuotas s/interés</p>
+            <div class="cant">
+                <label class="count">Cantidad</label>
+                <button class="menos" onclick="contadormenos()">-</button>
+                <input id="count" type="text" value="1" style="text-align: center; width: 30px;" >
+                <button class="menos" onclick="contadormas()">+</button>
+            </div>
+        </div>
+        
+        <div class="botones">
+            <% if(locals.user && user.user_cat==2){ %>
+                <form method="GET" action="/products/edit/<%= producto.id %>" >
+                    <input type="number" id="id_producto" name="id_producto" value="<%= producto.id %>">
+                    <button type="submit"class="boton-formulario"><i class="fas fa-edit"></i></button>
+                </form>
+            <%}%>
+            <% if(locals.user && user.user_cat==2){ %>
+                <form action="/products/delete/<%= producto.id %>?_method=DELETE" method="POST">
+                    <button type="submit" class="boton-formulario"><i class="fas fa-trash-alt"></i></button>
+                </form>
+            <%}%>
+                
+                <a href="/products/carrito"><button class="boton-formulario-shop"><i class="fas fa-shopping-cart"></i></button></a>
+        </div>
+    </main>
+    <%- include('partials/footer') %>
                 <script src="/js/agregar.js"></script>
                 <script src="/js/contador.js"></script>
     </body>
