@@ -191,7 +191,6 @@ const controller = {
                         cat_id: req.body.category,
                         name: req.body.name,
                         img: req.file.filename
-    
                     }, {
                     where: { id: req.params.id }
                 })
@@ -199,7 +198,6 @@ const controller = {
                         res.redirect('/')
                     })
             }
-
         }
     },
     destroy: (req, res) => {
@@ -211,10 +209,14 @@ const controller = {
         })
     },
     carrito: (req, res) => {
-        
         db.Product.findAll()
         .then(response => {
-         res.render('carritoDeCompras', {carritoDeCompras:response, toThousand});
+         res.render('carritoDeCompras', {
+            carritoDeCompras:response,
+            toThousand,
+            titulo:'Carrito de Compras',
+            enlace:'/css/productChart.css'    
+            });
         }).catch(function(e) {
             res.render('error', { titulo: '404', enlace: 'css/error.css'})
         })

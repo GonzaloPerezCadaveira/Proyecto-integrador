@@ -26,7 +26,7 @@
     <div class="main-header-container">
       <% if(locals.user){ %>
       <a href="/user/login" class="main-header-link"><i class="fa-solid fa-user"></i></a><p>Hola, <%= user.user_name%> </p>
-      <a href="/carrito" class="main-header-btn">Carrito<i class="fa-solid fa-cart-shopping"></i></a>
+      <a href="/products/carrito" class="main-header-btn">Carrito<i class="fa-solid fa-cart-shopping"></i></a>
       <% } %>
       <input type="search" class="main-header-input" placeholder="Buscar productos"><i class="search-icon fas fa-search"></i>
     </div>

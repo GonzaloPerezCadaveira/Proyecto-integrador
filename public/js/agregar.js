@@ -3,13 +3,12 @@ window.onload = function() {
     
     botonAgregar.addEventListener('click', function(e){
         e.preventDefault();
-
         let url = window.location.href.split("/");
         
         let id = url [url.length -1]
         
         let imagen = document.querySelector('.producto img').getAttribute("src")
-        let tituloProd = document.querySelector('.titulo-prod').innerText
+        let tituloProd = document.querySelector('.producto h1').innerText
         let precio = document.querySelector('.precio').innerText
         let descuento = document.querySelector('.descuento').innerText
         let inputCantidad = document.querySelector('.count').value
@@ -22,13 +21,13 @@ window.onload = function() {
             descuento: parseFloat(descuento),
             inputCantidad: parseFloat(inputCantidad)
         }
-
         if(localStorage.length == 0) {
             let carrito = []
             carrito.push(producto)
             localStorage.setItem("carrito", JSON.stringify(carrito))
             localStorage.setItem("totalCarrito", producto.precio * producto.inputCantidad)
-        } else {
+        }
+        else {
             let carrito = JSON.parse(localStorage.carrito)
             let arrayProductos = carrito.filter(function(producto){
                 return producto.idProducto == id

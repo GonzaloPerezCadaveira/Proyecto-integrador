@@ -19,18 +19,6 @@
                         <% }; %>
                 </div>
                 
-                    <p class="etiqueta">Correo electrónico</p>
-                    <div class="contenedor">
-                        <p class="etiqueta">Nombre y apellido</p>
-                        <i class="fa-solid fa-user icon"></i>
-                        <input type="text" class="input-register" name="user_name"
-                            value="<%= locals.old && old.user_name? old.user_name : '' %>">
-                        <% if(locals.errors && errors.user_name){ %>
-                            <p class="erroresLocales">
-                                <%= errors.user_name.msg %>
-                            </p>
-                            <% }; %>
-                    </div>
                     <div class="contenedor">
                         <p class="etiqueta">Correo electrónico</p>
                         <i class="fa-solid fa-at icon"></i>

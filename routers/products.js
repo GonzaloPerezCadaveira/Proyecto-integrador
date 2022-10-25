@@ -19,7 +19,7 @@ router.post('/create', validacionImg.single('img'),validationProduct, productCon
 router.get('/', productController.productsList)
 
 // Detalle de producto
-router.get("/:id", userAdmin, productController.detail);
+router.get("/detail/:id", userAdmin, productController.detail);
 
 // Actualización de producto (U)
 router.get('/edit/:id', function (req,res,next) {
