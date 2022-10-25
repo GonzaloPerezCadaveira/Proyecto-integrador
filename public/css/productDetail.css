@@ -31,7 +31,7 @@ h1{
     text-decoration: none;
 }
 
-body p{
+p{
     text-align: left;
 }
 
@@ -57,7 +57,6 @@ span{
 .main-producto{
     padding: 10px;
     background-color:  #ffffff;
-    height: 100vh;
 }
 
 .prod-descuento{
@@ -117,7 +116,7 @@ div.botones {
         border-radius: 10px;
         width: 45%;
         position: relative;
-        max-height: 150px;
+        max-height: 100px;
     }
 
     article .img-producto {
@@ -136,11 +135,6 @@ div.botones {
     .img-producto {
         border-top-left-radius: 15px;
         border-top-right-radius: 15px;
-    }
-
-    /*--PAGINA PRODUCT/DETAIL--*/
-    .main-producto{
-        height: 600px;
     }
 
     .barra-precio {
@@ -170,9 +164,6 @@ div.botones {
         background-color: rgb(93, 92, 92);
     }
 
-    .main-producto{
-        height: 900px;
-    }
 
 }
 

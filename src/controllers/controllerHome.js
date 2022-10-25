@@ -20,15 +20,18 @@ const controller={
                     enlace:'/css/index.css',
                     user
                 });
-                
             })
         }
         else{
+            db.Product.findAll()
+            .then(function(productos){
             res.render('index', {
                 productoBase,
                 titulo:'Carpincho Drinks',
-                enlace:'/css/index.css'
-            });
+                enlace:'/css/index.css',
+                productos
+            })
+        })
         }
     }
 

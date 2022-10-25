@@ -58,6 +58,133 @@
     left:10px;
 }
 
+/* Estilos de la seccion destacados -con descuento- */
+
+.titulo-section{
+    text-align: center;
+    font-size: 2.4em;
+    font-weight: 400;
+    color:#454546;
+    padding:10px
+}
+
+.producto img,
+.producto div {
+    width: 100%;
+}
+
+section article.producto {
+    margin:15px;
+    box-shadow: 0px 0px 5px #e5e7e9;
+}
+
+div p.precio {
+    width: 30%;
+    text-align: start;
+}
+
+a.hipervinculo-productos {
+    text-decoration: none;
+    color: black;
+    width:100%;
+    text-align: start
+}
+
+section article div.contenedor-articulo {
+    position: relative;
+    padding: 10px;
+}
+
+section article div.contenedor-articulo i {
+    background-color: #FFF;
+    display: block;
+    color: black;
+    font-size: 15px;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 20px;
+    top: -15px;
+}
+
+section article div.contenedor-articulo {
+    width: 100%;
+    background-color: #FFF;
+    border-top: 1px solid #ebebeb;
+    margin-top: -3px;
+    padding: 10px;
+    border-radius: 2px;
+}
+
+.nombre_producto {
+    font-size: 15px;
+    text-align: left;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.precio {
+    width: 30%;
+    color: rgb(20, 20, 20);
+    font-size: 15px;
+}
+
+section article {
+    transition: all 800ms;
+}
+
+section article:hover {
+    box-shadow: 0px 0px 20px white;
+}
+
+section article:hover i {
+    transform: rotateX(1turn);
+    transition: all 800ms;
+}
+
+.productos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+section.producto {
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* Media Queries */
+
+@media (min-width:425px) {
+    section .producto {
+        width: 40%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    @media (min-width:720px) {
+        section .producto {
+            width: 30%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        @media (min-width:1200px) {
+            section .producto {
+                width: 20%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+        }
+    }
+}
+
 @media screen and (min-width:768px){
     .slider{
         height: 700px;

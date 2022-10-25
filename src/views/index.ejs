@@ -27,6 +27,33 @@
                 <div class="slider-btn slider-btn--right" id="btn-right">&#62;</div>
                 <div class="slider-btn slider-btn--left" id="btn-left">&#60;</div>
             </div>
+            <hr>
+            <h1 class="titulo-section"> PRODUCTOS SELECCIONADOS </h1>
+            <hr>
+            <section>
+                <div class="productos">
+                    <% productos.forEach(function(element){ %>
+                        <% if (element.discount > 0){ %>		
+                        <article class="producto">
+                            <a class="hipervinculo-productos" href="/products/<%= element.id%>">
+                                <img src="/image/<%= element.img %>">
+                                <div class="contenedor-articulo">
+                                    <p class="nombre_producto">
+                                        <%= element.name %>
+                                    </p>
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                    <div class="precio_descripcion">
+                                        <p class="precio"> $<%= element.price %>
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+                        <% } %>
+                        <%})%>
+                </div>
+            </section>
+
 
             <%- include('partials/footer') %>
     </body>
