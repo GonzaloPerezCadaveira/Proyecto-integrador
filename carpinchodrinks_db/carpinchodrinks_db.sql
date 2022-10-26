@@ -23,7 +23,8 @@ CREATE TABLE `users` (
   `user_img` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `user_cat` int(10) unsigned NOT NULL, 
   PRIMARY KEY (`id`),
-  FOREIGN KEY (`user_cat`) REFERENCES users_categories (`id`)
+  KEY `users_user_cat_foreign` (`user_cat`),
+  CONSTRAINT `users_user_cat_foreign` FOREIGN KEY (`user_cat`) REFERENCES users_categories (`id`)
 );
 
 CREATE TABLE `products` (
@@ -36,7 +37,6 @@ CREATE TABLE `products` (
   `quantity`int(10) unsigned NOT NULL,
   `img` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `products_option_id_foreign` (`option_id`),
   KEY `products_cat_id_foreign` (`cat_id`),
   CONSTRAINT `products_cat_id_foreign` FOREIGN KEY (`cat_id`) REFERENCES `categories` (`id`)
 );

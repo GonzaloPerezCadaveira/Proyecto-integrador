@@ -24,10 +24,16 @@
     </div>
     <!-- CARRITO Y BARRA DE BUSQUEDA -->
     <div class="main-header-container">
-      <% if(locals.user){ %>
-      <a href="/user/login" class="main-header-link"><i class="fa-solid fa-user"></i></a><p>Hola, <%= user.user_name%> </p>
-      <a href="/products/carrito" class="main-header-btn">Carrito<i class="fa-solid fa-cart-shopping"></i></a>
-      <% } %>
+      <div class="main-header-user">
+        <% if(locals.user){ %>
+        <a href="/user/login" class="main-header-link"><img src="/image/avatars/<%= user.user_img%>" alt="avatar"><p>Hola, <%= user.user_name%> </p></a>
+        <a href="/products/carrito" class="main-header-btn">Carrito<i class="fa-solid fa-cart-shopping"></i></a>
+        <% } %>
+        <% if(!locals.user){ %>
+          <a href="/user/login" class="main-header-link"><img src="/image/avatars/1664421839976_img.jpg" alt="avatar"><p>Iniciar sesion!!</p></a>
+          <a href="/products/carrito" class="main-header-btn">Carrito<i class="fa-solid fa-cart-shopping"></i></a>
+          <% } %>
+      </div>
       <input type="search" class="main-header-input" placeholder="Buscar productos"><i class="search-icon fas fa-search"></i>
     </div>
   </div>
