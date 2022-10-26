@@ -209,17 +209,29 @@ const controller = {
         })
     },
     carrito: (req, res) => {
-        db.Product.findAll()
-        .then(response => {
-         res.render('carritoDeCompras', {
-            carritoDeCompras:response,
-            toThousand,
-            titulo:'Carrito de Compras',
-            enlace:'/css/productChart.css'    
-            });
-        }).catch(function(e) {
-            res.render('error', { titulo: '404', enlace: 'css/error.css'})
-        })
+        const usuario=req.session.userLogged
+        console.log(usuario);
+        if (usuario){
+            let productos= db.Product.findAll()
+            let userOn = db.User.findOne({
+                where:{id:usuario.id}
+            })
+            Promise.all([productos,userOn])
+            .then(([products,user]) => {
+             res.render('carritoDeCompras', {
+                carritoDeCompras:products,
+                toThousand,
+                user,
+                titulo:'Carrito de Compras',
+                enlace:'/css/productChart.css'    
+                });
+            }).catch(function(e) {
+                res.render('error', { titulo: '404', enlace: 'css/error.css'})
+            })
+        }
+        else{
+            res.redirect('/login')
+        }
     }
 }
 

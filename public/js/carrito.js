@@ -6,9 +6,9 @@ window.onload = function () {
       div.innerHTML += "<h2>No hay productos agregados al carrito</h2>";
     } else {
       let carrito = JSON.parse(localStorage.carrito);
-      for (let i = 0; i < carrito.length; i++) {
+      let div = document.querySelector(".vacio");
+      for (let i = 0; i < carrito.length; i++){
         let producto = carrito[i];
-        let div = document.querySelector(".vacio");
         let contenido = ` <section class="checkout-cart">
               <article class="item-cart">
                   <form action="#" method="GET">
