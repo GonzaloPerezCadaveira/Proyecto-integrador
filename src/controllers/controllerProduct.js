@@ -131,15 +131,9 @@ const controller = {
                 where:{id:usuario.id}
             })
             .then(function(user){
-                let pedidoProduct = {}
-                if(req.params){
-                    pedidoProduct = db.Product.findOne({
-                        where: { id: idParams }
-                    })
-                }
-                else{
-                    res.redirect('/login')
-                }     
+                let pedidoProduct = db.Product.findOne({
+                    where: { id: idParams }
+                })    
                 let pedidoCat = db.Category.findAll()
                 Promise.all([pedidoProduct, pedidoCat])
                     .then(function ([product, categories]) {

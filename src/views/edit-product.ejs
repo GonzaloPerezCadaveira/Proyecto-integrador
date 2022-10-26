@@ -37,13 +37,18 @@
                 <div class="contenedor">
                     <div class="input-contenedor">
                         <select name="cat_id">
-                            <option selected disabled>Selecciona la categoría</option>
+                            <option value='' selected disabled>Selecciona la categoría</option>
                             <% categories.forEach (function(category){ %>
                                 <option value="<%= category.id %>">
                                     <%= category.cat_name %>
                                 </option>
                             <% }) %>
                         </select>
+                        <% if(locals.errors && errors.cat_id){ %>
+                            <p class="erroresLocales">
+                                <%= errors.cat_id.msg %>
+                            </p>
+                        <% } %>
                     </div>
                 </div>
 

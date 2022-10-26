@@ -79,6 +79,11 @@ p{
     font-weight: bold;
 }
 
+.erroresLocales{
+    font-size: 1vw;
+    color:red;
+}
+
 @media (min-width:720px){
 
     .formulario{
