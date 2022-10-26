@@ -43,6 +43,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  
 }
 
 .main-header-user img{
@@ -117,13 +118,17 @@ img {
 }
 
 .main-header-link {
-  color: #333
+  color: #333;
+  text-decoration: none;
+  padding: 5px;
+  margin-left: 4px;
 }
 
 .main-header-btn {
   display: block;
   color: #454546;
   text-decoration: none;
+  margin-right:20%
 }
 
 .main-header-input {

@@ -35,7 +35,7 @@
                     <% productos.forEach(function(element){ %>
                         <% if (element.discount > 0){ %>		
                         <article class="producto">
-                            <a class="hipervinculo-productos" href="/products/<%= element.id%>">
+                            <a class="hipervinculo-productos" href="/products/detail/<%= element.id%>">
                                 <img src="/image/<%= element.img %>">
                                 <div class="contenedor-articulo">
                                     <p class="nombre_producto">

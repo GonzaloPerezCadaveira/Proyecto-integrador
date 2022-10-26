@@ -26,12 +26,12 @@
     <div class="main-header-container">
       <div class="main-header-user">
         <% if(locals.user){ %>
-        <a href="/user/login" class="main-header-link"><img src="/image/avatars/<%= user.user_img%>" alt="avatar"><p>Hola, <%= user.user_name%> </p></a>
+        <a href="/user/login" class="main-header-link"><img src="/image/avatars/<%= user.user_img%>" alt="avatar"><p class="main-header-link">Hola, <%= user.user_name%> </p></a>
         <a href="/products/carrito" class="main-header-btn">Carrito<i class="fa-solid fa-cart-shopping"></i></a>
         <% } %>
         <% if(!locals.user){ %>
-          <a href="/user/login" class="main-header-link"><img src="/image/avatars/1664421839976_img.jpg" alt="avatar"><p>Iniciar sesion!!</p></a>
-          <a href="/products/carrito" class="main-header-btn">Carrito<i class="fa-solid fa-cart-shopping"></i></a>
+          <a href="/user/login" class="main-header-link"><img src="/image/avatars/1664421839976_img.jpg" alt="avatar"><p>INGRESAR</p></a>
+          <a href="/products/carrito" class="main-header-btn"><i class="fa-solid fa-cart-shopping"></i></a>
           <% } %>
       </div>
       <form class="main-header-input" action="search" method="get">
