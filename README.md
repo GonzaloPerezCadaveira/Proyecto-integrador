@@ -1,17 +1,13 @@
-Productos a vender:
+Grupo 5: Proyecto integrador.
 
-- Vinos -> Tintos y blancos, distintos varietales y etiquetas
-- Espumantes ->
-- Cervezas -> Marcas con sus diversas variedades
-- Importados -> variedad de bedidas alcohólicas (Vodka, Gin, Whisky)
-- Nacionales -> variedad de bebidas alcohólicas (Fernet, Gin, Campari, Gancia)
+Carpincho Drinks: Tienda online de bebidas.
 
+Descripción: Somos una tienda online que ofrece una amplia variedad de productos (nacionales e importados) desde cervezas nacionales hasta licores importados de alta calidad.
+Para que el cliente (usuario) pueda disfrutar de una experiencia única adquiriendo un producto desde la comodidad de su hogar a precios 100% accesibles.
 
 Integrantes:
 
-- Gonzalo Perez Cadaveira, Contador Publico, tengo 29 años.
-- Fermín Arcos, Empleado administrativo para Productor Asesor de Seguros, actualmente tengo 21 años.
-- Facundo Calleja, Abogado, 31 años, residiendo en la ciudad de Posadas, Provincia de Misiones.
+- Facundo Calleja, Abogado, actualmente con 31 años.
 - Agustín Xavier Alvarez, Estudiante de Ing. en Sistemas (UTN), actualmente tengo 22 años.
 
 
@@ -23,4 +19,3 @@ Referencias:
 - https://www.elmercadodebebidas.com.ar/
 - https://www.espaciovino.com.ar
 - https://club.zuccardiwines.com/club/
-- https://www.amazon.com/-/es/ (diseño)
