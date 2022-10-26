@@ -2,7 +2,8 @@ const db = require('../database/models')
 
 function userConnectedLogged(req,res,next) { 
     let emailInCookie = req.cookies.userLogueado
-    console.log(emailInCookie);
+    console.log('hola' + emailInCookie);
+    console.log(req.session.userLogged); 
     if(emailInCookie && emailInCookie!==undefined){
         console.log(emailInCookie);
         db.User.findOne({
@@ -25,5 +26,6 @@ function userConnectedLogged(req,res,next) {
      }
      next();
 }
+
 
 module.exports=userConnectedLogged;

@@ -43,12 +43,12 @@ const controller = {
         else{
             db.User.findOne({
                 where:{
-                    user_email:req.body.user_email,
-                    user_password:bcrypt.hashSync(req.body.user_password, 10)
+                    user_email:req.body.user_email
                 }
             })
             .then(function(usuario){
                 if(!usuario){
+                    console.log('llegue aca por then ');
                     db.User.create({
                         user_name: req.body.user_name,
                         user_email: req.body.user_email,
@@ -59,8 +59,13 @@ const controller = {
                     .then(function(){
                         res.redirect('/')
                     })
+                    .catch(function(e) {
+                        console.log('llegue aca');
+                        res.render('error', { titulo: '404', enlace: 'css/error.css'})
+                    })
                 }
                 else{
+                    console.log('hola llegue por el else');
                     res.render('register', {
                     titulo: "Register",
                     enlace: "/css/register.css",
@@ -72,6 +77,7 @@ const controller = {
                     });
                 }
             })
+            
         }
     },
     login: (req, res) => {

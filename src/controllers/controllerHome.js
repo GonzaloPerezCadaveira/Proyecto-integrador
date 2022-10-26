@@ -12,15 +12,18 @@ const controller={
     home: (req, res)=>{
         const usuario=req.session.userLogged
         if(usuario){
-            db.User.findOne({
+            let prods= db.Product.findAll()
+            let userOn=db.User.findOne({
                 where:{id:usuario.id}
             })
-            .then(function(user){
+            Promise.all([prods,userOn])
+            .then(function([productos,user]){
                 res.render('index', {
                     productoBase,
                     titulo:'Carpincho Drinks',
                     enlace:'/css/index.css',
-                    user
+                    user,
+                    productos
                 });
             })
         }

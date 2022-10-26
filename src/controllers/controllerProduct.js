@@ -85,7 +85,6 @@ const controller = {
                 where:{id:usuario.id}
             })
             .then(function (user) {
-                
                 db.Product.findOne({
                     where: { id: idParams }
                 })
@@ -180,6 +179,15 @@ const controller = {
                 req.params.id = usuario.id
                 console.log(req.params.id);
                 res.redirect('/edit/'+req.params.id)
+                res.render('edit-product', {
+                    titulo: 'Edicion de Producto',
+                    enlace: '/css/editProduct.css',
+                    errors: errors.mapped(),
+                    errors: {
+                            img: { msg: 'No ha ingrasado una imagen' }    
+                        },
+                    old: req.body
+                    });
             }
             else{
                 db.Product.update(
