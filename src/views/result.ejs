@@ -1,0 +1,34 @@
+<html lang="en">
+<%- include('partials/head') %>
+
+    <%- include('partials/header') %>
+
+        <h2 class="products-title">Resultados de la búsqueda: <%= search %></h2>
+
+            <section class="container-products result-products">
+                        
+                <% for( product of products ) {  %>
+                    <article class="prod-contenedor">
+                        <div class="img-producto">
+                            <a href="/products/detail/<%= product.id %> ">        
+                                <img src="/image/<%= product.img %>" alt="<%= product.name %>" class="img-producto">
+                            </a>
+                        </div>
+                            
+                            <div class="products-gral">
+                                <p class="prod-precio"><%= product.price %></p>
+                                <p class="prod-descuento">
+                                    <%- product.discount ? `<span>${product.discount}% OFF</span>` : '' %>
+                                        <h4 class="prod-descripcion"><%= product.name %></h4>
+                                </p>
+                                <i class="fas fa-truck"></i>
+                            </div>
+                    </article>
+                <% } %>
+
+            </section>
+            <script src="/js/menu.js"></script>
+            <%- include('partials/footer')%>
+    </body>
+
+</html>

@@ -1,6 +1,8 @@
 const path=require("path");
 const fs= require('fs');
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const db = require('../database/models')
+const { Op } = require("sequelize");
 
 const productoData= path.join(__dirname, '../database/productsData.json')
 
@@ -33,8 +35,23 @@ const controller={
             })
         })
         }
+    },
+    search: (req, res) => {
+        db.Product.findAll({
+            where: {
+                name: {[Op.like]: '%' + req.query.search + '%'}
+            }
+        }).then(response => {
+            let search = req.query.search;
+            res.render('result',{
+                titulo:'Resultados de tu busqueda',
+                enlace:'/css/result.css',
+                toThousand,
+                products:response,
+                search,
+            })
+        })
     }
-
 };
 
 module.exports=controller;

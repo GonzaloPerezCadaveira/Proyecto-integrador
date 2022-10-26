@@ -101,18 +101,15 @@ img {
 }
 
 .main-header-btn {
-  padding:10px 30px;
   display: block;
   color: #454546;
-  border: 1px solid #454546;
   text-decoration: none;
 }
 
 .main-header-input {
   display: block;
   padding: 10px;
-  width: 100%;
-  position: relative;
+  width: 70%;
 }
 
 .search-icon{
@@ -150,19 +147,6 @@ img {
     padding: 0 20px;
   }
 
-  .main-header-btn {
-    width: 100px;
-    padding: 10px;
-  }
-
-  .main-header-input{
-    width: 100%;
-  }
-
-  .search-icon{
-    position: absolute;
-    right: 230px;
-  }
 
   .main-header-title {
     border-bottom: 1px solid rgb(188, 188, 188);

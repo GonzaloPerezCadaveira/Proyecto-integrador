@@ -13,7 +13,7 @@ const productController = require("../src/controllers/controllerProduct");
 // Creación de producto (C)
 router.get('/create', productController.create);
 
-router.post('/create', validacionImg.single('img'),validationProduct, productController.store);
+router.post('/create', validacionImg.single('img'), validationProduct, productController.store);
 
 // Listado de productos (R)
 router.get('/', productController.productsList)
@@ -27,7 +27,7 @@ router.get('/edit/:id', function (req,res,next) {
     next()
 } ,productController.edit);
 
-router.put('/actualizar/:id', validacionImg.single('img'),validationProduct , productController.editComplete);
+router.put('/actualizar/:id', validacionImg.single('img'), validationProduct, productController.editComplete);
 
 // Borrado de producto (D)
 router.delete('/delete/:id', productController.destroy); 

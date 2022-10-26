@@ -11,7 +11,7 @@ window.onload = function() {
         let tituloProd = document.querySelector('.producto h1').innerText
         let precio = document.querySelector('.precio').innerText
         let descuento = document.querySelector('.descuento').innerText
-        let inputCantidad = document.querySelector('.count').value
+        let inputCantidad = document.querySelector('#count').value
 
         let producto = {
             idProducto: id, 

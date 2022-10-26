@@ -1,24 +1,29 @@
+<html lang="en">
 <%- include('partials/head') %>
-<script src="/js/register.js"></script>
-    <body class="bodyRegister">
+    <script src="/js/register.js"></script>
+    <script src="/js/menu.js"></script>
 
-        <%- include('partials/header') %>
-        <form class="formulario" action="/register" method="POST" enctype="multipart/form-data">
-                <div id="ulErrors">
-                    <ul type="none"></ul>        
-                </div>
-                <h1>¡Creá tu cuenta!</h1>
-                <p class="etiqueta">Nombre y apellido</p>
-                <div class="contenedor">
-                    <i class="fa-solid fa-user icon"></i>
-                    <input type="text" name="user_name" id="user_name" value="<%= locals.old && old.user_name? old.user_name : '' %>">
-                    <% if(locals.errors && errors.user_name){ %>
-                        <p class="erroresLocales">
-                            <%= errors.user_name.msg %>
-                        </p>
-                        <% }; %>
-                </div>
-                
+    <%- include('partials/header') %>
+
+        <div class="main-register">
+            <div class="form-register">
+                <form class="formulario" action="/register" method="POST" enctype="multipart/form-data">
+                    <div id="ulErrors">
+                        <ul type="none"></ul>
+                    </div>
+                    <h1 class="register-title">¡Creá tu cuenta!</h1>
+                    <div class="contenedor">
+                        <p class="etiqueta">Nombre y apellido</p>
+                        <i class="fa-solid fa-user icon"></i>
+                        <input type="text" name="user_name" id="user_name" class="input-register"
+                            value="<%= locals.old && old.user_name? old.user_name : '' %>">
+                        <% if(locals.errors && errors.user_name){ %>
+                            <p class="erroresLocales">
+                                <%= errors.user_name.msg %>
+                            </p>
+                            <% }; %>
+                    </div>
+
                     <div class="contenedor">
                         <p class="etiqueta">Correo electrónico</p>
                         <i class="fa-solid fa-at icon"></i>
@@ -30,37 +35,38 @@
                             </p>
                             <% } %>
                     </div>
-                            <p class="etiqueta">Contraseña</p>
-                            <div class="contenedor">
-                                <i class="fa-solid fa-key icon"></i>
-                                <input type="password" name="user_password" id="user_password" autocorrect="off" autocapitalize="off"
-                                    value="<%= locals.old && old.user_password? old.user_password : '' %>">
-                                    <% if(locals.errors && errors.user_password){ %>
-                                        <p class="erroresLocales">
-                                            <%= errors.user_password.msg %>
-                                        </p>
-                                    <% }; %>
-                            </div>
-                                    <p class="etiqueta">Imagen de perfil</p>
-                                    <div class="contenedor">
-                                        <i class="fa-regular fa-image icon"></i>
-                                        <input type="file" name="user_img" accept=".jpg, .png, .jpng" >
-                                        <% if(locals.errors && errors.user_img){ %>
-                                            <p class="erroresLocales">
-                                                <%= errors.user_img.msg %>
-                                            </p>
-                                        <% } %>
-                                    </div>
-                                            <button type="submit" id="button-register" class="button">Registrate</button>
-                                            <p>Al registrarte como usuario aceptas nuestras condiciones de uso y
-                                                politica de Privacidad</p>
-                                            <p>¿Ya tenés cuenta?
-                                                <a class="link" href="/user/login">Iniciar sesión</a>
-                                            </p>
-                                            </div>
-            </form>
-            
-            <%- include('partials/footer')%>
-    </body>
+                    <div class="contenedor">
+                        <p class="etiqueta">Contraseña</p>
+                        <i class="fa-solid fa-key icon"></i>
+                        <input type="password" name="user_password" id="user_password" autocorrect="off"
+                            class="input-register" autocapitalize="off"
+                            value="<%= locals.old && old.user_password? old.user_password : '' %>">
+                        <% if(locals.errors && errors.user_password){ %>
+                            <p class="erroresLocales">
+                                <%= errors.user_password.msg %>
+                            </p>
+                            <% }; %>
+                    </div>
+                    <div class="contenedor">
+                        <p class="etiqueta">Imagen de perfil</p>
+                        <i class="fa-regular fa-image icon"></i>
+                        <input type="file" name="user_img" accept=".jpg, .png, .jpng" class="input-register">
+                        <% if(locals.errors && errors.user_img){ %>
+                            <p class="erroresLocales">
+                                <%= errors.user_img.msg %>
+                            </p>
+                            <% } %>
+                    </div>
+                    <button type="submit" id="button-register" class="button">Registrate</button>
+                    <p>Al registrarte como usuario aceptas nuestras condiciones de uso y
+                        politica de Privacidad</p>
+                    <p>¿Ya tenés cuenta?
+                        <a class="link" href="/user/login">Iniciar sesión</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+
+        <%- include('partials/footer')%>
 
 </html>

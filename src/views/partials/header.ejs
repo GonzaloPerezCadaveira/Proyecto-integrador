@@ -13,53 +13,24 @@
           <li class="menu-item"><a href="/#nosotros" class="menu-link">NOSOTROS</a></li>
           <li class="menu-item"><a href="/#contacto" class="menu-link">CONTACTO</a></li>
           <% if(locals.isLogged){ %>
-          <li class="menu-item"><a href="/user/register" class="menu-link">REGISTRO</a></li>
-          <li class="menu-item"><a href="/user/login" class="menu-link">INGRESAR</a></li>
-          <% } %>
-          <% if(locals.user){ %>
-          <li class="menu-item"><a href="/user/logout" class="menu-link">CERRAR CUENTA</a></li>
-          <% } %>
+            <li class="menu-item"><a href="/user/register" class="menu-link">REGISTRO</a></li>
+            <li class="menu-item"><a href="/user/login" class="menu-link">INGRESAR</a></li>
+            <% } %>
+              <% if(locals.user){ %>
+                <li class="menu-item"><a href="/user/logout" class="menu-link">CERRAR CUENTA</a></li>
+                <% } %>
         </ul>
       </nav>
     </div>
     <!-- CARRITO Y BARRA DE BUSQUEDA -->
     <div class="main-header-container">
-      <% if(locals.user){ %>
-      <a href="/user/login" class="main-header-link"><i class="fa-solid fa-user"></i></a><p>Hola, <%= user.user_name%> </p>
-      <a href="/products/carrito" class="main-header-btn">Carrito<i class="fa-solid fa-cart-shopping"></i></a>
-      <% } %>
-      <input type="search" class="main-header-input" placeholder="Buscar productos"><i class="search-icon fas fa-search"></i>
+
+      <a href="/user/login" class="main-header-link"><i class="fa-solid fa-user"></i></a>
+      <a href="/products/carrito" class="main-header-btn"><i class="fa-solid fa-cart-shopping"></i></a>
+      <form class="main-header-input" action="search" method="get">
+        <input type="search" name="search" class="main-header-input" placeholder="Buscar productos">
+      </form>
     </div>
   </div>
   <hr>
 </header>
-
-<!-- <header>
-  <div class="container-left">
-    <a href="/"> <img src="/image/logo-cd.png" class="logo"></a>
-  </div>
-  <div id="navbar">
-    <nav>
-      <a href="/">Home</a>
-      <a href="/#somosCarpi">¿Quienes Somos?</a>
-      <a href="/products">Nuestras bebidas</a>
-
-      <% if(locals.user){ %>
-        <img src="/image/avatars/<%= user.user_img %>" alt="<%= user.user_name %> Foto">
-        <h3>Hi <%= user.user_name%>
-        </h3>
-        <a href="/products/carrito"><i class="fa-solid fa-cart-shopping"></i></a>
-        <a href="/user/logout">Cerrar cuenta</a>
-        <% }else{ %>
-
-          <img src="/image/avatars/1664421839976_img.jpg" alt="avatar">
-          <a href="/products/carrito"><i class="fa-solid fa-cart-shopping"></i></a>
-          <% if(locals.isLogged){ %>
-            <a href="/user/login">Iniciar sesión <i class="fa-solid fa-right-to-bracket"></i> </a>
-            <a href="/user/register">Crear cuenta <i class="fa-regular fa-address-card"></i></a>
-            <% }%>
-              <% } %>
-    </nav>
-  </div>
-
-</header> -->

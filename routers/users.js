@@ -24,20 +24,20 @@ const userOn = require('../src/middlewares/userConnected')
 
 
 // Formulario de Registro
-router.get("/register",userOn,userController.register)
+router.get("/register", userOn, userController.register)
 
 // Procesar el registro
 router.post("/register", uploadFile.single('user_img'), validationsRegister, userController.store)
 
 // Formulario de Login
-router.get("/login",userOn, userController.login)
+router.get("/login", userOn, userController.login)
 
 // Valida el ingreso de un usuario
-router.post("/login",validacionLogin, userController.loginSucces)
+router.post("/login", validacionLogin, userController.loginSucces)
 
 // Perfil de usuario
-router.get("/profile",autentificacion, userController.profile)
+router.get("/profile", autentificacion, userController.profile)
 
-router.get('/logout',userController.logout)
+router.get('/logout', userController.logout)
 
 module.exports = router;
