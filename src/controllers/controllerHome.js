@@ -4,9 +4,9 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const db = require('../database/models')
 const { Op } = require("sequelize");
 
-const productoData= path.join(__dirname, '../database/productsData.json')
+// const productoData= path.join(__dirname, '../database/productsData.json')
 
-const productoBase= JSON.parse(fs.readFileSync(productoData, 'utf-8'))
+// const productoBase= JSON.parse(fs.readFileSync(productoData, 'utf-8'))
 
 const controller={
     home: (req, res)=>{
@@ -19,7 +19,6 @@ const controller={
             Promise.all([prods,userOn])
             .then(function([productos,user]){
                 res.render('index', {
-                    productoBase,
                     titulo:'Carpincho Drinks',
                     enlace:'/css/index.css',
                     user,
@@ -31,7 +30,6 @@ const controller={
             db.Product.findAll()
             .then(function(productos){
             res.render('index', {
-                productoBase,
                 titulo:'Carpincho Drinks',
                 enlace:'/css/index.css',
                 productos
