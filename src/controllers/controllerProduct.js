@@ -85,7 +85,6 @@ const controller = {
                 where:{id:usuario.id}
             })
             .then(function (user) {
-                
                 db.Product.findOne({
                     where: { id: idParams }
                 })
@@ -132,15 +131,9 @@ const controller = {
                 where:{id:usuario.id}
             })
             .then(function(user){
-                let pedidoProduct = {}
-                if(req.params){
-                    pedidoProduct = db.Product.findOne({
-                        where: { id: idParams }
-                    })
-                }
-                else{
-                    res.redirect('/login')
-                }     
+                let pedidoProduct = db.Product.findOne({
+                    where: { id: idParams }
+                })    
                 let pedidoCat = db.Category.findAll()
                 Promise.all([pedidoProduct, pedidoCat])
                     .then(function ([product, categories]) {
@@ -180,6 +173,15 @@ const controller = {
                 req.params.id = usuario.id
                 console.log(req.params.id);
                 res.redirect('/edit/'+req.params.id)
+                res.render('edit-product', {
+                    titulo: 'Edicion de Producto',
+                    enlace: '/css/editProduct.css',
+                    errors: errors.mapped(),
+                    errors: {
+                            img: { msg: 'No ha ingrasado una imagen' }    
+                        },
+                    old: req.body
+                    });
             }
             else{
                 db.Product.update(

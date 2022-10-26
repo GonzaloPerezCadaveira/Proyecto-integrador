@@ -6,12 +6,13 @@ const path = require ('path')
 
 const validacionImg= require('../src/middlewares/multerProduct')
 const validationProduct = require('../src/middlewares/validationProduct')
-const userAdmin = require('../src/middlewares/restriccionProdUsers')
+const userAdmin  = require('../src/middlewares/restriccionProdUsers')
+const restriccionAdmin  = require('../src/middlewares/adminCreateProds')
 const productController = require("../src/controllers/controllerProduct");
 
 
 // Creación de producto (C)
-router.get('/create', productController.create);
+router.get('/create',restriccionAdmin, productController.create);
 
 router.post('/create', validacionImg.single('img'), validationProduct, productController.store);
 

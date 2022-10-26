@@ -55,3 +55,7 @@ CREATE TABLE `carts` (
 
 INSERT INTO `categories` 
 VALUES (1,'Vinos'),(2,'Licores'),(3,'Cervezas'),(4,'Espumantes')
+
+
+INSERT INTO `users_categories` 
+VALUES (1,'Usuario'),(2,'Administrador')

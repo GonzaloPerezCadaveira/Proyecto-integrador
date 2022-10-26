@@ -3,6 +3,15 @@ const path= require('path')
 
 
 const validation = [
+    body('cat_id').custom(function(value) {
+        console.log(value);
+        if(!value){
+            throw new Error('Debes seleccionar una opcion')
+        }
+        else{
+            return true
+        }
+    }).bail(),
     body('img').custom(function(value,{req}){
         let file = req.file;
         const acceptedFiles = ['.jpeg', '.jpg', '.png'];
