@@ -23,10 +23,7 @@ router.get('/', productController.productsList)
 router.get("/detail/:id", userAdmin, productController.detail);
 
 // Actualización de producto (U)
-router.get('/edit/:id', function (req,res,next) {
-    console.log('sigo andando')
-    next()
-} ,productController.edit);
+router.get('/edit/:id',productController.edit);
 
 router.put('/actualizar/:id', validacionImg.single('img'), validationProduct, productController.editComplete);
 

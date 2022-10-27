@@ -4,7 +4,8 @@ const db = require('../database/models')
 const sequelize = db.sequelize;
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-const { validationResult } = require('express-validator')
+const { validationResult } = require('express-validator');
+
 
 const controller = {
     create: (req, res) => {
@@ -122,8 +123,6 @@ const controller = {
 
     },
     edit: (req, res) => {
-        let errors= validationResult(req)
-        console.log(req.params.id)
         let idParams = req.params.id
         const usuario=req.session.userLogged
         if(usuario){
@@ -136,32 +135,20 @@ const controller = {
                 })    
                 let pedidoCat = db.Category.findAll()
                 Promise.all([pedidoProduct, pedidoCat])
-                    .then(function ([product, categories]) {
+                    .then(function ([product, categories]){
+                        product.description.trim();
                         res.render('edit-product', {
                             titulo: 'Edicion de Producto',
                             enlace: '/css/editProduct.css',
                             product,
                             categories,
-                            user,
-                            errors:errors.mapped()
+                            user
                         })
                     })
             })
         } 
         else {
-            let pedidoProduct = db.Product.findOne({
-                where: { id: idParams }
-            })
-            let pedidoCat = db.Category.findAll()
-            Promise.all([pedidoProduct, pedidoCat])
-                .then(function ([product, categories]) {
-                    res.render('edit-product', {
-                        titulo: 'Edicion de Producto',
-                        enlace: '/css/editProduct.css',
-                        product,
-                        categories
-                    })
-                })
+            res.redirect('/login')
         }   
     },
     editComplete: (req, res) => {
@@ -170,18 +157,23 @@ const controller = {
         console.log(usuario);
         if (usuario){
             if (!errors.isEmpty()) {
-                req.params.id = usuario.id
-                console.log(req.params.id);
-                res.redirect('/edit/'+req.params.id)
-                res.render('edit-product', {
-                    titulo: 'Edicion de Producto',
-                    enlace: '/css/editProduct.css',
-                    errors: errors.mapped(),
-                    errors: {
-                            img: { msg: 'No ha ingrasado una imagen' }    
+                console.log(errors)
+                db.User.findOne({
+                    where:{ id:usuario.id}
+                })
+                .then(function(user) {
+                    res.render('edit-product', {
+                        titulo: 'Edicion de Producto',
+                        enlace: '/css/editProduct.css',
+                        errors: errors.mapped(),
+                        old: req.body,
+                        producto:{
+                            id:req.params.id
                         },
-                    old: req.body
+                        user
                     });
+                })
+
             }
             else{
                 db.Product.update(
