@@ -10,10 +10,6 @@
     text-align: center;
 }
 
-.login-error {
-    color: red;
-}
-
 .main-register{
     background-image:url("/image/slider2.jpg") ;
     background-repeat: no-repeat;
@@ -96,7 +92,7 @@ input .contenedor{
     background:rgba(30,30,30,0.4);
 }
 
-p{
+.etiqueta{
     text-align: center;
     font-size: 25px;
     margin-top: 20px;
