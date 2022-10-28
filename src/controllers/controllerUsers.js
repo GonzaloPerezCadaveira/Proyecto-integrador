@@ -115,26 +115,45 @@ const controller = {
                     user_email:req.body.user_email
                 }
             })
-            .then(function (usuario) {
-                let check=bcrypt.compareSync(req.body.user_password,usuario.user_password)
-                if(check){
-                    if(req.body.rememberUser){
-                        res.cookie('userLogueado',usuario.user_email, {maxAge:1000*60} )
+            .then(function(usuario){
+                if(usuario){
+                    let check=bcrypt.compareSync(req.body.user_password,usuario.user_password)
+                    if(check){
+                        if(req.body.rememberUser){
+                            res.cookie('userLogueado',usuario.user_email, {maxAge:1000*60} )
+                        }
+                        req.session.userLogged = usuario
+                        res.redirect("/profile")
                     }
-                    req.session.userLogged = usuario
-                    res.redirect("/profile")
+                    else
+                    {
+                        res.render('login', {
+                            titulo: "login",
+                            enlace: "/css/login.css",
+                            errors:{
+                                user_password:{msg:'La contraseña ingresada es incorrecta'}
+                            }, 
+                            old: req.body
+                        });   
+                    }
                 }
-                else
-                {
+                else{
                     res.render('login', {
                         titulo: "login",
                         enlace: "/css/login.css",
                         errors:{
-                            user_password:{msg:'La contraseña ingresada es incorrecta'}
+                            user_email:{ msg: 'El email ingresado no se encuentra registrado' }
                         }, 
                         old: req.body
-                    });   
+                    });
                 }
+            })
+            .catch(function(e) {
+                console.log('llegue aca');
+                res.render('error', { 
+                    titulo: '404', 
+                    enlace: 'css/error.css'
+                })
             })
         }
     },

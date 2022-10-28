@@ -11,7 +11,7 @@ const userController = require("../src/controllers/controllerUsers");
 
 const uploadFile = require('../src/middlewares/multerUsers')
 
-const validacionLogin = require ("../src/middlewares/validationsLogin")
+const validationLogin = require ("../src/middlewares/validationsLogin")
 
 const validationsRegister = require("../src/middlewares/validationsRegister")
 
@@ -33,7 +33,7 @@ router.post("/register", uploadFile.single('user_img'), validationsRegister, use
 router.get("/login", userOn, userController.login)
 
 // Valida el ingreso de un usuario
-router.post("/login", validacionLogin, userController.loginSucces)
+router.post("/login", validationLogin, userController.loginSucces)
 
 // Perfil de usuario
 router.get("/profile", autentificacion, userController.profile)
