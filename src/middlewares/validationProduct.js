@@ -1,12 +1,12 @@
-const { body }= require('express-validator');
+const { check }= require('express-validator');
 const path= require('path')
 
 
 const validation = [
-    body('name').notEmpty().withMessage('Debe asignarle un nombre al producto').bail()
+    check('name').notEmpty().withMessage('Debe asignarle un nombre al producto').bail()
     .isLength({min:5}).withMessage('El nombre del producto debe tener al menos 5 caracteres').bail(),
-    body('description').trim().isLength({min:20}).withMessage('La descripcion del producto debera tener como minimo 20 caracteres').bail(),
-    // body('cat_id').custom(function(value) {
+    check('description').trim().isLength({min:20}).withMessage('La descripcion del producto debera tener como minimo 20 caracteres').bail(),
+    // check('cat_id').custom(function(value) {
     //     if(!value){
     //         throw new Error('Debes seleccionar una opcion')
     //     }
@@ -14,7 +14,7 @@ const validation = [
     //         return true
     //     }
     // }).bail(),
-    body('img').custom(function(value,{req}){
+    check('img').custom(function(value,{req}){
         let file = req.file;
         const acceptedFiles = ['.jpeg', '.jpg', '.png'];
         if(!file){

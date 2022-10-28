@@ -31,17 +31,46 @@ const controller = {
             
     },
     store: (req, res) => {
-        db.Product.create({
-            name: req.body.name,
-            description: req.body.description,
-            price: req.body.price,
-            quantity: req.body.quantity,
-            discount: req.body.discount,
-            cat_id: req.body.cat_id,
-            img: req.file.filename
-        }).then(function () {
-            res.redirect('/products');
-        })
+        const errors = validationResult(req);
+        const usuario=req.session.userLogged
+        console.log(usuario);
+        if (usuario){
+            if (!errors.isEmpty()) {
+                console.log(errors)
+                let categorias = db.Category.findAll()
+                let userOn=db.User.findOne({
+                    where:{ id:usuario.id}
+                })
+                Promise.all([categorias, userOn])
+                .then(function([categories,user]) {
+                    res.render('create-product', {
+                        titulo: 'Creacion de Producto',
+                        enlace: '/css/createProduct.css',
+                        errors: errors.mapped(),
+                        old: req.body,
+                        producto:{
+                            id:req.params.id
+                        },
+                        user,
+                        categories
+                    });
+                })
+
+            }
+            else{
+                db.Product.create({
+                    name: req.body.name,
+                    description: req.body.description,
+                    price: req.body.price,
+                    quantity: req.body.quantity,
+                    discount: req.body.discount,
+                    cat_id: req.body.cat_id,
+                    img: req.file.filename
+                }).then(function () {
+                    res.redirect('/products');
+                })
+            }
+        }
     },
     productsList: (req, res) => {
         const usuario=req.session.userLogged
