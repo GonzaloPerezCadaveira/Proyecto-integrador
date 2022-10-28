@@ -1,113 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('partials/head') %>
-<body>
+
     <%- include('partials/header')%>
 
-        <body class="main">
-            <% if(locals.product && product.id && product.name){ %>
-                <form  action="/products/actualizar/<%= product.id %>?_method=PUT" method="POST" enctype='multipart/form-data' class="formulario">
-                    <h1>Formulario de edición del producto: <%= product.name %> </h1>
+        <main class="main">
+            <div class="form-edit">
+                <% if(locals.product && product.id && product.name){ %>
+                    <form action="/products/actualizar/<%= product.id %>?_method=PUT" method="POST"
+                        enctype='multipart/form-data' class="formulario">
+                        <h1>Formulario de edición del producto: <%= product.name %>
+                        </h1>
 
-            <%  } %>
-            <% if(locals.old && locals.producto ){%>
-                <form  action="/products/actualizar/<%=  producto.id ? producto.id : '' %>?_method=PUT" method="POST" enctype='multipart/form-data' class="formulario">
-                    <h1>Formulario de edición del producto: <%=  old.name ? old.name : '' %> </h1>
-            <%}%>        
-                <p class="etiqueta">Nombre del producto</p>
-                <div class="contenedor">
-                    <div class="input-contenedor"></div>
-                    <% if(locals.product && product.name){ %>
-                        <input type="text" name="name" value="<%= product.name %>">
-                    <%  } %>
-                    <% if(locals.old && old.name){%>
-                        <input type="text" name="name" value="<%= old.name %>">
-                    <%}%>
-                    <% if(locals.errors && errors.name){ %>
-                        <p class="erroresLocales">
-                            <%= errors.name.msg %>
-                        </p>
-                    <% } %> 
-                </div>
+                        <% } %>
+                            <% if(locals.old && locals.producto ){%>
+                                <form action="/products/actualizar/<%=  producto.id ? producto.id : '' %>?_method=PUT"
+                                    method="POST" enctype='multipart/form-data' class="formulario">
+                                    <h1 class="title">Formulario de edición del producto: <%= old.name ? old.name : '' %>
+                                    </h1>
+                                    <%}%>
+                                        <p class="etiqueta">Nombre del producto</p>
+                                        <div class="contenedor">
+                                            <div class="input-contenedor"></div>
+                                            <% if(locals.product && product.name){ %>
+                                                <input type="text" name="name" value="<%= product.name %>">
+                                                <% } %>
+                                                    <% if(locals.old && old.name){%>
+                                                        <input type="text" name="name" value="<%= old.name %>">
+                                                        <%}%>
+                                                            <% if(locals.errors && errors.name){ %>
+                                                                <p class="erroresLocales">
+                                                                    <%= errors.name.msg %>
+                                                                </p>
+                                                                <% } %>
+                                        </div>
 
-                <p class="etiqueta">Descripción</p>
-                <div class="contenedor">
-                    <div class="input-contenedor"></div>
-                    <% if(locals.product && product.description){ %>
-                        <textarea type="text" name="description"><%= product.description %></textarea>
-                    <%  } %>
-                    <% if(locals.old && old.description){%>
-                        <textarea type="text" name="description"><%= old.description %></textarea>
-                    <%}%>
-                    <% if(locals.errors && errors.description){ %>
-                        <p class="erroresLocales">
-                            <%= errors.description.msg %>
-                        </p>
-                    <% } %>    
-                    
-                </div>
-                <% if(locals.product){ %>
-                    <p class="etiqueta">Precio</p>
-                    <div class="contenedor">
-                        <div class="input-contenedor"></div>
-                        <input type="number" min="0" name="price" value="<%= product.price %>">
-                    </div>
-    
-                    <p class="etiqueta">Descuento</p>
-                    <div class="contenedor">
-                        <div class="input-contenedor">
-                            <input type="number" min="0" max="50" name="discount" value="<%= product.discount %>">
-                        </div>
-                    </div>
+                                        <p class="etiqueta">Descripción</p>
+                                        <div class="contenedor">
+                                            <div class="input-contenedor"></div>
+                                            <% if(locals.product && product.description){ %>
+                                                <textarea type="text"
+                                                    name="description"><%= product.description %></textarea>
+                                                <% } %>
+                                                    <% if(locals.old && old.description){%>
+                                                        <textarea type="text"
+                                                            name="description"><%= old.description %></textarea>
+                                                        <%}%>
+                                                            <% if(locals.errors && errors.description){ %>
+                                                                <p class="erroresLocales">
+                                                                    <%= errors.description.msg %>
+                                                                </p>
+                                                                <% } %>
 
-                    <p class="etiqueta">Cantidad</p>
-                    <div class="contenedor">
-                        <div class="input-contenedor">
-                            <input type="number" min="0" max="50" name="quantity" value="<%= product.quantity %>">
-                        </div>
-                    </div>
+                                        </div>
+                                        <% if(locals.product){ %>
+                                            <p class="etiqueta">Precio</p>
+                                            <div class="contenedor">
+                                                <div class="input-contenedor"></div>
+                                                <input type="number" min="0" name="price" value="<%= product.price %>">
+                                            </div>
 
-                    <p class="etiqueta">Imagen del producto</p>
-                    <div class="contenedor">
-                        <div class="input-contenedor">
-                            <input type="file" name="img" value="<%= product.img %>">
-                        </div>
-                    </div>
-                <%  } %>
-                <% if(locals.old){ %>
-                    <p class="etiqueta">Precio</p>
-                    <div class="contenedor">
-                        <div class="input-contenedor"></div>
-                        <input type="number" min="0" name="price" value="<%= old.price ? old.price : ''  %>">
-                    </div>
-    
-                    <p class="etiqueta">Descuento</p>
-                    <div class="contenedor">
-                        <div class="input-contenedor">
-                            <input type="number" min="0" max="50" name="discount" value="<%= old.discount ? old.discount : ''  %>">
-                        </div>
-                    </div>
+                                            <p class="etiqueta">Descuento</p>
+                                            <div class="contenedor">
+                                                <div class="input-contenedor">
+                                                    <input type="number" min="0" max="50" name="discount"
+                                                        value="<%= product.discount %>">
+                                                </div>
+                                            </div>
 
-                    <p class="etiqueta">Cantidad</p>
-                    <div class="contenedor">
-                        <div class="input-contenedor">
-                            <input type="number" min="0" max="50" name="quantity" value="<%=  old.quantity ? old.quantity : ''  %>">
-                        </div>
-                    </div>
-                    <p class="etiqueta">Imagen del producto</p>
-                    <div class="contenedor">
-                        <div class="input-contenedor">
-                            <input type="file" name="img" value="<%= old.img? old.img : '' %>">
-                        </div>
-                    </div>
-                <%  } %>
-                <% if(locals.errors && errors.img){ %>
-                    <p class="erroresLocales">
-                        <%= errors.img.msg %>
-                    </p>
-                <% } %>
-                <!-- consultar como hacer el select con el old -->
-                <!-- <p class="etiqueta">Categoría</p>
+                                            <p class="etiqueta">Cantidad</p>
+                                            <div class="contenedor">
+                                                <div class="input-contenedor">
+                                                    <input type="number" min="0" max="50" name="quantity"
+                                                        value="<%= product.quantity %>">
+                                                </div>
+                                            </div>
+
+                                            <p class="etiqueta">Imagen del producto</p>
+                                            <div class="contenedor">
+                                                <div class="input-contenedor">
+                                                    <input type="file" name="img" value="<%= product.img %>">
+                                                </div>
+                                            </div>
+                                            <% } %>
+                                                <% if(locals.old){ %>
+                                                    <p class="etiqueta">Precio</p>
+                                                    <div class="contenedor">
+                                                        <div class="input-contenedor"></div>
+                                                        <input type="number" min="0" name="price"
+                                                            value="<%= old.price ? old.price : ''  %>">
+                                                    </div>
+
+                                                    <p class="etiqueta">Descuento</p>
+                                                    <div class="contenedor">
+                                                        <div class="input-contenedor">
+                                                            <input type="number" min="0" max="50" name="discount"
+                                                                value="<%= old.discount ? old.discount : ''  %>">
+                                                        </div>
+                                                    </div>
+
+                                                    <p class="etiqueta">Cantidad</p>
+                                                    <div class="contenedor">
+                                                        <div class="input-contenedor">
+                                                            <input type="number" min="0" max="50" name="quantity"
+                                                                value="<%=  old.quantity ? old.quantity : ''  %>">
+                                                        </div>
+                                                    </div>
+                                                    <p class="etiqueta">Imagen del producto</p>
+                                                    <div class="contenedor">
+                                                        <div class="input-contenedor">
+                                                            <input type="file" name="img"
+                                                                value="<%= old.img? old.img : '' %>">
+                                                        </div>
+                                                    </div>
+                                                    <% } %>
+                                                        <% if(locals.errors && errors.img){ %>
+                                                            <p class="erroresLocales">
+                                                                <%= errors.img.msg %>
+                                                            </p>
+                                                            <% } %>
+                                                                <!-- consultar como hacer el select con el old -->
+                                                                <!-- <p class="etiqueta">Categoría</p>
                 <div class="contenedor">
                     <div class="input-contenedor">
                         <select name="cat_id">
@@ -130,8 +143,10 @@
                         <% } %>
                     </div>
                 </div> -->
-                <button type="submit" class="button">Editar producto</button>
-            </form>
-    <%- include('partials/footer')%>
-</body>
+                                                                <button type="submit" class="button">Editar producto</button>
+                                </form>
+                                <%- include('partials/footer')%>
+            </div>
+        </main>
+
 </html>

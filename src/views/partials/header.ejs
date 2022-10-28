@@ -14,7 +14,6 @@
           <li class="menu-item"><a href="/#contacto" class="menu-link">CONTACTO</a></li>
           <% if(locals.isLogged){ %>
             <li class="menu-item"><a href="/user/register" class="menu-link">REGISTRO</a></li>
-            <li class="menu-item"><a href="/user/login" class="menu-link">INGRESAR</a></li>
             <% } %>
               <% if(locals.user){ %>
                 <li class="menu-item"><a href="/user/logout" class="menu-link">CERRAR CUENTA</a></li>
@@ -25,7 +24,7 @@
     <!-- CARRITO Y BARRA DE BUSQUEDA -->
     <div class="main-header-container">
       <div class="main-header-user">
-        <% if(locals.user){ %>
+        <% if(locals.user){ %>  
         <a href="/user/login" class="main-header-link"><img src="/image/avatars/<%= user.user_img%>" alt="avatar"><p class="main-header-link">Hola, <%= user.user_name%> </p></a>
         <a href="/products/carrito" class="main-header-btn"><i class="fa-solid fa-cart-shopping"></i></a>
         <% } %>

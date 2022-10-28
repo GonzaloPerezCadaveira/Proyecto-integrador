@@ -5,6 +5,17 @@
     <%- include('partials/header')%>
 
         <main class="main">
+            <div class="form-create">
+                <form method="POST" action="/products/create" enctype='multipart/form-data' class="formulario">
+                    <div id="ulErrors">
+                        <ul type="none"></ul>
+                    </div>
+                    <h1 class="title">Formulario de creación de productos</h1>
+
+                    <div class="contenedor">
+                        <p class="etiqueta">Nombre del producto</p>
+                        <div class="input-contenedor"></div>
+                        <input type="text" name="name" id="name_product">
             <form method="POST" action="/products/create" enctype='multipart/form-data' class="formulario">
                 <div id="ulErrors">
                     <ul type="none"></ul>
@@ -113,8 +124,56 @@
                             <% }) %>
                         </select>
                     </div>
-                </div>
 
+                    <div class="contenedor">
+                        <p class="etiqueta">Descripción</p>
+                        <div class="input-contenedor"></div>
+                        <textarea type="text" name="description" id="description_product"></textarea>
+                    </div>
+
+                    <div class="contenedor">
+                        <p class="etiqueta">Precio</p>
+                        <div class="input-contenedor"></div>
+                        <input type="number" min="0" name="price" id="price_product">
+                    </div>
+
+                    <div class="contenedor">
+                        <p class="etiqueta">Descuento</p>
+                        <div class="input-contenedor">
+                            <input type="number" min="0" max="50" name="discount" id="discount_product">
+                        </div>
+                    </div>
+
+                    <div class="contenedor">
+                        <p class="etiqueta">Categoría</p>
+                        <div class="input-contenedor">
+                            <select name="cat_id" id="cat_id">
+                                <option selected disabled>Selecciona la categoría</option>
+                                <% categories.forEach(category=> { %>
+                                    <option value="<%= category.id %>">
+                                        <%= category.cat_name %>
+                                    </option>
+                                    <% }) %>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="contenedor">
+                        <p class="etiqueta">Cantidad</p>
+                        <div class="input-contenedor">
+                            <input type="number" min="0" max="50" name="quantity">
+                        </div>
+                    </div>
+
+                    <div class="contenedor">
+                        <p class="etiqueta">Imagen del producto</p>
+                        <div class="input-contenedor">
+                            <input type="file" name="img">
+                        </div>
+                    </div>
+                    <button type="submit" class="button">Guardar producto</button>
+                </form>
+            </div>
                 <button type="submit" class="button">Guardar producto</button>
             </form>
         </main>

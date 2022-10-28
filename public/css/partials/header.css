@@ -34,9 +34,9 @@ img {
 .main-header-user {
   display: flex;
   width: 100%;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
-  margin:2vw 1vw; 
+  margin-right:2vw 1vw; 
 }
 
 .main-header-user a{
@@ -47,8 +47,10 @@ img {
 }
 
 .main-header-user img{
+  width: 40px;
+  height:40px;
   border-radius: 50%;
-  width: 3vw;
+  object-fit: fill;
 }
 
 .main-header-title {
@@ -122,6 +124,10 @@ img {
   text-decoration: none;
   padding: 5px;
   margin-left: 4px;
+}
+
+.main-header-user p{
+  font-size: 12px;
 }
 
 .main-header-btn {
