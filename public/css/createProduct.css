@@ -8,24 +8,39 @@
     background-image:url("/image/slider2.jpg") ;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size:contain;
     background-size:cover;
     padding:10px;
     margin:auto;
 }
 
+.contenedor{
+    width: 100%;
+    padding:15px;
+    text-align: center;
+}
+
 .formulario{
-    text-align:-webkit-center;
     background: white;
     margin: 10% 0%;
-    padding:3px;
+    padding:10px;
+    width: 100%;
+    border:0.5px solid #212121;
+    border-radius: 5px;
+}
+
+.title{
+    text-align: center;
+    color:#1a2537;
+    font-size:40px;
+}
+
+.form-create{
+    text-align:-webkit-center;
     padding-bottom: 20px;
 }
 
 input[type="text"],
-input[type="password"],
 input[type="file"],
-input[type="email"],
 input[type="number"],
 textarea,
 select,
@@ -76,11 +91,11 @@ input .contenedor{
     font-weight: bold;
 }
 
-@media (min-width:720px){
+@media (min-width:768px){
 
     .formulario{
-        width: 500px;
-        border-radius:2%;
+        width: 550px;
+        border-radius: 5px;
     }
 
 

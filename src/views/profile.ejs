@@ -7,12 +7,23 @@
         <%- include('partials/header') %>
 
             <main class="main-profile">
-                <div class="container-products div-profile">
-                    <h2>Bienvenido <%= user.user_name%> </h2>
-                    <p class="p-profile"></p>
-                    <a href="/">Ir a Inicio</a>
-                    <a href="/users/edit">Editar usuario</a>
+                <div class="div-profile">
+                    <h2 class="profile-title">Bienvenido <%= user.user_name%>
+                    </h2>
+                    <p class="profile-title ">Correo electrónico: <%= user.user_email %>
+                    </p>
+                    <p class="profile-title">Imagen de perfil</p>
+                    <img src="/image/avatars/<%= user.user_img%>">
                 </div>
+                    <div class="perfil-button">
+                        <a href="/">Inicio</a>
+                        <a href="/users/edit">Editar </a>
+                        <% if(locals.user && user.user_cat==2){ %>
+                        <a href="/products/create">Crear productos</a>
+                        <a href="/users/delete">Eliminar usuario</a>
+                        <% } %> 
+                    </div>
+                
             </main>
             <%- include('partials/footer') %>
     </body>

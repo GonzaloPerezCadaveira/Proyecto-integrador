@@ -8,10 +8,20 @@
     background-image:url("/image/slider2.jpg") ;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size:contain;
     background-size:cover;
     padding:10px;
     margin:auto;
+}
+
+.form-edit{
+    text-align:-webkit-center;
+    padding-bottom: 20px;
+}
+
+.title{
+    text-align: center;
+    color:#1a2537;
+    font-size:40px;
 }
 
 .formulario{
@@ -72,12 +82,6 @@ h1{
     margin-bottom:60px;
 }
 
-p{
-    text-align: center;
-    font-size: 25px;
-    margin-top: 20px;
-    font-weight: bold;
-}
 
 .erroresLocales{
     font-size: 1vw;

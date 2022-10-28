@@ -2,7 +2,7 @@ Grupo 5: Proyecto integrador.
 
 Carpincho Drinks: Tienda online de bebidas.
 
-Descripción: Somos una tienda online que ofrece una amplia variedad de productos (nacionales e importados) desde cervezas nacionales hasta licores importados de alta calidad.
+Descripción: Somos una tienda online que ofrece una amplia variedad de productos, desde cervezas nacionales hasta licores importados de alta calidad.
 Para que el cliente (usuario) pueda disfrutar de una experiencia única adquiriendo un producto desde la comodidad de su hogar a precios 100% accesibles.
 
 Integrantes:

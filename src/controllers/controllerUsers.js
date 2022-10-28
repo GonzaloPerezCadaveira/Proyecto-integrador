@@ -54,7 +54,7 @@ const controller = {
                         user_email: req.body.user_email,
                         user_password: bcrypt.hashSync(req.body.user_password, 10),
                         user_img: req.file.filename,
-                        user_cat:2
+                        user_cat:1
                     })
                     .then(function(){
                         res.redirect('/')

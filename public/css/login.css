@@ -115,7 +115,7 @@ input .contenedor{
 }
 
 
-@media (min-width:720px){
+@media (min-width:768px){
 
     .formulario{
         width: 50%;
