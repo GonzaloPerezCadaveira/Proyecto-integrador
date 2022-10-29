@@ -1,8 +1,6 @@
 <html>
 <%- include('partials/head') %>
     <script src="/js/login.js"></script>
-
-
         <%- include('partials/header') %>
             <div class="main-login">
                 <div class="login-form">
@@ -12,7 +10,7 @@
                             <p class="etiqueta">Correo electrónico</p>
                             <i class="fa-solid fa-at icon"></i>
                             <input type="email" class="input-login" name="user_email"
-                                value="<%= locals.old && old.user_email? old.user_email : '' %>">
+                            id="user_email" value="<%= locals.old && old.user_email? old.user_email : '' %>">
                             <% if(locals.errors && errors.user_email) { %>
                                 <p class="erroresLocales">
                                     <%= errors.user_email.msg %>
@@ -22,7 +20,7 @@
                         <div class="contenedor">
                             <p class="etiqueta">Contraseña</p>
                             <i class="fa-solid fa-key icon"></i>
-                            <input type="password" class="input-login" name="user_password" >
+                            <input type="password" class="input-login" name="user_password" id="user_password" >
                             <div class="erroresLocales">
                                 <% if(locals.errors && errors.user_password) { %>
                                     <p class="erroresLocales">

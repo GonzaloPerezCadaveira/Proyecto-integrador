@@ -26,6 +26,16 @@ window.addEventListener('load', function () {
             console.log('hola');
         }
     })
+    user_password.addEventListener('keyup',function(e){
+        if(user_password.value[0]){
+            if(user_password.value[0] !== user_password.value[0].toUpperCase()){
+                user_password.style.border='solid', '2px' 
+                user_password.style.borderColor='red'
+                user_password.style.color='black'
+                user_password.style.opacity=0.5  
+            }
+        }
+    })
     button.addEventListener('click', function(e){
         let errores=[];
         let ulErrors= document.querySelector('#ulErrors ul')
@@ -49,6 +59,15 @@ window.addEventListener('load', function () {
             user_password.style.opacity=0.5
             errores.push('Debes escribir una contraseña')
         }
+        // if(user_password.value[0]){
+        //     if(user_password.value[0] !== user_password.value[0].toUpperCase()){
+        //         user_password.style.border='solid', '2px' 
+                // user_password.style.borderColor='red'
+                // user_password.style.color='black'
+                // user_password.style.opacity=0.5
+        //         errores.push('La contraseña es incorrecta')  
+        //     }
+        // }
         if(errores.length>0){
             e.preventDefault()
             ulErrors.innerHTML=''

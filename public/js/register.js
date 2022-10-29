@@ -1,6 +1,5 @@
 
 window.addEventListener('load', function () {
-
     let user_name = document.querySelector('#user_name')
     let user_email = document.querySelector('#user_email')
     let user_password = document.querySelector('#user_password')
@@ -26,7 +25,7 @@ window.addEventListener('load', function () {
             user_email.style.color='black'
             user_email.style.opacity=0.5  
         } 
-        if(user_email.value.includes('@')){
+        if(!user_email.value.includes('@')){
             user_email.style.backgroundColor='red'
             user_email.style.color='black'
             user_email.style.opacity=0.5  
@@ -39,8 +38,11 @@ window.addEventListener('load', function () {
             user_password.style.color='black'
             user_password.style.opacity=0.5  
         }
-    })
-    user_password.addEventListener('keyup',function(e){
+        if (user_password.value.length<=8){
+            user_password.style.backgroundColor='red'
+            user_password.style.color='black'
+            user_password.style.opacity=0.5
+        }
         if(user_password.value[0]){
             if(user_password.value[0] !== user_password.value[0].toUpperCase()){
                 user_password.style.backgroundColor='red'
@@ -49,6 +51,8 @@ window.addEventListener('load', function () {
             }
         }
     })
+
+
   
     button_enviar.addEventListener('click',function(e){
         let errores=[];
@@ -68,11 +72,16 @@ window.addEventListener('load', function () {
             errores.push('Debe tener al menos 2 caracteres')
         }
         if(user_email.value.trim()==''){
-
             user_email.style.backgroundColor='red'
             user_email.style.color='black'
             user_email.style.opacity=0.5  
             errores.push('Debes completar con tu email')
+        }
+        if(!user_email.value.includes('@')){
+            user_email.style.backgroundColor='red'
+            user_email.style.color='black'
+            user_email.style.opacity=0.5 
+            errores.push('Debe ingresar un email "@"') 
         }
         if(user_password.value.trim()==''){
             user_password.style.backgroundColor='red'
@@ -80,12 +89,18 @@ window.addEventListener('load', function () {
             user_password.style.opacity=0.5
             errores.push('Debes escribir una contraseña') 
         }
+        if(user_password.value[0]){
+            if(user_password.value[0] !== user_password.value[0].toUpperCase()){
+                user_password.style.backgroundColor='red'
+                user_password.style.color='black'
+                user_password.style.opacity=0.5  
+                errores.push('La contraseña debe empezar com mayuscula')
+            }
+        }
         if(errores.length>0){
             e.preventDefault()
             ulErrors.innerHTML=''
             errores.map(function(error){
-                ulErrors.innerHTML+=`<li>${error}</li>`; 
-                    ulErrors.innerHTML+=`<li>${error}</li>`; 
                 ulErrors.innerHTML+=`<li>${error}</li>`; 
             })
             console.log(errores)
