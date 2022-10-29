@@ -202,7 +202,6 @@ const controller = {
                         user
                     });
                 })
-
             }
             else{
                 db.Product.update(

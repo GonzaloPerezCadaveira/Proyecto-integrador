@@ -38,6 +38,10 @@ router.post("/login", validationLogin, userController.loginSucces)
 // Perfil de usuario
 router.get("/profile", autentificacion, userController.profile)
 
+router.get('/edit/:id',userController.edit)
+
+router.get('/actualizar/:id',userController.editSucces)
+
 router.get('/logout', userController.logout)
 
 module.exports = router;

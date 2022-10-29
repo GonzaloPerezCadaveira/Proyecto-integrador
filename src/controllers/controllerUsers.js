@@ -178,6 +178,55 @@ const controller = {
             })
         }
     },
+    edit:(req,res)=>{
+        const usuario=req.session.userLogged
+        console.log(usuario);
+        if (usuario){
+            db.User.findOne({
+                where:{id:usuario.id}
+            })
+            .then(function(user){
+                res.render('edit-', {
+                    titulo: 'Edicion de usuario',
+                    enlace: '/css/editProduct.css',
+                    user
+                })
+            })
+        }
+    },
+    editSucces:(req,res)=>{
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            console.log(errors)
+            db.User.findOne({
+                where:{ id:usuario.id}
+            })
+            .then(function(user){
+                res.render('edit-', {
+                    titulo: 'Edicion de usuario',
+                    enlace: '/css/editProduct.css',
+                    errors: errors.mapped(),
+                    old: req.body,
+                    user
+                });
+            })
+        }
+        else{
+            db.User.update(
+                {
+                    user_name: req.body.user_name,
+                    user_email: req.body.user_email,
+                    user_password: bcrypt.hashSync(req.body.user_password, 10),
+                    user_img: req.file.filename
+                }, 
+                {
+                where: { id: req.params.id }
+            })
+                .then(function () {
+                    res.redirect('/profile')
+                })
+        }
+    },    
     logout:(req,res)=>{
         res.clearCookie('userLogueado')
         req.session.destroy();
