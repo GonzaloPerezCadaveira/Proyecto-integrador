@@ -15,11 +15,11 @@
                     <form action="/products/actualizar/<%=  producto.id ? producto.id : '' %>?_method=PUT" method="POST" enctype='multipart/form-data' class="formulario">
                     <h1 class="title">Formulario de edición del producto: <%= old.name ? old.name : '' %></h1>
                 <%}%>
-                <div id="ulErrors">
+                <div id="ulErrors" class="erroresLocales">
                     <ul type="none"></ul>
                 </div>
-                                        <p class="etiqueta">Nombre del producto</p>
                                         <div class="contenedor">
+                                        <p class="etiqueta">Nombre del producto</p>
                                             <div class="input-contenedor"></div>
                                             <% if(locals.product && product.name){ %>
                                                 <input type="text" name="name" id="name_product" value="<%= product.name %>">
@@ -33,8 +33,8 @@
                                             </p>
                                             <% } %>
                                         </div>
-                                        <p class="etiqueta">Descripción</p>
                                         <div class="contenedor">
+                                        <p class="etiqueta">Descripción</p>
                                             <div class="input-contenedor"></div>
                                             <% if(locals.product && product.description){ %>
                                                 <textarea type="text"
@@ -52,14 +52,14 @@
 
                                         </div>
                                         <% if(locals.product){ %>
-                                            <p class="etiqueta">Precio</p>
                                             <div class="contenedor">
+                                            <p class="etiqueta">Precio</p>
                                                 <div class="input-contenedor"></div>
                                                 <input type="number" min="0" name="price" id="price_product" value="<%= product.price %>">
                                             </div>
 
-                                            <p class="etiqueta">Descuento</p>
                                             <div class="contenedor">
+                                            <p class="etiqueta">Descuento</p>
                                                 <div class="input-contenedor">
                                                     <input type="number" min="0" max="50" name="discount" id="discount_product"
                                                         value="<%= product.discount %>">
@@ -74,38 +74,38 @@
                                                 </div>
                                             </div>
 
-                                            <p class="etiqueta">Imagen del producto</p>
                                             <div class="contenedor">
+                                            <p class="etiqueta">Imagen del producto</p>
                                                 <div class="input-contenedor">
                                                     <input type="file" name="img" id="img-form" value="<%= product.img %>">
                                                 </div>
                                             </div>
                                             <% } %>
                                                 <% if(locals.old){ %>
-                                                    <p class="etiqueta">Precio</p>
                                                     <div class="contenedor">
+                                                    <p class="etiqueta">Precio</p>
                                                         <div class="input-contenedor"></div>
                                                         <input type="number" min="0" name="price" id="price_product"
                                                             value="<%= old.price ? old.price : ''  %>">
                                                     </div>
 
-                                                    <p class="etiqueta">Descuento</p>
                                                     <div class="contenedor">
+                                                    <p class="etiqueta">Descuento</p>
                                                         <div class="input-contenedor">
                                                             <input type="number" min="0" max="50" name="discount" id="discount_product"
                                                                 value="<%= old.discount ? old.discount : ''  %>">
                                                         </div>
                                                     </div>
 
-                                                    <p class="etiqueta">Cantidad</p>
                                                     <div class="contenedor">
+                                                    <p class="etiqueta">Cantidad</p>
                                                         <div class="input-contenedor">
                                                             <input type="number" min="0" max="50" name="quantity"
                                                                 value="<%=  old.quantity ? old.quantity : ''  %>">
                                                         </div>
                                                     </div>
-                                                    <p class="etiqueta">Imagen del producto</p>
                                                     <div class="contenedor">
+                                                    <p class="etiqueta">Imagen del producto</p>
                                                         <div class="input-contenedor">
                                                             <input type="file" name="img" id="img-form"
                                                                 value="<%= old.img? old.img : '' %>">

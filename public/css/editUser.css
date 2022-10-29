@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main{
+    background-image:url("/image/slider2.jpg") ;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size:cover;
+    padding:10px;
+    margin:auto;
+}
+
+.form-edit{
+    text-align:-webkit-center
+}
+
+.title{
+    text-align: center;
+    color:#1a2537;
+    font-size:40px;
+}
+
+.formulario{
+    background: white;
+    margin: 10% 0%;
+    padding:3px;
+    text-align: center;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="file"],
+input[type="email"],
+input[type="number"],
+textarea,
+select,
+option{
+    font-size: 20px;
+    width: 82%;
+    padding:10px;
+    border:none;
+    box-shadow: 1px 1px 2px rgba(57, 56, 56, 0.5);
+}
+
+input .contenedor{
+    margin-bottom: 15px;
+    border:1px solid #aaa;
+}
+
+.etiqueta{
+    text-align: center;
+    font-size: 25px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.button{
+    border:none;
+    width: 100%;
+    margin-top: 15px;
+    color:white;
+    font-size: 20px;
+    background:rgba(30,30,30);
+    padding:15px 20px;
+    border-radius:5px;
+    cursor: pointer;
+}
+
+.button:hover{
+    background:rgba(30,30,30,0.4);
+}
+
+h1{
+    margin-bottom:60px;
+}
+
+.erroresLocales{
+    font-size: 1vw;
+    color:red;
+}
+
+@media (min-width:720px){
+
+    .formulario{
+        width: 500px;
+        border-radius:2%;
+    }
+}

@@ -186,9 +186,9 @@ const controller = {
                 where:{id:usuario.id}
             })
             .then(function(user){
-                res.render('edit-', {
+                res.render('edit-user', {
                     titulo: 'Edicion de usuario',
-                    enlace: '/css/editProduct.css',
+                    enlace: '/css/editUser.css',
                     user
                 })
             })
@@ -202,9 +202,9 @@ const controller = {
                 where:{ id:usuario.id}
             })
             .then(function(user){
-                res.render('edit-', {
+                res.render('edit-user', {
                     titulo: 'Edicion de usuario',
-                    enlace: '/css/editProduct.css',
+                    enlace: '/css/editUser.css',
                     errors: errors.mapped(),
                     old: req.body,
                     user

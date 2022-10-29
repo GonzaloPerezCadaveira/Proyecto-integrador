@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head') %>
+
+    <%- include('partials/header')%>
+
+        <main class="main">
+            <div class="form-edit">
+                <% if(locals.user && user.id && user.user_name){ %>
+                    <form action="/user/actualizar/<%= user.id %>?_method=PUT" method="POST"
+                        enctype='multipart/form-data' class="formulario">
+                        <h1>Formulario de edición del usuario: <%= user.user_name %>
+                        </h1>
+                        <% } %>
+                            <% if(locals.old && locals.user ){%>
+                                <form action="/products/actualizar/<%=  user.id ? user.id : '' %>?_method=PUT"
+                                    method="POST" enctype='multipart/form-data' class="formulario">
+                                    <h1 class="title">Formulario de edición del usuario: <%= old.user_name ?
+                                            old.user_name : '' %>
+                                    </h1>
+                                    <%}%>
+                                        <div id="ulErrors">
+                                            <ul type="none"></ul>
+                                        </div>
+                                        <div class="contenedor">
+                                            <p class="etiqueta">Nombre y apellido</p>
+                                            <i class="fa-solid fa-user icon"></i>
+                                            <% if(locals.user && user.user_name){ %>
+                                                <input type="text" name="user_name" id="user_name"
+                                                    value="<%= user.user_name %>">
+                                                <% } %>
+                                                    <% if(locals.old && old.user_name){%>
+                                                        <input type="text" name="user_name" id="user_name"
+                                                            value="<%= old.user_name %>">
+                                                        <%}%>
+                                                            <% if(locals.errors && errors.user_name){ %>
+                                                                <p class="erroresLocales">
+                                                                    <%= errors.user_name.msg %>
+                                                                </p>
+                                                                <% } %>
+                                        </div>
+                                        <div class="contenedor">
+                                            <p class="etiqueta">Correo electrónico</p>
+                                            <i class="fa-solid fa-key icon"></i>
+                                            <% if(locals.user && user.user_email){ %>
+                                                <input type="email" id="user_email" name="user_email"
+                                                    value="<%= user.user_email %>">
+                                                <% } %>
+                                                    <% if(locals.old && old.user_email){%>
+                                                        <input type="email" name="user_email" id="user_email"
+                                                            value="<%= old.user_email %>">
+                                                        <%}%>
+                                                            <% if(locals.errors && errors.user_email){ %>
+                                                                <p class="erroresLocales">
+                                                                    <%= errors.user_email.msg %>
+                                                                </p>
+                                                                <% } %>
+
+                                        </div>
+                                        <div class="contenedor">
+                                            <p class="etiqueta">Contraseña</p>
+                                            <i class="fa-solid fa-key icon"></i>
+                                            <input type="password" name="user_password" id="user_password"
+                                                autocorrect="off" class="input-register" autocapitalize="off"
+                                                value="<%= locals.old && old.user_password? old.user_password : '' %>">
+                                            <% if(locals.errors && errors.user_password){ %>
+                                                <p class="erroresLocales">
+                                                    <%= errors.user_password.msg %>
+                                                </p>
+                                                <% }; %>
+                                        </div>
+                                        <div class="contenedor">
+                                            <p class="etiqueta">Imagen de perfil</p>
+                                            <i class="fa-regular fa-image icon"></i>
+                                            <input type="file" name="user_img" accept=".jpg, .png, .jpng"
+                                                class="input-register">
+                                            <% if(locals.errors && errors.user_img){ %>
+                                                <p class="erroresLocales">
+                                                    <%= errors.user_img.msg %>
+                                                </p>
+                                                <% } %>
+                                        </div>
+                                        <button type="submit" id='button-create' class="button">Editar
+                                            usuario</button>
+                                </form>
+                                <%- include('partials/footer')%>
+            </div>
+        </main>
+        <script src="/js/menu.js"></script>
+
+</html>
