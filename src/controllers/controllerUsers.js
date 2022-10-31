@@ -195,36 +195,41 @@ const controller = {
         }
     },
     editSucces:(req,res)=>{
-        const errors = validationResult(req);
-        if (!errors.isEmpty()) {
-            console.log(errors)
-            db.User.findOne({
-                where:{ id:usuario.id}
-            })
-            .then(function(user){
-                res.render('edit-user', {
-                    titulo: 'Edicion de usuario',
-                    enlace: '/css/editUser.css',
-                    errors: errors.mapped(),
-                    old: req.body,
-                    user
-                });
-            })
-        }
-        else{
-            db.User.update(
-                {
-                    user_name: req.body.user_name,
-                    user_email: req.body.user_email,
-                    user_password: bcrypt.hashSync(req.body.user_password, 10),
-                    user_img: req.file.filename
-                }, 
-                {
-                where: { id: req.params.id }
-            })
-                .then(function () {
-                    res.redirect('/profile')
+        const errors = validationResult(req)
+        let usuario= req.session.userLogged
+        if(usuario){
+            if (!errors.isEmpty()) {
+                console.log(errors)
+                db.User.findOne({
+                    where:{ id:usuario.id}
                 })
+                .then(function(user){
+                    res.render('edit-user', {
+                        titulo: 'Edicion de usuario',
+                        enlace: '/css/editUser.css',
+                        errors: errors.mapped(),
+                        old: req.body,
+                        usuario:{
+                            id:req.params.id
+                        },
+                        user
+                    });
+                })
+            }
+            else{
+                db.User.update(
+                    {
+                        user_name: req.body.user_name,
+                        user_email: req.body.user_email,
+                        user_img: req.file.filename
+                    }, 
+                    {
+                    where: { id: req.params.id }
+                })
+                    .then(function () {
+                        res.redirect('/profile')
+                    })
+            }
         }
     },    
     logout:(req,res)=>{

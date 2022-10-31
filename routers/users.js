@@ -15,6 +15,8 @@ const validationLogin = require ("../src/middlewares/validationsLogin")
 
 const validationsRegister = require("../src/middlewares/validationsRegister")
 
+const validationsEdit = require("../src/middlewares/validationEditUsers")
+
 const autentificacion=require('../src/middlewares/auth')
 
 const userOn = require('../src/middlewares/userConnected')
@@ -40,7 +42,7 @@ router.get("/profile", autentificacion, userController.profile)
 
 router.get('/edit/:id',userController.edit)
 
-router.get('/actualizar/:id',userController.editSucces)
+router.put('/actualizar/:id', uploadFile.single('user_img'), validationsEdit,userController.editSucces)
 
 router.get('/logout', userController.logout)
 
