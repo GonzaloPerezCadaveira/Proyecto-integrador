@@ -10,6 +10,7 @@ const userConnectedLogged=require('./src/middlewares/userConnectedLogged')
 const homeRouter = require("./routers/home");
 const productsRouter = require("./routers/products");
 const usersRouter = require('./routers/users')
+const apiRouter = require('./routers/api/') 
 
 // Template engine
 app.set('view engine', 'ejs');
@@ -42,7 +43,8 @@ console.log ('Servidor corriendo en puerto 3020')
 app.use("/", homeRouter);
 app.use("/products", productsRouter);
 app.use("/user", usersRouter);
-app.use("/", usersRouter)
+app.use("/api", apiRouter);
+
 
 // Error (404):
 app.use((req, res, next) => {
