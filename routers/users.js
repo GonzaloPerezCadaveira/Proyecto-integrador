@@ -15,6 +15,8 @@ const validationLogin = require ("../src/middlewares/validationsLogin")
 
 const validationsRegister = require("../src/middlewares/validationsRegister")
 
+const validationsEdit = require("../src/middlewares/validationEditUsers")
+
 const autentificacion=require('../src/middlewares/auth')
 
 const userOn = require('../src/middlewares/userConnected')
@@ -40,7 +42,7 @@ router.get("/profile", autentificacion, userController.profile)
 // Vista de edición de usuario
 router.get('/edit/:id',userController.edit)
 // Procesa la edición del usuario
-router.get('/actualizar/:id',userController.editSucces)
+router.put('/actualizar/:id', uploadFile.single('user_img'), validationsEdit,userController.editSucces)
 // Cierra la sesión del usuario
 router.get('/logout', userController.logout)
 // Desde el perfil del usuario administrador, acccede a la lista de usuarios registrados
