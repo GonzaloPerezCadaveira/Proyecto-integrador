@@ -1,5 +1,6 @@
 .body-404 {
     background-color: white;
+    max-width:1200px;
 }
 
 .main-404 {
@@ -9,11 +10,11 @@
 .image-error{
     display: block;
     margin: auto;
-    width: 90%;
+    width: 50%
 }
 
 .button-404 {
-    width: 180px;
+    width: 150px;
     display: block;
     font-size: 1em;
     background-color:rgba(30,30,30);

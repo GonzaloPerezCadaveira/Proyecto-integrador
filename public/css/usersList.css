@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Kanit', sans-serif;
+}
+
+
+main {
+    background-color: rgb(255 255 255);
+}
+
+.titular {
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    margin: auto;
+    padding: 20px;
+}
+
+.usuario img,
+.usuario div {
+    width: 100%;
+}
+
+main article.usuario {
+    margin: 15px;
+    box-shadow: 0px 0px 5px #e5e7e9;
+}
+
+
+a.hipervinculo-usuarios {
+    text-decoration: none;
+    color: black;
+    width: 100%;
+    text-align: start
+}
+
+main article div.contenedor-articulo {
+    width: 100%;
+    background-color: #FFF;
+    border-top: 1px solid #ebebeb;
+    margin-top: -3px;
+    padding: 10px;
+    border-radius: 2px;
+}
+
+.nombre_usuario {
+    font-size: 15px;
+    text-align: left;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.precio {
+    width: 30%;
+    color: rgb(20, 20, 20);
+    font-size: 15px;
+}
+
+main article {
+    transition: all 800ms;
+}
+
+main article:hover {
+    box-shadow: 0px 0px 20px white;
+}
+
+main article :hover i {
+    transform: rotateX(1turn);
+    transition: all 800ms;
+}
+
+.usuarios {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+section.usuario {
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.boton-formulario{
+    width: 45px;
+    background-color: rgba(30,30,30);
+    border: none;
+    margin-right: 5px;
+    font-size: 16px;
+    color:#FFF;
+    padding: 13px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+div.botones {
+    display: flex;
+    padding-left: 7px;
+    margin-top: 10px;
+}
+
+@media (min-width:425px) {
+    section.usuario {
+        width: 40%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+}
+
+@media (min-width:720px) {
+    section .usuario {
+        width: 30%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}
+
+@media (min-width:1200px) {
+    section .usuario {
+        width: 20%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}
