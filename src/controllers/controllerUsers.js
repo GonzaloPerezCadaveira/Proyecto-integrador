@@ -29,7 +29,7 @@ const controller = {
         });
     },
 
-    store:function(req, res){
+    store: function (req, res) {
         const errors = validationResult(req);
         console.log(req.body);
         if (!errors.isEmpty()) {
@@ -40,66 +40,66 @@ const controller = {
                 old: req.body
             });
         }
-        else{
+        else {
             db.User.findOne({
-                where:{
-                    user_email:req.body.user_email
+                where: {
+                    user_email: req.body.user_email
                 }
             })
-            .then(function(usuario){
-                if(!usuario){
-                    console.log('llegue aca por then ');
-                    db.User.create({
-                        user_name: req.body.user_name,
-                        user_email: req.body.user_email,
-                        user_password: bcrypt.hashSync(req.body.user_password, 10),
-                        user_img: req.file.filename,
-                        user_cat:1
-                    })
-                    .then(function(){
-                        res.redirect('/')
-                    })
-                    .catch(function(e) {
-                        console.log('llegue aca');
-                        res.render('error', { titulo: '404', enlace: 'css/error.css'})
-                    })
-                }
-                else{
-                    console.log('hola llegue por el else');
-                    res.render('register', {
-                    titulo: "Register",
-                    enlace: "/css/register.css",
-                    errors: errors.mapped(),
-                    errors: {
-                            user_email: { msg: 'El email '+usuario.user_email+' ya se encuentra registrado' }    
-                        },
-                    old: req.body
-                    });
-                }
-            })
-            
+                .then(function (usuario) {
+                    if (!usuario) {
+                        console.log('llegue aca por then ');
+                        db.User.create({
+                            user_name: req.body.user_name,
+                            user_email: req.body.user_email,
+                            user_password: bcrypt.hashSync(req.body.user_password, 10),
+                            user_img: req.file.filename,
+                            user_cat: 1
+                        })
+                            .then(function () {
+                                res.redirect('/')
+                            })
+                            .catch(function (e) {
+                                console.log('llegue aca');
+                                res.render('error', { titulo: '404', enlace: 'css/error.css' })
+                            })
+                    }
+                    else {
+                        console.log('hola llegue por el else');
+                        res.render('register', {
+                            titulo: "Register",
+                            enlace: "/css/register.css",
+                            errors: errors.mapped(),
+                            errors: {
+                                user_email: { msg: 'El email ' + usuario.user_email + ' ya se encuentra registrado' }
+                            },
+                            old: req.body
+                        });
+                    }
+                })
+
         }
     },
     login: (req, res) => {
         console.log(req.cookies);
-        if(req.cookies.userLogueado){
+        if (req.cookies.userLogueado) {
             res.render('login', {
                 titulo: 'login',
                 loginError: '',
                 enlace: '/css/login.css',
-                user_email:req.cookies.userLogueado
+                user_email: req.cookies.userLogueado
             });
         }
-        else{
+        else {
             res.render('login', {
                 titulo: 'login',
                 loginError: '',
                 enlace: '/css/login.css',
             });
         }
-        
+
     },
-    loginSucces:(req,res)=>{
+    loginSucces: (req, res) => {
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
             res.render('login', {
@@ -109,134 +109,162 @@ const controller = {
                 old: req.body
             });
         }
-        else{
+        else {
             db.User.findOne({
-                where:{
-                    user_email:req.body.user_email
+                where: {
+                    user_email: req.body.user_email
                 }
             })
-            .then(function(usuario){
-                if(usuario){
-                    let check=bcrypt.compareSync(req.body.user_password,usuario.user_password)
-                    if(check){
-                        if(req.body.rememberUser){
-                            res.cookie('userLogueado',usuario.user_email, {maxAge:1000*60} )
+                .then(function (usuario) {
+                    if (usuario) {
+                        let check = bcrypt.compareSync(req.body.user_password, usuario.user_password)
+                        if (check) {
+                            if (req.body.rememberUser) {
+                                res.cookie('userLogueado', usuario.user_email, { maxAge: 1000 * 60 })
+                            }
+                            req.session.userLogged = usuario
+                            res.redirect("/profile")
                         }
-                        req.session.userLogged = usuario
-                        res.redirect("/profile")
+                        else {
+                            res.render('login', {
+                                titulo: "login",
+                                enlace: "/css/login.css",
+                                errors: {
+                                    user_password: { msg: 'La contraseña ingresada es incorrecta' }
+                                },
+                                old: req.body
+                            });
+                        }
                     }
-                    else
-                    {
+                    else {
                         res.render('login', {
                             titulo: "login",
                             enlace: "/css/login.css",
-                            errors:{
-                                user_password:{msg:'La contraseña ingresada es incorrecta'}
-                            }, 
+                            errors: {
+                                user_email: { msg: 'El email ingresado no se encuentra registrado' }
+                            },
                             old: req.body
-                        });   
+                        });
                     }
-                }
-                else{
-                    res.render('login', {
-                        titulo: "login",
-                        enlace: "/css/login.css",
-                        errors:{
-                            user_email:{ msg: 'El email ingresado no se encuentra registrado' }
-                        }, 
-                        old: req.body
-                    });
-                }
-            })
-            .catch(function(e) {
-                console.log('llegue aca');
-                res.render('error', { 
-                    titulo: '404', 
-                    enlace: 'css/error.css'
                 })
-            })
+                .catch(function (e) {
+                    console.log('llegue aca');
+                    res.render('error', {
+                        titulo: '404',
+                        enlace: 'css/error.css'
+                    })
+                })
         }
     },
     profile: (req, res) => {
-        if(req.session.userLogged){
-            const usuario=req.session.userLogged
+        if (req.session.userLogged) {
+            const usuario = req.session.userLogged
             db.User.findOne({
-                where:{id:usuario.id}
+                where: { id: usuario.id }
             })
-            .then(function(user) {
-                res.render('profile',{
-                    titulo:'Profile',
-                    enlace:'/css/profile.css',
-                    user
+                .then(function (user) {
+                    res.render('profile', {
+                        titulo: 'Profile',
+                        enlace: '/css/profile.css',
+                        user
+                    })
                 })
-            })
         }
-        else{
-            res.render('profile',{
-                titulo:'Profile',
-                enlace:'/css/profile.css',
+        else {
+            res.render('profile', {
+                titulo: 'Profile',
+                enlace: '/css/profile.css',
             })
         }
     },
-    edit:(req,res)=>{
-        const usuario=req.session.userLogged
+    edit: (req, res) => {
+        const usuario = req.session.userLogged
         console.log(usuario);
-        if (usuario){
+        if (usuario) {
             db.User.findOne({
-                where:{id:usuario.id}
+                where: { id: usuario.id }
             })
-            .then(function(user){
-                res.render('edit-user', {
-                    titulo: 'Edicion de usuario',
-                    enlace: '/css/editUser.css',
-                    user
+                .then(function (user) {
+                    res.render('edit-user', {
+                        titulo: 'Edicion de usuario',
+                        enlace: '/css/editUser.css',
+                        user
+                    })
                 })
-            })
         }
     },
-    editSucces:(req,res)=>{
-        const errors = validationResult(req)
-        let usuario= req.session.userLogged
-        if(usuario){
-            if (!errors.isEmpty()) {
-                console.log(errors)
-                db.User.findOne({
-                    where:{ id:usuario.id}
-                })
-                .then(function(user){
+    editSucces: (req, res) => {
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            console.log(errors)
+            db.User.findOne({
+                where: { id: usuario.id }
+            })
+                .then(function (user) {
                     res.render('edit-user', {
                         titulo: 'Edicion de usuario',
                         enlace: '/css/editUser.css',
                         errors: errors.mapped(),
                         old: req.body,
-                        usuario:{
-                            id:req.params.id
-                        },
                         user
                     });
                 })
-            }
-            else{
-                db.User.update(
-                    {
-                        user_name: req.body.user_name,
-                        user_email: req.body.user_email,
-                        user_img: req.file.filename
-                    }, 
-                    {
+        }
+        else {
+            db.User.update(
+                {
+                    user_name: req.body.user_name,
+                    user_email: req.body.user_email,
+                    user_password: bcrypt.hashSync(req.body.user_password, 10),
+                    user_img: req.file.filename
+                },
+                {
                     where: { id: req.params.id }
                 })
-                    .then(function () {
-                        res.redirect('/profile')
-                    })
-            }
+                .then(function () {
+                    res.redirect('/profile')
+                })
         }
-    },    
-    logout:(req,res)=>{
+    },
+    logout: (req, res) => {
         res.clearCookie('userLogueado')
         req.session.destroy();
         return res.redirect('/')
-    }
+    },
+    usersList: (req, res) => {
+        const usuario = req.session.userLogged
+        if (usuario) {
+            db.User.findOne({
+                where: { id: usuario.user_cat == 2 }
+            })
+                .then(function (userOn) {
+                    const user = userOn
+                    db.User.findAll()
+                        .then(function (usuarios) {
+                            res.render('usersList', {
+                                titulo: 'Lista de usuarios registrados',
+                                enlace: '/css/usersList.css',
+                                usuarios,
+                                user:userOn
+                            })
+                        })
+                })
+        } else {
+            res.render('profile', {
+                titulo: 'Profile',
+                enlace: '/css/profile.css',
+            })
+        }
+    },
+    destroy: (req, res) => {
+        db.User.destroy({
+            where: { id:req.params.id }
+        })
+        .then(function(){
+            res.redirect('/')
+        })
+    },
+
 }
 
 module.exports = controller;
@@ -394,4 +422,3 @@ module.exports = controller;
         //             };
         //         })
         // }
-    

@@ -15,15 +15,15 @@
                     <p class="profile-title">Imagen de perfil</p>
                     <img src="/image/avatars/<%= user.user_img%>">
                 </div>
-                    <div class="perfil-button">
-                        <a href="/">Inicio</a>
-                        <a href="/edit/<%= user.id %>">Editar usuario</a>
-                        <% if(locals.user && user.user_cat==2){ %>
+                <div class="perfil-button">
+                    <a href="/">Inicio</a>
+                    <a href="/edit/<%= user.id %>">Editar usuario</a>
+                    <% if(locals.user && user.user_cat==2){ %>
                         <a href="/products/create">Crear productos</a>
-                        <a href="/delete">Eliminar usuario</a>
-                        <% } %> 
-                    </div>
-                
+                        <a href="/userslist">Administrar usuarios</a>
+                        <% } %>
+                </div>
+
             </main>
             <%- include('partials/footer') %>
     </body>

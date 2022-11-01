@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head') %>
+    <script src="/js/menu.js"></script>
+
+    <body>
+        <%- include('partials/header') %>
+            <main>
+                <section>
+                    <div class="usuarios">
+                        <% usuarios.forEach(function(element){ %>
+                            <article class="usuario">
+                                <a class="hipervinculo-usuarios" href="/user/<%= element.id%>">
+                                    <img src="/image/avatars/<%= element.user_img%>">
+                                    <div class="contenedor-articulo">
+                                        <p class="nombre_usuario">
+                                            <%= element.user_name %>
+                                        </p>
+                                        <p class="nombre_usuario">
+                                            <%= element.user_email %>
+                                        </p>
+                                        <div class="botones">
+                                            <form method="GET" action="/edit/<%= element.id %>">
+                                                <button type="submit" class="boton-formulario"><i
+                                                        class="fas fa-edit"></i></button>
+                                            </form>
+                                            <form action="/delete/<%= element.id %>?_method=DELETE" method="POST">
+                                                <button type="submit" class="boton-formulario"><i
+                                                        class="fas fa-trash-alt"></i></button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </a>
+                            </article>
+                            <%})%>
+                    </div>
+                </section>
+            </main>
+            <%- include('partials/footer') %>
+    </body>
+
+</html>
