@@ -5,7 +5,7 @@
 
         <h2 class="products-title">Resultados de la búsqueda: <%= search %></h2>
 
-            <section class="container-products result-products">
+            <section class="result-products">
                         
                 <% for( product of products ) {  %>
                     <article class="prod-contenedor">
@@ -21,7 +21,6 @@
                                     <%- product.discount ? `<span>${product.discount}% OFF</span>` : '' %>
                                         <h4 class="prod-descripcion"><%= product.name %></h4>
                                 </p>
-                                <i class="fas fa-truck"></i>
                             </div>
                     </article>
                 <% } %>

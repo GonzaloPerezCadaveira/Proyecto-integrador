@@ -9,15 +9,16 @@ main {
 
 img{
     width: 40%;
-
     box-shadow : 0px 0px 5px #e5e7e9;
+    margin:auto
 }
 
 main article{
     color:black
 }
 
-h1{
+.title-product{
+    font-size: 1.5em;
     font-weight: bold;
     margin: 15px 0px;
     text-align: center;
@@ -75,6 +76,7 @@ span{
     flex-wrap: wrap;
     flex-direction: column;
     padding-left: 15px;
+    margin:auto
 }
 
 .barra-precio h2 {

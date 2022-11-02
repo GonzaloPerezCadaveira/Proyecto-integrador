@@ -25,7 +25,7 @@
     <div class="main-header-container">
       <div class="main-header-user">
         <% if(locals.user){ %>  
-        <a href="/user/login" class="main-header-link"><img src="/image/avatars/<%= user.user_img%>" alt="avatar"><p class="main-header-link">Hola, <%= user.user_name%> </p></a>
+        <a href="/user/profile" class="main-header-link"><img src="/image/avatars/<%= user.user_img%>" alt="avatar"><p class="main-header-link">Hola, <%= user.user_name%> </p></a>
         <a href="/products/carrito" class="main-header-btn"><i class="fa-solid fa-cart-shopping"></i></a>
         <% } %>
         <% if(!locals.user){ %>

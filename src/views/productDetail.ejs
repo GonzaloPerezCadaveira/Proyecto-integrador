@@ -6,7 +6,7 @@
     <main class="main-producto">
         <% let precioFinal = locals.producto.discount ? (producto.price - producto.price * producto.discount / 100).toFixed(0) : producto.price; %>
         <div class="producto">
-            <h1><%= producto.name %></h1>
+            <h1 class="title-product"><%= producto.name %></h1>
             <img src="/image/<%= producto.img %>"  alt="Imagen del producto">
         </div>
         <div class="barra-precio">

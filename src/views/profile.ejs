@@ -17,10 +17,10 @@
                 </div>
                 <div class="perfil-button">
                     <a href="/">Inicio</a>
-                    <a href="/edit/<%= user.id %>">Editar usuario</a>
+                    <a href="/user/edit/<%= user.id %>">Editar usuario</a>
                     <% if(locals.user && user.user_cat==2){ %>
                         <a href="/products/create">Crear productos</a>
-                        <a href="/userslist">Administrar usuarios</a>
+                        <a href="/user/userslist">Administrar usuarios</a>
                         <% } %>
                 </div>
 
