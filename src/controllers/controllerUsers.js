@@ -123,7 +123,7 @@ const controller = {
                                 res.cookie('userLogueado', usuario.user_email, { maxAge: 1000 * 60 })
                             }
                             req.session.userLogged = usuario
-                            res.redirect("/profile")
+                            res.redirect("/user/profile")
                         }
                         else {
                             res.render('login', {
