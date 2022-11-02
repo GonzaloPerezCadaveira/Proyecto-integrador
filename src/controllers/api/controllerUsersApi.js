@@ -5,23 +5,46 @@ const controllerApi={
     list:(req,res)=>{
         db.User.findAll()
         .then(function (usuarios) {
-            res.status(200).json({
-                quantity: usuarios.length,
-                users: usuarios,
-                status:200
-            })
+            let respuesta = {
+                meta: {
+                    status: 200,
+                    count: usuarios.length,
+                    url: "/api/users"
+                },
+                users: usuarios.map(user => {
+                    return{
+                        id: user.id,
+                        user_name: user.user_name,
+                        user_email: user.user_email,
+                        user_img: "/img/avatar/" + user.user_img,
+                        detail: "/api/user/" + user.id
+                    }
+                })
+            }
+            res.status(200).json(respuesta)
         })
     },
     detail:(req,res)=>{
         db.User.findOne({
             where:{id:req.params.id}
         })
-        .then(function (usuario) {
-            res.status(200).json({
-                user: usuario,
-                status:200
-            })
+        .then(user=>{
+            let respuesta = {
+                meta:{
+                    status: 200,
+                    total: user.id.length,
+                    url: "/api/user/" + user.id
+                },
+                user: {
+                        id: user.id,
+                        user_name: user.user_name,
+                        user_email: user.email,
+                        user_img: "/img/avatar/" + user.user_img,
+                    }
+            }
+            res.json(respuesta)
         })
+
     }
 }
 
