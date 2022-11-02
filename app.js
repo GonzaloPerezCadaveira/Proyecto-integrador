@@ -10,7 +10,7 @@ const userConnectedLogged=require('./src/middlewares/userConnectedLogged')
 const homeRouter = require("./routers/home");
 const productsRouter = require("./routers/products");
 const usersRouter = require('./routers/users')
-const apiRouter = require('./routers/api/') 
+const apiRouter = require('./routers/api/apisCarpinchoDrinks') 
 
 // Template engine
 app.set('view engine', 'ejs');

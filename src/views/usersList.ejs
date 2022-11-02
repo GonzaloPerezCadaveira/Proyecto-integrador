@@ -10,7 +10,7 @@
                     <div class="usuarios">
                         <% usuarios.forEach(function(element){ %>
                             <article class="usuario">
-                                <a class="hipervinculo-usuarios" href="/user/<%= element.id%>">
+                                <div class="hipervinculo-usuarios">
                                     <img src="/image/avatars/<%= element.user_img%>">
                                     <div class="contenedor-articulo">
                                         <p class="nombre_usuario">
@@ -20,17 +20,17 @@
                                             <%= element.user_email %>
                                         </p>
                                         <div class="botones">
-                                            <form method="GET" action="/edit/<%= element.id %>">
+                                            <a href="/edit/<%= element.id %>">
                                                 <button type="submit" class="boton-formulario"><i
                                                         class="fas fa-edit"></i></button>
-                                            </form>
+                                                </a>
                                             <form action="/delete/<%= element.id %>?_method=DELETE" method="POST">
                                                 <button type="submit" class="boton-formulario"><i
                                                         class="fas fa-trash-alt"></i></button>
                                             </form>
                                         </div>
                                     </div>
-                                </a>
+                                </div>
                             </article>
                             <%})%>
                     </div>

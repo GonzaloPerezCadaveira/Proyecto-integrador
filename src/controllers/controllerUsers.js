@@ -215,7 +215,6 @@ const controller = {
                 {
                     user_name: req.body.user_name,
                     user_email: req.body.user_email,
-                    user_password: bcrypt.hashSync(req.body.user_password, 10),
                     user_img: req.file.filename
                 },
                 {
@@ -235,7 +234,7 @@ const controller = {
         const usuario = req.session.userLogged
         if (usuario) {
             db.User.findOne({
-                where: { id: usuario.user_cat == 2 }
+                where: { id: usuario.id }
             })
                 .then(function (userOn) {
                     const user = userOn
