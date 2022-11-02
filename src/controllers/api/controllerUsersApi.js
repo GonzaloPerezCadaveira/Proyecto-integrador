@@ -32,7 +32,6 @@ const controllerApi={
             let respuesta = {
                 meta:{
                     status: 200,
-                    total: user.id.length,
                     url: "/api/user/" + user.id
                 },
                 user: {

@@ -49,10 +49,24 @@ const controllerApi={
             where:{id:req.params.id}
         })
         .then(function (producto) {
-            res.status(200).json({
-                product: producto,
-                status:200
-            })
+            let respuesta = {
+                meta: {
+                    status: 200,
+                    url: "/api/product/"+producto.id
+                },
+                product: producto.map(product => {
+                    return{
+                        id: user.id,
+                        name: user.product,
+                        description: product.user_email,
+                        discount:product.discount,
+                        img: "/img/" + product.img,
+                        detail: "/api/product/" + product.id
+                    }
+                }),
+                relation:'categories'
+            }
+            res.status(200).json(respuesta)
         })
     }
 }
