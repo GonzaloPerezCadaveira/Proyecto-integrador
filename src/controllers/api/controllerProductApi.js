@@ -35,7 +35,7 @@ const controllerApi={
                         name:producto.name,
                         description:producto.description,
                         relation:'categories',
-                        detail:'/products/detail/'+producto.id
+                        detail:'/api/product/'+producto.id
                     }
                     
                 })
@@ -54,16 +54,15 @@ const controllerApi={
                     status: 200,
                     url: "/api/product/"+producto.id
                 },
-                product: producto.map(product => {
-                    return{
-                        id: user.id,
-                        name: user.product,
-                        description: product.user_email,
-                        discount:product.discount,
-                        img: "/img/" + product.img,
-                        detail: "/api/product/" + product.id
-                    }
-                }),
+                product:
+                {       
+                    id: producto.id,
+                    name: producto.product,
+                    description: producto.user_email,
+                    discount:producto.discount,
+                    img: "/img/" + producto.img,
+                    detail: "/api/product/" + producto.id
+                },    
                 relation:'categories'
             }
             res.status(200).json(respuesta)
