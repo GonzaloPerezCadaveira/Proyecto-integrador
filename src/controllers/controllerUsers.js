@@ -221,7 +221,7 @@ const controller = {
                     where: { id: req.params.id }
                 })
                 .then(function () {
-                    res.redirect('/profile')
+                    res.redirect('/user/profile')
                 })
         }
     },
