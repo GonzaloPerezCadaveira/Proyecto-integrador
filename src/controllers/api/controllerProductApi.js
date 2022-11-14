@@ -13,6 +13,7 @@ const controllerApi={
                     count: products.length,
                     url: "/api/products/" + products.id
                 },
+                data:products,
                 countByCategory:
                     categories.map(function(categoria,i){
                         let total=categories.map(function(categoria){
@@ -26,7 +27,8 @@ const controllerApi={
                         });
                         return {
                             cat_name:categoria.cat_name,
-                            tot:total[i]
+                            tot:total[i],
+                            count:categoria.length
                         }
                     }),
                 products:products.map(function(producto){
@@ -35,7 +37,7 @@ const controllerApi={
                         name:producto.name,
                         description:producto.description,
                         relation:'categories',
-                        detail:'/api/product/'+producto.id
+                        detail:'/api/product/'+ producto.id
                     }
                     
                 })

@@ -11,6 +11,7 @@ const controllerApi={
                     count: usuarios.length,
                     url: "/api/users"
                 },
+                data:usuarios,
                 users: usuarios.map(user => {
                     return{
                         id: user.id,

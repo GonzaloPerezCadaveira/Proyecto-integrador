@@ -10,7 +10,6 @@ main {
 img{
     width: 40%;
     box-shadow : 0px 0px 5px #e5e7e9;
-    margin:auto
 }
 
 main article{
@@ -76,7 +75,6 @@ span{
     flex-wrap: wrap;
     flex-direction: column;
     padding-left: 15px;
-    margin:auto
 }
 
 .barra-precio h2 {
