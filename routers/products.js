@@ -23,12 +23,12 @@ router.get('/', productController.productsList)
 router.get("/detail/:id", userAdmin, productController.detail);
 
 // Actualización de producto (U)
-router.get('/edit/:id',productController.edit);
+router.get('/edit/:id',restriccionAdmin,productController.edit);
 
 router.put('/actualizar/:id', validacionImg.single('img'), validationProduct, productController.editComplete);
 
 // Borrado de producto (D)
-router.delete('/delete/:id', productController.destroy); 
+router.delete('/delete/:id',restriccionAdmin, productController.destroy); 
 
 
 router.get('/carrito', productController.carrito);

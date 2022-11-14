@@ -21,7 +21,7 @@ const controllerApi={
                     }
                 })
             }
-            res.status(200).json(respuesta)
+            return res.status(200).json(respuesta)
         })
     },
     detail:(req,res)=>{
@@ -41,7 +41,7 @@ const controllerApi={
                         user_img: "/img/avatar/" + user.user_img,
                     }
             }
-            res.json(respuesta)
+            return res.json(respuesta)
         })
 
     }

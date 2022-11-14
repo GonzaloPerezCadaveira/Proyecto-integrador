@@ -57,12 +57,18 @@ span{
 }
 
 .producto{
-    width: 100%;
+    width: 50%;
+}
+
+.contenido{
+    width: 70%;
 }
 
 .main-producto{
-    padding: 10px;
+    margin:2vw 10%;
     background-color:  #ffffff;
+    display: flex;
+    justify-content: center;
 }
 
 .prod-descuento{
